@@ -2,34 +2,147 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta viewport="width=device-width, initial-scale=1.0">
-<title>แฟ้มสะสมงานของฉัน</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สารบัญ Portfolio</title>
+
 <style>
-body { font-family: sans-serif; background-color: #f4f7f6; text-align: center;
-padding: 30px; }
-.container { max-width: 800px; margin: 0 auto; }
-.project-card { background: white; padding: 20px; margin: 20px 0; border-radius:
-8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
-.btn { display: inline-block; background: #2c3e50; color: white; padding: 10px
-20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#f5e9ff,#e9d5ff,#d8b4fe);
+    overflow:hidden;
+}
+
+/* อิโมจิลอย */
+
+.floating{
+    position:absolute;
+    font-size:2rem;
+    opacity:.7;
+    animation:float 18s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(120vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+.f1{left:5%; animation-delay:0s;}
+.f2{left:15%; animation-delay:2s;}
+.f3{left:25%; animation-delay:4s;}
+.f4{left:35%; animation-delay:6s;}
+.f5{left:45%; animation-delay:8s;}
+.f6{left:55%; animation-delay:10s;}
+.f7{left:65%; animation-delay:12s;}
+.f8{left:75%; animation-delay:14s;}
+.f9{left:85%; animation-delay:16s;}
+
+.card{
+    width:90%;
+    max-width:800px;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(10px);
+    border-radius:30px;
+    padding:40px;
+    text-align:center;
+    z-index:10;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+h1{
+    color:#7e22ce;
+    margin-bottom:25px;
+}
+
+.menu{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.menu a{
+    text-decoration:none;
+    background:#c084fc;
+    color:white;
+    padding:15px;
+    border-radius:20px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    background:#9333ea;
+    transform:scale(1.05);
+}
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    color:#7e22ce;
+    text-decoration:none;
+    font-weight:bold;
+}
+
 </style>
 </head>
+
 <body>
-<div class="container">
-<h1> แฟ้มสะสมงาน (Portfolio)</h1>
-<p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
-<!-- กล่องผลงานชิ้นที่ 1 -->
-<div class="project-card">
-<h3>1. โครงงาน/ชิ้นงานวิทยาศาสตร์คำนวณ </h3>
-<p>รายละเอียดชิ้นงาน : เขียนอธิบายสั้นๆ ว่าทำอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง  </p>
+
+<div class="floating f1">🐰</div>
+<div class="floating f2">💜</div>
+<div class="floating f3">⭐</div>
+<div class="floating f4">☁️</div>
+<div class="floating f5">🌷</div>
+<div class="floating f6">🪻</div>
+<div class="floating f7">💖</div>
+<div class="floating f8">⭐</div>
+<div class="floating f9">🐰</div>
+
+<div class="card">
+
+<h1>📚 สารบัญ Portfolio 📚</h1>
+
+<div class="menu">
+
+<a href="sop.html">📝 SOP</a>
+
+<a href="profile.html">👤 ประวัติส่วนตัว</a>
+
+<a href="education.html">🏫 ประวัติการศึกษา</a>
+
+<a href="work1.html">💼 ผลงาน 1</a>
+
+<a href="work2.html">💼 ผลงาน 2</a>
+
+<a href="activity1.html">🎉 กิจกรรม 1</a>
+
+<a href="activity2.html">🎉 กิจกรรม 2</a>
+
+<a href="certificate1.html">🏆 เกียรติบัตร 1</a>
+
+<a href="certificate2.html">🏆 เกียรติบัตร 2</a>
+
+<a href="certificate3.html">🏆 เกียรติบัตร 3</a>
+
 </div>
-<!-- กล่องผลงานชนที่ ้ิ 2 -->
-<div class="project-card">
-<h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
-<p>รายละเอียดชิ้นงาน : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
+
+<a class="back" href="index.html">⬅ Back to home</a>
+
 </div>
-<!-- ปุ่มกดกลับหน้าแรก -->
-<a href="index.html" class="btn"> กลับหน้าแรก</a>
-</div>
+
 </body>
 </html>
