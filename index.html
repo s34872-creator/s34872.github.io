@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
+<title>Kantida Portfolio</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,144 +15,196 @@
 }
 
 body{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#f3e8ff,#d8b4fe);
+    background:linear-gradient(
+        135deg,
+        #f5e9ff,
+        #e9d5ff,
+        #d8b4fe
+    );
     overflow:hidden;
+    position:relative;
 }
 
+/* อิโมจิลอย */
+
+.floating{
+    position:absolute;
+    font-size:2rem;
+    opacity:0.7;
+    animation:float 18s linear infinite;
+}
+
+.f1{left:5%; animation-delay:0s;}
+.f2{left:15%; animation-delay:3s;}
+.f3{left:25%; animation-delay:6s;}
+.f4{left:35%; animation-delay:9s;}
+.f5{left:50%; animation-delay:12s;}
+.f6{left:65%; animation-delay:15s;}
+.f7{left:75%; animation-delay:4s;}
+.f8{left:85%; animation-delay:8s;}
+.f9{left:92%; animation-delay:13s;}
+.f10{left:45%; animation-delay:17s;}
+
+@keyframes float{
+    from{
+        transform:translateY(120vh) rotate(0deg);
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
+
+/* การ์ด */
+
 .card{
-    width:80%;
-    max-width:900px;
+    width:90%;
+    max-width:700px;
     background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(10px);
-    border-radius:30px;
+    backdrop-filter:blur(15px);
+    border-radius:35px;
     padding:50px;
     text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
     position:relative;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    z-index:10;
+}
+
+/* ตกแต่ง */
+
+.rabbit-top{
+    position:absolute;
+    top:15px;
+    left:20px;
+    font-size:40px;
+}
+
+.rabbit-bottom{
+    position:absolute;
+    bottom:15px;
+    right:20px;
+    font-size:40px;
+}
+
+.star-top{
+    position:absolute;
+    top:20px;
+    right:80px;
+    font-size:28px;
+}
+
+.star-bottom{
+    position:absolute;
+    bottom:20px;
+    left:70px;
+    font-size:28px;
 }
 
 h1{
-    color:#8b5cf6;
+    color:#7e22ce;
     margin-bottom:20px;
+    font-size:2rem;
 }
 
 .profile{
-    font-size:70px;
+    font-size:80px;
     margin:15px 0;
 }
 
 .name{
-    font-size:28px;
     color:#6d28d9;
+    font-size:1.8rem;
     font-weight:bold;
     margin-bottom:15px;
 }
 
-.text{
-    font-size:18px;
+.info{
     color:#555;
-    line-height:1.8;
+    font-size:1.15rem;
+    line-height:2;
 }
 
 .btn{
     display:inline-block;
     margin-top:30px;
-    padding:14px 35px;
     background:#a855f7;
     color:white;
     text-decoration:none;
+    padding:14px 35px;
     border-radius:50px;
     font-size:18px;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .btn:hover{
     background:#9333ea;
-    transform:scale(1.05);
+    transform:scale(1.08);
 }
 
-/* ตกแต่ง */
-
-.rabbit1{
-    position:absolute;
-    top:20px;
-    left:25px;
-    font-size:45px;
+.subtitle{
+    margin-top:10px;
+    color:#7c3aed;
+    font-weight:600;
 }
 
-.rabbit2{
-    position:absolute;
-    bottom:20px;
-    right:25px;
-    font-size:45px;
-}
-
-.star1{
-    position:absolute;
-    top:30px;
-    right:120px;
-    font-size:30px;
-}
-
-.star2{
-    position:absolute;
-    bottom:20px;
-    left:25px;
-    font-size:30px;
-}
-
-.heart{
-    position:absolute;
-    top:80px;
-    right:50px;
-    font-size:28px;
-}
-
-.cloud{
-    position:absolute;
-    bottom:80px;
-    left:50px;
-    font-size:35px;
-}
 </style>
 </head>
 
 <body>
 
+<!-- อิโมจิลอย -->
+
+<div class="floating f1">🐰</div>
+<div class="floating f2">💜</div>
+<div class="floating f3">⭐</div>
+<div class="floating f4">☁️</div>
+<div class="floating f5">🌷</div>
+<div class="floating f6">🪻</div>
+<div class="floating f7">💖</div>
+<div class="floating f8">🐰</div>
+<div class="floating f9">⭐</div>
+<div class="floating f10">☁️</div>
+
 <div class="card">
 
-    <div class="rabbit1">🐰</div>
-    <div class="rabbit2">🐰</div>
-    <div class="star1">⭐</div>
-    <div class="star2">⭐</div>
-    <div class="heart">💜</div>
-    <div class="cloud">☁️</div>
+    <div class="rabbit-top">🐰</div>
+    <div class="rabbit-bottom">🐰</div>
+
+    <div class="star-top">⭐</div>
+    <div class="star-bottom">⭐</div>
 
     <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h1>
 
-    <div class="profile">👩🏻</div>
+    <div class="profile">🐰</div>
 
     <div class="name">
-        กานต์ธิดา ทีปกากร<br>
+        กานต์ธิดา ทีปกากร
+    </div>
+
+    <div class="subtitle">
         (Kantida Teepakakorn)
     </div>
 
-    <div class="text">
-        สวัสดีค่ะ !<br><br>
+    <br>
 
-        ขณะนี้กำลังสนใจด้าน<br>
+    <div class="info">
         💜 Faculty of Veterinary Medicine<br>
-        ⚙️ Engineering<br><br>
+        ⚙️ Engineering
+        <br><br>
 
-        นี่คือเว็บไซต์แรกของฉัน<br>
-        ที่โฮสต์บน GitHub Pages
+        สวัสดีค่ะ !<br>
+        ขณะนี้กำลังสนใจด้านสัตวแพทยศาสตร์
+        และวิศวกรรมศาสตร์
+        <br><br>
+
+        ✨ นี่คือเว็บไซต์แรกของฉัน
+        ที่โฮสต์บน GitHub Pages ✨
     </div>
 
-    <a href="portflio.html" class="btn">
+    <a href="portfolio.html" class="btn">
         ไปหน้าถัดไป ➜
     </a>
 
