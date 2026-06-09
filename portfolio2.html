@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#f5e9ff,#e9d5ff,#d8b4fe);
+    min-height:100vh;
+    padding:40px;
+    overflow-x:hidden;
+}
+
+/* อิโมจิลอย */
+
+.floating{
+    position:fixed;
+    font-size:2rem;
+    opacity:.7;
+    animation:float 15s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(110vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+.f1{left:5%;animation-delay:0s;}
+.f2{left:20%;animation-delay:3s;}
+.f3{left:40%;animation-delay:6s;}
+.f4{left:60%;animation-delay:9s;}
+.f5{left:80%;animation-delay:12s;}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    position:relative;
+    z-index:10;
+}
+
+.header{
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(10px);
+    border-radius:30px;
+    padding:30px;
+    text-align:center;
+    margin-bottom:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.header h1{
+    color:#7e22ce;
+}
+
+.header p{
+    color:#666;
+    margin-top:10px;
+}
+
+.project-card{
+    background:rgba(255,255,255,.9);
+    border-radius:25px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.project-card h3{
+    color:#7e22ce;
+    margin-bottom:15px;
+}
+
+.project-image{
+    width:100%;
+    height:250px;
+    border:3px dashed #c084fc;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:15px;
+    color:#9333ea;
+    background:#faf5ff;
+}
+
+/* ใส่รูปจริง */
+.project-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:18px;
+}
+
+.project-card p{
+    color:#555;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    background:#a855f7;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:30px;
+    margin-top:15px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#9333ea;
+    transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="floating f1">🐰</div>
+<div class="floating f2">💜</div>
+<div class="floating f3">⭐</div>
+<div class="floating f4">🌷</div>
+<div class="floating f5">🪻</div>
+
+<div class="container">
+
+<div class="header">
+    <h1>📁 แฟ้มสะสมผลงาน</h1>
+    <p>พื้นที่รวบรวมผลงานและกิจกรรมที่ภาคภูมิใจ 💜</p>
+</div>
+
+<!-- ผลงานที่ 1 -->
+<div class="project-card">
+
+    <h3>💻 ผลงานชิ้นที่ 1</h3>
+
+    <div class="project-image">
+        📸 ใส่รูปผลงานตรงนี้
+    </div>
+
+    <p>
+        อธิบายรายละเอียดผลงาน
+        วัตถุประสงค์ วิธีดำเนินงาน
+        และสิ่งที่ได้รับจากการทำผลงานชิ้นนี้
+    </p>
+
+</div>
+
+<!-- ผลงานที่ 2 -->
+<div class="project-card">
+
+    <h3>🏆 ผลงานชิ้นที่ 2</h3>
+
+    <div class="project-image">
+        📸 ใส่รูปผลงานตรงนี้
+    </div>
+
+    <p>
+        อธิบายกิจกรรม การแข่งขัน
+        หรือเกียรติบัตรที่ได้รับ
+    </p>
+
+</div>
+
+<center
