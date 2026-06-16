@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -22,7 +23,6 @@ body{
 }
 
 /* อิโมจิลอย */
-
 .floating{
     position:fixed;
     font-size:2rem;
@@ -52,14 +52,32 @@ body{
     z-index:10;
 }
 
+/* ส่วนหัว */
 .header{
     background:rgba(255,255,255,.85);
     backdrop-filter:blur(10px);
     border-radius:30px;
     padding:30px;
-    text-align:center;
     margin-bottom:25px;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
+}
+
+.profile-pic{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #c084fc;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.header-text{
+    text-align:left;
 }
 
 .header h1{
@@ -139,44 +157,58 @@ body{
 
 <div class="container">
 
-<div class="header">
-    <h1>📁 แฟ้มสะสมผลงาน</h1>
-    <p>พื้นที่รวบรวมผลงานและกิจกรรมที่ภาคภูมิใจ 💜</p>
-</div>
+    <div class="header">
 
-<!-- ผลงานที่ 1 -->
-<div class="project-card">
+        <img src="images/my-profile.jpg"
+             alt="รูปโปรไฟล์"
+             class="profile-pic">
 
-    <h3>💻 ผลงานชิ้นที่ 1</h3>
+        <div class="header-text">
+            <h1>💜🐰 Portfolio 🐰💜</h1>
+            <p>พื้นที่รวบรวมผลงานและกิจกรรมที่ภาคภูมิใจ 💜</p>
+        </div>
 
-    <div class="project-image">
-        📸 ใส่รูปผลงานตรงนี้
     </div>
 
-    <p>
-        อธิบายรายละเอียดผลงาน
-        วัตถุประสงค์ วิธีดำเนินงาน
-        และสิ่งที่ได้รับจากการทำผลงานชิ้นนี้
-    </p>
+    <!-- ผลงานที่ 1 -->
+    <div class="project-card">
 
-</div>
+        <h3>🐰 ผลงานชิ้นที่ 1</h3>
 
-<!-- ผลงานที่ 2 -->
-<div class="project-card">
+        <div class="project-image">
+            📸 ใส่รูปผลงานตรงนี้
+        </div>
 
-    <h3>🏆 ผลงานชิ้นที่ 2</h3>
+        <p>
+            อธิบายรายละเอียดผลงาน
+            วัตถุประสงค์ วิธีดำเนินงาน
+            และสิ่งที่ได้รับจากการทำผลงานชิ้นนี้
+        </p>
 
-    <div class="project-image">
-        📸 ใส่รูปผลงานตรงนี้
     </div>
 
-    <p>
-        อธิบายกิจกรรม การแข่งขัน
-        หรือเกียรติบัตรที่ได้รับ
-    </p>
-<a href="portfolio.html" class="btn">
-    ◀ Back to Portfolio Contents
-</a>
+    <!-- ผลงานที่ 2 -->
+    <div class="project-card">
+
+        <h3>🐰 ผลงานชิ้นที่ 2</h3>
+
+        <div class="project-image">
+            📸 ใส่รูปผลงานตรงนี้
+        </div>
+
+        <p>
+            อธิบายกิจกรรม การแข่งขัน
+            หรือเกียรติบัตรที่ได้รับ
+        </p>
+
+        <a href="portfolio.html" class="btn">
+            ◀ Back to Portfolio Contents
+        </a>
+
+    </div>
+
 </div>
 
-<center
+</body>
+</html>
+```
