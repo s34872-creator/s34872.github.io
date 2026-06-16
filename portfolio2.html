@@ -7,6 +7,7 @@
 
 <style>
 
+/* RESET */
 *{
     margin:0;
     padding:0;
@@ -55,13 +56,13 @@ body{
     padding:30px;
     margin-bottom:25px;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
-
     text-align:center;
 }
 
+/* ✅ แก้รูปโปรไฟล์ให้ใหญ่ + responsive */
 .profile-pic{
-    width:200px;
-    height:200px;
+    width: clamp(220px, 25vw, 320px);
+    height: clamp(220px, 25vw, 320px);
     border-radius:50%;
     object-fit:cover;
     border:5px solid #c084fc;
@@ -163,7 +164,6 @@ body{
 
     <!-- ผลงาน 1 -->
     <div class="project-card">
-
         <h3>🐰 ผลงานชิ้นที่ 1</h3>
 
         <div class="project-image">
@@ -171,15 +171,12 @@ body{
         </div>
 
         <p>
-            อธิบายรายละเอียดผลงาน วัตถุประสงค์ วิธีดำเนินงาน
-            และสิ่งที่ได้รับจากการทำผลงานชิ้นนี้
+            อธิบายรายละเอียดผลงาน วัตถุประสงค์ วิธีดำเนินงาน และสิ่งที่ได้รับ
         </p>
-
     </div>
 
     <!-- ผลงาน 2 -->
     <div class="project-card">
-
         <h3>🐰 ผลงานชิ้นที่ 2</h3>
 
         <div class="project-image">
@@ -190,10 +187,7 @@ body{
             อธิบายกิจกรรม การแข่งขัน หรือเกียรติบัตรที่ได้รับ
         </p>
 
-        <a href="portfolio.html" class="btn">
-            ◀ Back to Portfolio Contents
-        </a>
-
+        <a href="#" class="btn">◀ Back</a>
     </div>
 
 </div>
