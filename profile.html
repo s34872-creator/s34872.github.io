@@ -1,1 +1,336 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>ประวัติส่วนตัว</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#f5e9ff,#e9d5ff,#d8b4fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+    overflow-x:hidden;
+}
+
+/* ตกแต่งพื้นหลัง */
+body::before{
+    content:"";
+    position:fixed;
+    width:250px;
+    height:250px;
+    background:#c084fc;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.25;
+    top:5%;
+    left:5%;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:300px;
+    height:300px;
+    background:#a855f7;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.2;
+    bottom:0;
+    right:5%;
+}
+
+/* กล่องหลัก */
+.profile-card{
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    max-width:750px;
+
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(10px);
+
+    border-radius:35px;
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 40px rgba(126,34,206,.15),
+        0 0 30px rgba(192,132,252,.15);
+}
+
+/* รูปโปรไฟล์ */
+.profile-pic{
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:5px solid #c084fc;
+
+    box-shadow:
+        0 5px 20px rgba(126,34,206,.25),
+        0 0 20px rgba(192,132,252,.3);
+
+    margin-bottom:15px;
+
+    transition:.3s;
+}
+
+.profile-pic:hover{
+    transform:scale(1.08) rotate(3deg);
+}
+
+/* หัวข้อ */
+h1{
+    color:#7e22ce;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#777;
+    margin-bottom:25px;
+}
+
+/* กล่องข้อมูล */
+.info{
+    text-align:left;
+
+    background:#faf5ff;
+
+    border:2px solid #ead5ff;
+    border-radius:22px;
+
+    padding:20px;
+    margin-top:15px;
+}
+
+.info p{
+    color:#555;
+    font-size:16px;
+    line-height:2;
+
+    border-bottom:1px dashed #ddd;
+    padding:5px 0;
+}
+
+.info p:last-child{
+    border-bottom:none;
+}
+
+.info span{
+    color:#7e22ce;
+    font-weight:bold;
+}
+
+/* เกี่ยวกับฉัน */
+.about{
+    margin-top:20px;
+
+    text-align:left;
+
+    background:linear-gradient(
+        135deg,
+        #f3e8ff,
+        #faf5ff
+    );
+
+    border:2px solid #e9d5ff;
+
+    padding:22px;
+
+    border-radius:22px;
+}
+
+.about h2{
+    color:#7e22ce;
+    margin-bottom:10px;
+}
+
+.about p{
+    color:#555;
+    line-height:1.8;
+}
+
+/* ปุ่มย้อนกลับ */
+.back-button{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:30px;
+
+    padding:14px 30px;
+
+    color:white;
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:bold;
+
+    background:linear-gradient(
+        135deg,
+        #c084fc,
+        #a855f7,
+        #7e22ce
+    );
+
+    border:2px solid rgba(255,255,255,.7);
+
+    border-radius:50px;
+
+    box-shadow:
+        0 8px 20px rgba(126,34,206,.3),
+        0 0 15px rgba(168,85,247,.3);
+
+    transition:all .3s ease;
+}
+
+/* ลูกศร */
+.back-button .arrow{
+    font-size:25px;
+
+    transition:
+        transform .3s ease;
+}
+
+/* ตอนเอาเมาส์ไปชี้ */
+.back-button:hover{
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    background:linear-gradient(
+        135deg,
+        #d8b4fe,
+        #c084fc,
+        #9333ea
+    );
+
+    box-shadow:
+        0 12px 30px rgba(126,34,206,.4),
+        0 0 30px rgba(168,85,247,.6);
+}
+
+.back-button:hover .arrow{
+    transform:translateX(-7px);
+}
+
+/* เอฟเฟกต์ตอนกด */
+.back-button:active{
+    transform:scale(.95);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="profile-card">
+
+    <!-- รูปตัวเอง -->
+    <!-- เปลี่ยน profile.jpg เป็นชื่อไฟล์รูปของตัวเอง -->
+    <img 
+        src="profile.jpg"
+        alt="รูปโปรไฟล์"
+        class="profile-pic"
+    >
+
+    <h1>💜 ประวัติส่วนตัว 💜</h1>
+
+    <p class="subtitle">
+        ✨ ยินดีต้อนรับเข้าสู่ประวัติส่วนตัวของฉัน ✨
+    </p>
+
+    <!-- ข้อมูลส่วนตัว -->
+    <div class="info">
+
+        <p>
+            <span>👤 ชื่อ - นามสกุล :</span>
+            ................................
+        </p>
+
+        <p>
+            <span>💜 ชื่อเล่น :</span>
+            ................................
+        </p>
+
+        <p>
+            <span>🎂 วันเกิด :</span>
+            ................................
+        </p>
+
+        <p>
+            <span>🎓 อายุ :</span>
+            ................................ ปี
+        </p>
+
+        <p>
+            <span>🏫 โรงเรียน :</span>
+            ................................
+        </p>
+
+        <p>
+            <span>📚 ระดับชั้น :</span>
+            ................................
+        </p>
+
+        <p>
+            <span>🎨 งานอดิเรก :</span>
+            ................................
+        </p>
+
+        <p>
+            <span>⭐ ความสามารถพิเศษ :</span>
+            ................................
+        </p>
+
+    </div>
+
+    <!-- เกี่ยวกับฉัน -->
+    <div class="about">
+
+        <h2>💜 เกี่ยวกับฉัน</h2>
+
+        <p>
+            สวัสดีค่ะ ฉันชื่อ นางสาวกานต์ธิดา ทีปกากร
+            เป็นคนที่ชื่นชอบ วิชาชีววิทยา การร้องเพลงและการถ่ายรูป
+            ในเวลาว่างฉันมักจะ ฟังเพลง / อ่านหนังสือ / เล่นกับสัตว์เลี้ยง
+            และมีความสนใจในด้าน การเรียนสัตวแพทย์เฉพาะทางสัตว์เลี้ยงชนิดพิเศษ ( Exotic Pet Veterinarian ) 
+        </p>
+
+    </div>
+
+    <!-- ปุ่มย้อนกลับ -->
+    <a href="index.html" class="back-button">
+
+        <span class="arrow">←</span>
+
+        <span>ย้อนกลับ</span>
+
+    </a>
+
+</div>
+
+</body>
+</html>
