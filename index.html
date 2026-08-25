@@ -127,27 +127,95 @@ h1{
     line-height:2;
 }
 
-.btn{
-    display:inline-block;
-    margin-top:30px;
-    background:#a855f7;
-    color:white;
-    text-decoration:none;
-    padding:14px 35px;
-    border-radius:50px;
-    font-size:18px;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#9333ea;
-    transform:scale(1.08);
-}
-
 .subtitle{
     margin-top:10px;
     color:#7c3aed;
     font-weight:600;
+}
+
+
+/* =========================
+   ปุ่มย้อนกลับแบบเฟี้ยว
+   ========================= */
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:30px;
+
+    padding:14px 30px;
+
+    color:white;
+    text-decoration:none;
+
+    font-size:16px;
+    font-weight:bold;
+
+    background:linear-gradient(
+        135deg,
+        #c084fc,
+        #a855f7,
+        #7e22ce
+    );
+
+    border:2px solid rgba(255,255,255,.7);
+
+    border-radius:50px;
+
+    box-shadow:
+        0 8px 20px rgba(126,34,206,.3),
+        0 0 15px rgba(168,85,247,.3);
+
+    transition:all .3s ease;
+}
+
+
+/* ลูกศร */
+
+.btn .arrow{
+    font-size:25px;
+
+    transition:
+        transform .3s ease;
+}
+
+
+/* ตอนเอาเมาส์ไปชี้ */
+
+.btn:hover{
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    background:linear-gradient(
+        135deg,
+        #d8b4fe,
+        #c084fc,
+        #9333ea
+    );
+
+    box-shadow:
+        0 12px 30px rgba(126,34,206,.4),
+        0 0 30px rgba(168,85,247,.6);
+}
+
+
+/* ลูกศรขยับ */
+
+.btn:hover .arrow{
+    transform:translateX(6px);
+}
+
+
+/* ตอนกด */
+
+.btn:active{
+    transform:scale(.95);
 }
 
 </style>
@@ -191,19 +259,27 @@ h1{
     <br>
 
     <div class="info">
+
         💜 Faculty of Veterinary Medicine<br>
-        ⚙️ Engineering
+
         <br><br>
 
         สวัสดีค่ะ !<br>
-        ขณะนี้กำลังสนใจด้าน Faculty of Veterinary Medicine & Engineering
+
+        ขณะนี้กำลังสนใจด้าน Faculty of Veterinary Medicine – Specialty in Exotic Pets 
+
         <br><br>
 
         ✨ นี่คือเว็บไซต์นำเสนอ Portfolio ของฉัน ✨
+
     </div>
 
     <a href="portfolio.html" class="btn">
-        Explore my portfolio !  ➜
+
+        <span>Explore my portfolio !</span>
+
+        <span class="arrow">➜</span>
+
     </a>
 
 </div>
