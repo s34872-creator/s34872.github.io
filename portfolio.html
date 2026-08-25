@@ -19,7 +19,14 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#f5e9ff,#e9d5ff,#d8b4fe);
+
+    background:linear-gradient(
+        135deg,
+        #f5e9ff,
+        #e9d5ff,
+        #d8b4fe
+    );
+
     overflow:hidden;
 }
 
@@ -51,22 +58,38 @@ body{
 .f8{left:75%; animation-delay:14s;}
 .f9{left:85%; animation-delay:16s;}
 
+
+/* การ์ด */
+
 .card{
     width:90%;
     max-width:800px;
+
     background:rgba(255,255,255,.85);
     backdrop-filter:blur(10px);
+
     border-radius:30px;
+
     padding:40px;
+
     text-align:center;
+
     z-index:10;
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.1);
 }
+
+
+/* หัวข้อ */
 
 h1{
     color:#7e22ce;
     margin-bottom:25px;
 }
+
+
+/* เมนู */
 
 .menu{
     display:grid;
@@ -76,31 +99,135 @@ h1{
 
 .menu a{
     text-decoration:none;
-    background:#c084fc;
+
+    background:linear-gradient(
+        135deg,
+        #c084fc,
+        #a855f7
+    );
+
     color:white;
+
     padding:15px;
+
     border-radius:20px;
+
     transition:.3s;
+
     font-weight:bold;
+
+    box-shadow:
+        0 5px 15px rgba(126,34,206,.2);
 }
 
 .menu a:hover{
-    background:#9333ea;
-    transform:scale(1.05);
+    background:linear-gradient(
+        135deg,
+        #d8b4fe,
+        #9333ea
+    );
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 10px 25px rgba(126,34,206,.35);
 }
 
+
+/* =========================
+   ปุ่ม Back to Home
+   ========================= */
+
 .back{
-    display:inline-block;
-    margin-top:25px;
-    color:#7e22ce;
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:30px;
+
+    padding:14px 30px;
+
+    color:white;
+
     text-decoration:none;
+
+    font-size:16px;
+
     font-weight:bold;
+
+    background:linear-gradient(
+        135deg,
+        #c084fc,
+        #a855f7,
+        #7e22ce
+    );
+
+    border:2px solid rgba(255,255,255,.7);
+
+    border-radius:50px;
+
+    box-shadow:
+        0 8px 20px rgba(126,34,206,.3),
+        0 0 15px rgba(168,85,247,.3);
+
+    transition:all .3s ease;
+}
+
+
+/* ลูกศร */
+
+.back .arrow{
+    font-size:22px;
+
+    transition:
+        transform .3s ease;
+}
+
+
+/* ตอนเอาเมาส์ชี้ */
+
+.back:hover{
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    background:linear-gradient(
+        135deg,
+        #d8b4fe,
+        #c084fc,
+        #9333ea
+    );
+
+    box-shadow:
+        0 12px 30px rgba(126,34,206,.4),
+        0 0 30px rgba(168,85,247,.6);
+}
+
+
+/* ลูกศรขยับ */
+
+.back:hover .arrow{
+    transform:translateX(-6px);
+}
+
+
+/* ตอนกด */
+
+.back:active{
+    transform:scale(.95);
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- อิโมจิลอย -->
 
 <div class="floating f1">🐰</div>
 <div class="floating f2">💜</div>
@@ -112,22 +239,38 @@ h1{
 <div class="floating f8">⭐</div>
 <div class="floating f9">🐰</div>
 
+
 <div class="card">
 
-<h1>🐰 Portfolio contents 🐰</h1>
+    <h1>🐰 Portfolio contents 🐰</h1>
 
-<div class="menu">
 
-<a href="sop.html">SOP</a>
-<a href="profile.html">Profile</a>
-<a href="education.html">Edcation</a>
-<a href="portfolio2.html">Portfolio</a>
-<a href="activity.html">Activity</a>
-<a href="certificate.html">Certificates</a>
+    <div class="menu">
 
-</div>
+        <a href="sop.html">SOP</a>
 
-<a class="back" href="index.html">◀ Back to home</a>
+        <a href="profile.html">Profile</a>
+
+        <a href="education.html">Education</a>
+
+        <a href="portfolio2.html">Portfolio</a>
+
+        <a href="activity.html">Activity</a>
+
+        <a href="certificate.html">Certificates</a>
+
+    </div>
+
+
+    <!-- ปุ่มย้อนกลับ -->
+
+    <a class="back" href="index.html">
+
+        <span class="arrow">←</span>
+
+        <span>Back to Home</span>
+
+    </a>
 
 </div>
 
