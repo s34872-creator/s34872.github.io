@@ -25,6 +25,33 @@ body{
     overflow-x:hidden;
 }
 
+/* =================================
+   ส่วนของอิโมจิลอย (Floating Animation)
+   ================================= */
+.floating{
+    position:fixed;
+    font-size:2rem;
+    opacity:.7;
+    animation:float 15s linear infinite;
+    z-index: 1; /* ให้อยู่หลังกล่องเนื้อหา */
+    pointer-events: none;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(110vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+.f1{left:5%;animation-delay:0s;}
+.f2{left:20%;animation-delay:3s;}
+.f3{left:40%;animation-delay:6s;}
+.f4{left:60%;animation-delay:9s;}
+.f5{left:80%;animation-delay:12s;}
+
 /* ตกแต่งพื้นหลัง */
 body::before{
     content:"";
@@ -52,13 +79,18 @@ body::after{
     right:5%;
 }
 
+/* คอนเทนเนอร์หลัก */
+.container{
+    width:100%;
+    max-width:750px;
+    position:relative;
+    z-index:2;
+}
+
 /* กล่องหลัก */
 .profile-card{
     position:relative;
-    z-index:2;
-
     width:100%;
-    max-width:750px;
 
     background:rgba(255,255,255,.9);
     backdrop-filter:blur(10px);
@@ -247,101 +279,100 @@ h1{
 <body>
 
     <!-- อิโมจิลอย -->
+    <div class="floating f1">🐰</div>
+    <div class="floating f2">💜</div>
+    <div class="floating f3">⭐</div>
+    <div class="floating f4">🌷</div>
+    <div class="floating f5">🪻</div>
 
-<div class="floating f1">🐰</div>
-<div class="floating f2">💜</div>
-<div class="floating f3">⭐</div>
-<div class="floating f4">🌷</div>
-<div class="floating f5">🪻</div>
+    <div class="container">
 
+        <div class="profile-card">
 
-<div class="container">
+            <!-- รูปตัวเอง -->
+            <img 
+                src="IMG_0591.jpeg"
+                alt="รูปโปรไฟล์"
+                class="profile-pic"
+            >
 
-<div class="profile-card">
+            <h1>💜 Personal Profile 💜</h1>
 
-    <!-- รูปตัวเอง -->
-    <!-- เปลี่ยน profile.jpg เป็นชื่อไฟล์รูปของตัวเอง -->
-    <img 
-        src="IMG_0591.jpeg"
-        alt="รูปโปรไฟล์"
-        class="profile-pic"
-    >
+            <p class="subtitle">
+                ✨ ยินดีต้อนรับเข้าสู่ประวัติส่วนตัวของฉัน ✨
+            </p>
 
-    <h1>💜 Personal Profile 💜</h1>
+            <!-- ข้อมูลส่วนตัว -->
+            <div class="info">
 
-    <p class="subtitle">
-        ✨ ยินดีต้อนรับเข้าสู่ประวัติส่วนตัวของฉัน ✨
-    </p>
+                <p>
+                    <span>👤 ชื่อ - นามสกุล :</span>
+                    นางสาวกานต์ธิดา ทีปกากร
+                </p>
 
-    <!-- ข้อมูลส่วนตัว -->
-    <div class="info">
+                <p>
+                    <span>💜 ชื่อเล่น :</span>
+                    ข้าว
+                </p>
 
-        <p>
-            <span>👤 ชื่อ - นามสกุล :</span>
-            นางสาวกานต์ธิดา ทีปกากร
-        </p>
+                <p>
+                    <span>🎂 วันเกิด :</span>
+                    17 ธันวาคม 2008
+                </p>
 
-        <p>
-            <span>💜 ชื่อเล่น :</span>
-            ข้าว
-        </p>
+                <p>
+                    <span>🎓 อายุ :</span>
+                    17 ปี
+                </p>
 
-        <p>
-            <span>🎂 วันเกิด :</span>
-            17 ธันวาคม 2008
-        </p>
+                <p>
+                    <span>🏫 โรงเรียน :</span>
+                    บ้านบึง"อุตสาหกรรมนุเคราะห์"
+                </p>
 
-        <p>
-            <span>🎓 อายุ :</span>
-            17 ปี
-        </p>
+                <p>
+                    <span>📚 ระดับชั้น :</span>
+                    มัธยมศึกษาปีที่ 6
+                </p>
 
-        <p>
-            <span>🏫 โรงเรียน :</span>
-            บ้านบึง"อุตสาหกรรมนุเคราะห์"
-        </p>
+                <p>
+                    <span>🎨 งานอดิเรก :</span>
+                    อ่านหนังสือ ฟังเพลง ถ่ายรูป
+                </p>
 
-        <p>
-            <span>📚 ระดับชั้น :</span>
-            มัธยมศึกษาปีที่ 6
-        </p>
+                <p>
+                    <span>⭐ ความสามารถพิเศษ :</span>
+                    ร้องเพลง มีความอดทนและใจเย็นเมื่อต้องดูแลสัตว์ และ มีความรู้พื้นฐานเกี่ยวกับการดูแลสัตว์หลากหลายชนิด
+                </p>
 
-        <p>
-            <span>🎨 งานอดิเรก :</span>
-            อ่านหนังสือ ฟังเพลง ถ่ายรูป
-        </p>
+            </div>
 
-        <p>
-            <span>⭐ ความสามารถพิเศษ :</span>
-            ร้องเพลง มีความอดทนและใจเย็นเมื่อต้องดูแลสัตว์ และ มีความรู้พื้นฐานเกี่ยวกับการดูแลสัตว์หลากหลายชนิด
-        </p>
+            <!-- เกี่ยวกับฉัน -->
+            <div class="about">
 
-    </div>
+                <h2>💜 เกี่ยวกับฉัน</h2>
 
-    <!-- เกี่ยวกับฉัน -->
-    <div class="about">
+                <p>
+                    สวัสดีค่ะ ฉันชื่อนางสาวกานต์ธิดา ทีปกากร
+                    เป็นคนที่ชื่นชอบวิชาชีววิทยา การร้องเพลง การถ่ายรูป สนใจสัตว์เลี้ยง exotic และชอบกระต่ายมากมากค่ะ
+                    ในเวลาว่างฉันมักจะฟังเพลง / อ่านหนังสือ / เล่นกับสัตว์เลี้ยง
+                    และมีความสนใจในด้านการเรียนสัตวแพทย์เฉพาะทางสัตว์เลี้ยงชนิดพิเศษ ( Exotic Pet Veterinarian )
+                </p>
 
-        <h2>💜 เกี่ยวกับฉัน</h2>
+            </div>
 
-        <p>
-            สวัสดีค่ะ ฉันชื่อนางสาวกานต์ธิดา ทีปกากร
-            เป็นคนที่ชื่นชอบวิชาชีววิทยา การร้องเพลง การถ่ายรูป สนใจสัตว์เลี้ยง exotic และชอบกระต่ายมากมากค่ะ
-            ในเวลาว่างฉันมักจะฟังเพลง / อ่านหนังสือ / เล่นกับสัตว์เลี้ยง
-            และมีความสนใจในด้านการเรียนสัตวแพทย์เฉพาะทางสัตว์เลี้ยงชนิดพิเศษ ( Exotic Pet Veterinarian )
-        </p>
+            <!-- ปุ่มย้อนกลับ -->
+            <a href="portfolio.html" class="back-button">
 
-    </div>
+                <span class="arrow">←</span>
 
-    <!-- ปุ่มย้อนกลับ -->
-    <a href="portfolio.html" class="back-button">
+                <span>Back to Content</span>
 
-        <span class="arrow">←</span>
+            </a>
 
-        <span>Back to Content</span>
+        </div> <!-- ปิด profile-card -->
 
-    </a>
-
-</div>
+    </div> <!-- ปิด container -->
 
 </body>
 </html>
