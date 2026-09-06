@@ -1,1 +1,251 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statement of Purpose - Kantida Teepagorn</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg, #f5e9ff, #e9d5ff, #d8b4fe);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+    overflow-x:hidden;
+}
+
+/* =================================
+   ส่วนของอิโมจิลอย (Floating Animation)
+   ================================= */
+.floating{
+    position:fixed;
+    font-size:2rem;
+    opacity:.7;
+    animation:float 15s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(110vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+.f1{left:5%;animation-delay:0s;}
+.f2{left:20%;animation-delay:3s;}
+.f3{left:40%;animation-delay:6s;}
+.f4{left:60%;animation-delay:9s;}
+.f5{left:80%;animation-delay:12s;}
+
+/* ตกแต่งพื้นหลัง */
+body::before{
+    content:"";
+    position:fixed;
+    width:250px;
+    height:250px;
+    background:#c084fc;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.25;
+    top:5%;
+    left:5%;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:300px;
+    height:300px;
+    background:#a855f7;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.2;
+    bottom:0;
+    right:5%;
+}
+
+/* คอนเทนเนอร์หลัก */
+.container{
+    width:100%;
+    max-width:800px;
+    position:relative;
+    z-index:2;
+}
+
+/* กล่องหลัก */
+.sop-card{
+    position:relative;
+    width:100%;
+    background:rgba(255, 255, 255, .92);
+    backdrop-filter:blur(10px);
+    border-radius:35px;
+    padding:40px;
+    box-shadow: 0 15px 40px rgba(126,34,206,.15), 0 0 30px rgba(192,132,252,.15);
+}
+
+/* หัวข้อ */
+.sop-header{
+    text-align:center;
+    margin-bottom:30px;
+    border-bottom:2px dashed #e9d5ff;
+    padding-bottom:20px;
+}
+
+.sop-header h1{
+    color:#7e22ce;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.sop-header p{
+    color:#666;
+    font-size:15px;
+}
+
+/* เนื้อหา SOP */
+.sop-section{
+    background:#faf5ff;
+    border:2px solid #ead5ff;
+    border-radius:20px;
+    padding:22px;
+    margin-bottom:20px;
+}
+
+.sop-section h2{
+    color:#7e22ce;
+    font-size:18px;
+    margin-bottom:10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.sop-section p{
+    color:#444;
+    font-size:15px;
+    line-height:1.8;
+    text-align:justify;
+}
+
+/* ปุ่มย้อนกลับ */
+.button-box{
+    text-align:center;
+    margin-top:20px;
+}
+
+.back-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 30px;
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
+    background:linear-gradient(135deg, #c084fc, #a855f7, #7e22ce);
+    border:2px solid rgba(255,255,255,.7);
+    border-radius:50px;
+    box-shadow: 0 8px 20px rgba(126,34,206,.3), 0 0 15px rgba(168,85,247,.3);
+    transition:all .3s ease;
+}
+
+.back-button .arrow{
+    font-size:25px;
+    transition:transform .3s ease;
+}
+
+.back-button:hover{
+    transform:translateY(-5px) scale(1.05);
+    background:linear-gradient(135deg, #d8b4fe, #c084fc, #9333ea);
+    box-shadow: 0 12px 30px rgba(126,34,206,.4), 0 0 30px rgba(168,85,247,.6);
+}
+
+.back-button:hover .arrow{
+    transform:translateX(-7px);
+}
+
+.back-button:active{
+    transform:scale(.95);
+}
+</style>
+</head>
+
+<body>
+
+    <!-- อิโมจิลอย -->
+    <div class="floating f1">🐰</div>
+    <div class="floating f2">💜</div>
+    <div class="floating f3">⭐</div>
+    <div class="floating f4">🌷</div>
+    <div class="floating f5">🪻</div>
+
+    <div class="container">
+        
+        <div class="sop-card">
+
+            <div class="sop-header">
+                <h1>📝 Statement of Purpose 🐰</h1>
+                <p><strong>นางสาวกานต์ธิดา ทีปกากร</strong> | คณะสัตวแพทยศาสตร์ (GPAX 3.94)</p>
+            </div>
+
+            <!-- ย่อหน้าที่ 1 -->
+            <div class="sop-section">
+                <h2>🐰 แรงบันดาลใจและความหลงใหลในกลไกชีวิต</h2>
+                <p>
+                    จุดเริ่มต้นความหลงใหลในวิชาชีพสัตวแพทย์ของดิฉัน ไม่ได้เกิดเพียงจากความรักในสัตว์เลี้ยงทั่วไป แต่เริ่มจากการสังเกตพฤติกรรมและธรรมชาติอันละเอียดอ่อนของ "กระต่าย" ซึ่งเป็นสัตว์ที่ไม่แสดงอาการเจ็บป่วยออกมาอย่างเปิดเผย ความซับซ้อนนี้กระตุ้นให้ดิฉันต้องการศึกษาลึกถึงกลไกทางชีววิทยา ระบบกายวิภาคศาสตร์ และพฤติกรรมวิทยา เพื่อวิเคราะห์สิ่งที่ซ่อนอยู่ภายใต้ความเงียบขรึมนั้น การได้เข้าใจธรรมชาติของสิ่งมีชีวิตและเป็นผู้ลงมือช่วยเหลือรักษาอย่างแม่นยำ คือเป้าหมายสูงสุดที่ดิฉันตั้งใจมุ่งมั่นเดินหน้าต่อไป
+                </p>
+            </div>
+
+            <!-- ย่อหน้าที่ 2 -->
+            <div class="sop-section">
+                <h2>🧬 ศักยภาพทางชีววิทยาและการฝึกฝนความคิดเชิงวิเคราะห์</h2>
+                <p>
+                    ตลอดการศึกษาระดับมัธยมศึกษาตอนปลาย แผนการเรียน Gifted Program ดิฉันได้ค้นพบความเชี่ยวชาญและความหลงใหลอย่างแท้จริงในรายวิชาชีววิทยา ซึ่งส่งผลให้ดิฉันสั่งสมเกรดเฉลี่ยสะสม (GPAX) ได้ถึง 3.94 ดิฉันมองว่าชีววิทยาไม่ใช่การท่องจำ แต่คือการร้อยเรียงระบบเหตุและผล ดิฉันชอบการวิเคราะห์กระบวนการทำงานของระบบร่างกาย เซลล์ และกลไกการเกิดโรค การเรียนรู้ผ่านการสังเกต รายละเอียดเล็กๆ และการค้นคว้าอย่างถี่ถ้วน ทำให้ดิฉันพัฒนาทักษะการสืบหาต้นตอของปัญหาอย่างเป็นระบบ ซึ่งเป็นหัวใจสำคัญในการวินิจฉัยโรคทางสัตวแพทย์
+                </p>
+            </div>
+
+            <!-- ย่อหน้าที่ 3 -->
+            <div class="sop-section">
+                <h2>🩺 ความสุขในการทำงานเงียบๆ และความมุ่งมั่นภาคปฏิบัติ</h2>
+                <p>
+                    ดิฉันเป็นคนที่ชอบความสงบ มีสมาธิสูง และถนัดการเรียนรู้ผ่านการเฝ้าสังเกตและลงมือปฏิบัติอย่างตั้งใจ จากประสบการณ์เข้าร่วมกิจกรรมฝึกปฏิบัติงาน ณ กลุ่มงานการพยาบาล โรงพยาบาลบ้านบึง และกิจกรรมเปิดบ้านคณะสัตวแพทยศาสตร์ มหาวิทยาลัยมหิดล ทำให้ดิฉันพบว่าหัวใจของสัตวแพทย์ที่รักษาสัตว์เล็กหรือสัตว์พิเศษ คือ "ความอดทนและความละเอียดอ่อน" สัตว์พูดไม่ได้และมักหวาดกลัว การทำงานที่ต้องใช้ความเงียบ สมาธิที่จดจ่อ และการสังเกตสัญญาณชีพอย่างใจเย็น คือจุดแข็งที่ทำให้ดิฉันสามารถจดจ่อกับการวินิจฉัย การเข้าแล็บ และการรักษาได้อย่างมีประสิทธิภาพ
+                </p>
+            </div>
+
+            <!-- ย่อหน้าที่ 4 -->
+            <div class="sop-section">
+                <h2>🌟 เป้าหมายในอนาคต</h2>
+                <p>
+                    เป้าหมายหลักของดิฉันคือ การสำเร็จการศึกษาจากคณะสัตวแพทยศาสตร์ และมุ่งสู่การเป็นสัตวแพทย์เฉพาะทางด้านสัตว์เลี้ยงชนิดพิเศษ (Exotic Pet Veterinarian) ที่มีความเชี่ยวชาญด้านกระต่ายและสัตว์เลี้ยงขนาดเล็ก ดิฉันพร้อมที่จะทุ่มเทเวลาให้กับการศึกษารายวิชาชีววิทยาสัตว์ การทำวิจัยในห้องปฏิบัติการ และการฝึกทักษะหัตถการทางการแพทย์ เพื่อนำความรู้และความตั้งใจจริงมายกระดับมาตรฐานการรักษาพยาบาลสัตว์เลี้ยงพิเศษในประเทศไทยอย่างดีที่สุด
+                </p>
+            </div>
+
+            <!-- ปุ่มย้อนกลับ -->
+            <div class="button-box">
+                <a href="portfolio.html" class="back-button">
+                    <span class="arrow">←</span>
+                    <span>Back to Content</span>
+                </a>
+            </div>
+
+        </div> <!-- ปิด sop-card -->
+
+    </div> <!-- ปิด container -->
+
+</body>
+</html>
 
