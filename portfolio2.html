@@ -117,6 +117,53 @@ body{
 .project-card p{
     color:#555;
     line-height:1.8;
+    margin-bottom:20px;
+}
+
+/* =================================
+   ส่วนจัดวางรูปภาพ (Gallery & Single)
+   ================================= */
+
+/* กริดสำหรับ 2 รูป (มหิดล) */
+.activity-gallery-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.img-box{
+    background:#fff;
+    border:2px solid #e9d5ff;
+    border-radius:18px;
+    padding:8px;
+    box-shadow:0 4px 10px rgba(126,34,206,.05);
+}
+
+.activity-img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
+    display:block;
+}
+
+/* สำหรับรูปเดียว (เกียรติบัตรตอบปัญหา) */
+.single-cert-box{
+    width:100%;
+    background:#fff;
+    border:2px solid #e9d5ff;
+    border-radius:18px;
+    padding:10px;
+    box-shadow:0 4px 10px rgba(126,34,206,.05);
+}
+
+.single-cert-img{
+    width:100%;
+    height:auto;
+    max-height:450px;
+    object-fit:contain;
+    border-radius:10px;
+    display:block;
 }
 
 
@@ -207,6 +254,13 @@ body{
     transform:scale(.95);
 }
 
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .activity-gallery-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
 </style>
 </head>
 
@@ -241,39 +295,54 @@ body{
     </div>
 
 
-    <!-- ผลงาน 1 -->
+    <!-- ผลงาน 1: กิจกรรมมหิดล (2 รูป) -->
 
     <div class="project-card">
 
-        <h3>🐰 ผลงานชิ้นที่ 1</h3>
+        <h3>🐰 ผลงานชิ้นที่ 1 : กิจกรรมเปิดบ้านและเยี่ยมชม คณะสัตวแพทยศาสตร์ มหาวิทยาลัยมหิดล</h3>
 
         <p>
-            อธิบายรายละเอียดผลงาน วัตถุประสงค์ วิธีดำเนินงาน และสิ่งที่ได้รับ
+            เข้าร่วมกิจกรรมเปิดบ้าน ณ มหิดลสิทธาคาร และเยี่ยมชมคณะสัตวแพทยศาสตร์ มหาวิทยาลัยมหิดล เพื่อเรียนรู้บรรยากาศการเรียนและค้นหาแนวทางการศึกษาต่อในสายสัตวแพทย์
         </p>
+
+        <div class="activity-gallery-2">
+            <div class="img-box">
+                <img src="mahidol-hall.jpg" alt="มหิดลสิทธาคาร" class="activity-img">
+            </div>
+            <div class="img-box">
+                <img src="mahidol-vet.jpg" alt="คณะสัตวแพทยศาสตร์ มหิดล" class="activity-img">
+            </div>
+        </div>
 
     </div>
 
 
-    <!-- ผลงาน 2 -->
+    <!-- ผลงาน 2: แข่งตอบปัญหา AMSCI (1 รูป) -->
 
     <div class="project-card">
 
-        <h3>🐰 ผลงานชิ้นที่ 2</h3>
+        <h3>🐰 ผลงานชิ้นที่ 2 : การแข่งขันตอบปัญหาวิชาการชีววิทยาและวิทยาศาสตร์การแพทย์ (AMSCI 2026)</h3>
 
         <p>
-            อธิบายกิจกรรม การแข่งขัน หรือเกียรติบัตรที่ได้รับ
+            เข้าร่วมการแข่งขันตอบปัญหาวิชาการชีววิทยาและวิทยาศาสตร์การแพทย์ ระดับมัธยมศึกษาตอนปลาย ชิงโล่พระราชทานฯ เนื่องในงานสัปดาห์วันอานันทมหิดล จัดโดยสโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย
         </p>
+
+        <div class="single-cert-box">
+            <img src="amsci-cert.jpg" alt="เกียรติบัตรการแข่งขันตอบปัญหา AMSCI 2026" class="single-cert-img">
+        </div>
 
 
         <!-- ปุ่มย้อนกลับ -->
 
-        <a href="portfolio.html" class="btn">
+        <div style="text-align: center;">
+            <a href="portfolio.html" class="btn">
 
-            <span class="arrow">←</span>
+                <span class="arrow">←</span>
 
-            <span>Back to Contents</span>
+                <span>Back to Contents</span>
 
-        </a>
+            </a>
+        </div>
 
     </div>
 
