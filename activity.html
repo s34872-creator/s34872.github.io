@@ -7,337 +7,99 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Fredoka', 'Kanit', sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Fredoka','Kanit',sans-serif}
+body{min-height:100vh;padding:30px 15px;display:flex;justify-content:center;align-items:center;overflow-x:hidden;background:radial-gradient(circle at 10% 10%,#e9d5ff99,transparent 25%),radial-gradient(circle at 90% 90%,#c084fc55,transparent 30%),linear-gradient(135deg,#fffaff,#f3e8ff,#e9d5ff)}
+.floating{position:fixed;font-size:1.8rem;opacity:.5;z-index:1;pointer-events:none;animation:float 15s linear infinite;filter:drop-shadow(0 4px 6px #c084fc33)}
+.f1{left:5%}.f2{left:20%;animation-delay:3s}.f3{left:40%;animation-delay:6s}.f4{left:60%;animation-delay:9s}.f5{left:80%;animation-delay:12s}
+@keyframes float{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-120vh) rotate(360deg)}}
 
-body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #fbf7ff 0%, #f3e8ff 50%, #e9d5ff 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 15px;
-    overflow-x: hidden;
-}
+.container{width:100%;max-width:800px;position:relative;z-index:2}
+.activity-card{padding:42px 30px;text-align:center;border:2px solid #fff;border-radius:40px;background:#ffffffb8;backdrop-filter:blur(20px);box-shadow:0 25px 60px #8b5cf61c,inset 0 1px 0 #fff}
+h1{color:#7c3aed;font-size:2rem;margin-bottom:6px;text-shadow:0 3px 8px #8b5cf622}
+.subtitle{color:#a855f7;font-weight:500;margin-bottom:30px}
+.subtitle:after{content:"  ✦  ♡  ✦";display:block;color:#c084fc;font-size:.8rem;margin-top:6px}
 
-/* =================================
-   ส่วนของอิโมจิลอย (Floating Animation)
-   ================================= */
-.floating {
-    position: fixed;
-    font-size: 2rem;
-    opacity: 0.55;
-    filter: drop-shadow(0 4px 6px rgba(192, 132, 252, 0.15));
-    animation: float 15s linear infinite;
-    z-index: 1;
-    pointer-events: none;
-}
+.activity-list{display:flex;flex-direction:column;gap:25px}
+.activity-item{padding:25px;text-align:left;border:2px solid #f3e8ff;border-radius:28px;background:#ffffffa8;box-shadow:0 10px 25px #a855f714;transition:.3s}
+.activity-item:hover{transform:translateY(-5px);box-shadow:0 15px 30px #a855f722;border-color:#d8b4fe}
+.activity-header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.activity-title{color:#6d28d9;font-size:1.15rem;font-weight:600;line-height:1.4}
+.activity-date{padding:5px 15px;border-radius:20px;border:1px solid #e9d5ff;background:#f3e8ff;color:#7c3aed;font-size:.85rem;font-weight:600;white-space:nowrap}
+.activity-desc{color:#5b5266;font-size:.98rem;line-height:1.8;margin-bottom:20px}
+.activity-desc strong{color:#7c3aed}
 
-@keyframes float {
-    from {
-        transform: translateY(110vh) rotate(0deg) scale(0.9);
-    }
-    to {
-        transform: translateY(-120vh) rotate(360deg) scale(1.1);
-    }
-}
+.activity-gallery{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.cert-box{padding:8px;background:#fff;border:2px solid #f3e8ff;border-radius:20px;box-shadow:0 5px 15px #a855f714;transition:.3s}
+.cert-box:hover{transform:scale(1.02);border-color:#c084fc}
+.activity-img{width:100%;max-height:220px;object-fit:contain;border-radius:14px;display:block}
 
-.f1 { left: 5%; animation-delay: 0s; }
-.f2 { left: 20%; animation-delay: 3s; }
-.f3 { left: 40%; animation-delay: 6s; }
-.f4 { left: 60%; animation-delay: 9s; }
-.f5 { left: 80%; animation-delay: 12s; }
+.back-button{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:14px 32px;color:#fff;text-decoration:none;font-weight:500;background:linear-gradient(135deg,#c084fc,#a855f7);border:3px solid #fff;border-radius:50px;box-shadow:0 10px 20px #a855f740,0 0 0 4px #e9d5ff80;transition:.3s}
+.back-button:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 15px 25px #a855f755}
+.arrow{font-size:18px;transition:.3s}.back-button:hover .arrow{transform:translateX(-5px)}
 
-/* ตกแต่งพื้นหลังเรืองแสงละมุน */
-body::before {
-    content: "";
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    background: #e9d5ff;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.5;
-    top: 5%;
-    left: 5%;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    width: 350px;
-    height: 350px;
-    background: #c084fc;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.25;
-    bottom: 0;
-    right: 5%;
-}
-
-/* คอนเทนเนอร์หลัก */
-.container {
-    width: 100%;
-    max-width: 800px;
-    position: relative;
-    z-index: 2;
-}
-
-/* กล่องหลัก Glassmorphism */
-.activity-card {
-    position: relative;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    border-radius: 40px;
-    padding: 40px 30px;
-    text-align: center;
-    box-shadow: 
-        0 20px 40px rgba(168, 85, 247, 0.08),
-        0 2px 10px rgba(255, 255, 255, 0.8) inset;
-}
-
-/* หัวข้อ */
-h1 {
-    color: #8b5cf6;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-    filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.15));
-}
-
-.subtitle {
-    color: #a855f7;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 30px;
-}
-
-/* รายการกิจกรรม */
-.activity-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.activity-item {
-    text-align: left;
-    background: rgba(255, 255, 255, 0.6);
-    border: 2px solid #f3e8ff;
-    border-radius: 28px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.activity-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(168, 85, 247, 0.08);
-    background: rgba(255, 255, 255, 0.85);
-}
-
-.activity-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.activity-title {
-    color: #6d28d9;
-    font-size: 1.15rem;
-    font-weight: 600;
-    line-height: 1.4;
-}
-
-.activity-date {
-    background: #f3e8ff;
-    color: #7c3aed;
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 5px 16px;
-    border-radius: 20px;
-    border: 1px solid #e9d5ff;
-}
-
-.activity-desc {
-    color: #5b5266;
-    font-size: 0.98rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-weight: 400;
-}
-
-.activity-desc strong {
-    color: #7c3aed;
-    font-weight: 500;
-}
-
-/* กริดใส่รูปภาพเกียรติบัตรคู่ */
-.activity-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.cert-box {
-    background: #ffffff;
-    border: 2px solid #f3e8ff;
-    border-radius: 20px;
-    padding: 8px;
-    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.05);
-    overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.cert-box:hover {
-    transform: scale(1.02);
-    border-color: #c084fc;
-}
-
-.activity-img {
-    width: 100%;
-    height: auto;
-    max-height: 220px;
-    object-fit: contain;
-    border-radius: 14px;
-    display: block;
-}
-
-/* ปุ่มย้อนกลับแบบละมุนนุ่มนวล */
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-    padding: 14px 32px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-    border: 3px solid #ffffff;
-    border-radius: 50px;
-    box-shadow: 
-        0 10px 20px rgba(168, 85, 247, 0.25),
-        0 0 0 4px rgba(233, 213, 255, 0.5);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.back-button .arrow {
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.back-button:hover {
-    transform: translateY(-4px) scale(1.03);
-    background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
-    box-shadow: 
-        0 14px 25px rgba(168, 85, 247, 0.35),
-        0 0 0 6px rgba(233, 213, 255, 0.7);
-}
-
-.back-button:hover .arrow {
-    transform: translateX(-5px);
-}
-
-.back-button:active {
-    transform: translateY(0) scale(0.97);
-}
-
-/* รองรับมือถือ */
-@media (max-width: 600px) {
-    .activity-card {
-        padding: 30px 18px;
-        border-radius: 30px;
-    }
-    .activity-gallery {
-        grid-template-columns: 1fr;
-    }
-    h1 {
-        font-size: 1.6rem;
-    }
+@media(max-width:600px){
+.activity-card{padding:30px 18px;border-radius:30px}
+.activity-gallery{grid-template-columns:1fr}
+h1{font-size:1.6rem}
+.activity-item{padding:20px}
+.activity-desc{font-size:.9rem}
 }
 </style>
 </head>
 
 <body>
-    
-    <!-- อิโมจิลอย -->
-    <div class="floating f1">🐰</div>
-    <div class="floating f2">💜</div>
-    <div class="floating f3">⭐</div>
-    <div class="floating f4">🌷</div>
-    <div class="floating f5">🪻</div>
+<div class="floating f1">🐰</div>
+<div class="floating f2">💜</div>
+<div class="floating f3">⭐</div>
+<div class="floating f4">🌷</div>
+<div class="floating f5">🪻</div>
 
-    <div class="container">
-        <div class="activity-card">
+<div class="container">
+<div class="activity-card">
 
-            <h1>✨ Activities & Experiences 🌟</h1>
-            <p class="subtitle">💜 ประสบการณ์ กิจกรรม และผลงาน 💜</p>
+<h1>✨ Activities & Experiences 🌟</h1>
+<p class="subtitle">💜 ประสบการณ์ กิจกรรม และผลงาน 💜</p>
 
-            <div class="activity-list">
+<div class="activity-list">
 
-                <!-- กิจกรรมที่ 1: แข่งตอบปัญหาตอบวิทยาศาสตร์ ม.4 - ม.5 รวมกัน -->
-                <div class="activity-item">
-                    <div class="activity-header">
-                        <div class="activity-title">🏆 รางวัลรองชนะเลิศอันดับ 1 การแข่งขันตอบปัญหาวิทยาศาสตร์</div>
-                        <div class="activity-date">2567 - 2568</div>
-                    </div>
-                    <p class="activity-desc">
-                        ได้รับรางวัลรองชนะเลิศอันดับ 1 การแข่งขันตอบปัญหาวิทยาศาสตร์ ระดับชั้นมัธยมศึกษาปีที่ 4 และ มัธยมศึกษาปีที่ 5 ในกิจกรรมสัปดาห์วิทยาศาสตร์ ณ โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"<br>
-                        <strong>สิ่งสำคัญที่ได้รับ:</strong> แสดงถึงความมุ่งมั่นสั่งสมความรู้ทางวิทยาศาสตร์และชีววิทยาอย่างต่อเนื่อง พัฒนาทักษะการคิดวิเคราะห์อย่างเป็นระบบ ซึ่งเป็นพื้นฐานสำคัญในการศึกษาสัตวแพทยศาสตร์
-                    </p>
-                    <div class="activity-gallery">
-                        <div class="cert-box">
-                            <img src="IMG_0643.jpeg" alt="เกียรติบัตรตอบปัญหาวิทยาศาสตร์ ม.4" class="activity-img">
-                        </div>
-                        <div class="cert-box">
-                            <img src="IMG_0642.jpeg" alt="เกียรติบัตรตอบปัญหาวิทยาศาสตร์ ม.5" class="activity-img">
-                        </div>
-                    </div>
-                </div>
+<div class="activity-item">
+<div class="activity-header">
+<div class="activity-title">🏆 รางวัลรองชนะเลิศอันดับ 1 การแข่งขันตอบปัญหาวิทยาศาสตร์</div>
+<div class="activity-date">2567 - 2568</div>
+</div>
+<p class="activity-desc">
+ได้รับรางวัลรองชนะเลิศอันดับ 1 การแข่งขันตอบปัญหาวิทยาศาสตร์ ระดับชั้นมัธยมศึกษาปีที่ 4 และ มัธยมศึกษาปีที่ 5 ในกิจกรรมสัปดาห์วิทยาศาสตร์ ณ โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"<br>
+<strong>สิ่งสำคัญที่ได้รับ:</strong> แสดงถึงความมุ่งมั่นสั่งสมความรู้ทางวิทยาศาสตร์และชีววิทยาอย่างต่อเนื่อง พัฒนาทักษะการคิดวิเคราะห์อย่างเป็นระบบ ซึ่งเป็นพื้นฐานสำคัญในการศึกษาสัตวแพทยศาสตร์
+</p>
+<div class="activity-gallery">
+<div class="cert-box"><img src="IMG_0643.jpeg" alt="เกียรติบัตรตอบปัญหาวิทยาศาสตร์ ม.4" class="activity-img"></div>
+<div class="cert-box"><img src="IMG_0642.jpeg" alt="เกียรติบัตรตอบปัญหาวิทยาศาสตร์ ม.5" class="activity-img"></div>
+</div>
+</div>
 
-                <!-- กิจกรรมที่ 2: ฝึกงานโรงพยาบาลบ้านบึง -->
-                <div class="activity-item">
-                    <div class="activity-header">
-                        <div class="activity-title">🩺 การฝึกปฏิบัติงาน ณ กลุ่มงานการพยาบาล โรงพยาบาลบ้านบึง</div>
-                        <div class="activity-date">1 - 8 พฤษภาคม 2569</div>
-                    </div>
-                    <p class="activity-desc">
-                        เข้ารับการฝึกปฏิบัติงานจริงและผ่านการประเมินผลการปฏิบัติงาน ณ กลุ่มงานการพยาบาล โรงพยาบาลบ้านบึง (โรงเรียนรัฐบาล)<br>
-                        <strong>สิ่งสำคัญที่ได้รับ:</strong> ได้เรียนรู้ระบบการทำงานในทางการแพทย์ การดูแลและให้ความช่วยเหลือผู้ป่วย การทำงานร่วมกับทีมบุคลากรทางการแพทย์อย่างมืออาชีพ ฝึกฝนความอดทน ความใจเย็น และจิตวิญญาณของการเป็นผู้ให้บริการทางสาธารณสุข
-                    </p>
-                    <div class="activity-gallery">
-                        <div class="cert-box">
-                            <img src="IMG_0639.jpeg" alt="หนังสือรับรอง" class="activity-img">
-                        </div>
-                        <div class="cert-box">
-                            <img src="IMG_7409.jpeg" alt="รูปภาพขณะฝึกงาน" class="activity-img">
-                        </div>
-                    </div>
-                </div>
+<div class="activity-item">
+<div class="activity-header">
+<div class="activity-title">🩺 การฝึกปฏิบัติงาน ณ กลุ่มงานการพยาบาล โรงพยาบาลบ้านบึง</div>
+<div class="activity-date">1 - 8 พฤษภาคม 2569</div>
+</div>
+<p class="activity-desc">
+เข้ารับการฝึกปฏิบัติงานจริงและผ่านการประเมินผลการปฏิบัติงาน ณ กลุ่มงานการพยาบาล โรงพยาบาลบ้านบึง (โรงเรียนรัฐบาล)<br>
+<strong>สิ่งสำคัญที่ได้รับ:</strong> ได้เรียนรู้ระบบการทำงานในทางการแพทย์ การดูแลและให้ความช่วยเหลือผู้ป่วย การทำงานร่วมกับทีมบุคลากรทางการแพทย์อย่างมืออาชีพ ฝึกฝนความอดทน ความใจเย็น และจิตวิญญาณของการเป็นผู้ให้บริการทางสาธารณสุข
+</p>
+<div class="activity-gallery">
+<div class="cert-box"><img src="IMG_0639.jpeg" alt="หนังสือรับรอง" class="activity-img"></div>
+<div class="cert-box"><img src="IMG_7409.jpeg" alt="รูปภาพขณะฝึกงาน" class="activity-img"></div>
+</div>
+</div>
 
-            </div> <!-- ปิด activity-list -->
+</div>
 
-            <!-- ปุ่มย้อนกลับ -->
-            <a href="portfolio.html" class="back-button">
-                <span class="arrow">←</span>
-                <span>Back to Content</span>
-            </a>
+<a href="portfolio.html" class="back-button">
+<span class="arrow">←</span>
+<span>Back to Content</span>
+</a>
 
-        </div> <!-- ปิด activity-card -->
-    </div> <!-- ปิด container -->
-
+</div>
+</div>
 </body>
 </html>
