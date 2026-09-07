@@ -7,253 +7,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Fredoka','Kanit',sans-serif}
+body{min-height:100vh;padding:30px 15px;overflow-x:hidden;background:radial-gradient(circle at 10% 10%,#e9d5ff99,transparent 25%),radial-gradient(circle at 90% 90%,#c084fc55,transparent 30%),linear-gradient(135deg,#fffaff,#f3e8ff,#e9d5ff)}
+.floating{position:fixed;font-size:1.8rem;opacity:.5;z-index:1;pointer-events:none;animation:float 15s linear infinite;filter:drop-shadow(0 4px 6px #c084fc33)}
+.f1{left:5%}.f2{left:20%;animation-delay:3s}.f3{left:40%;animation-delay:6s}.f4{left:60%;animation-delay:9s}.f5{left:80%;animation-delay:12s}
+@keyframes float{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-120vh) rotate(360deg)}}
 
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Fredoka', 'Kanit', sans-serif;
+.container{max-width:900px;margin:auto;position:relative;z-index:2}
+.header,.project-card{background:#ffffffb8;backdrop-filter:blur(20px);border:2px solid #fff;border-radius:35px;box-shadow:0 20px 40px #a855f714,inset 0 1px 0 #fff}
+.header{padding:35px 30px;margin-bottom:25px;text-align:center}
+.header h1{color:#7c3aed;font-size:1.8rem;font-weight:600;text-shadow:0 3px 8px #8b5cf622}
+.header p{color:#7c3aed;margin-top:10px;font-size:1rem;font-weight:500}
+
+.project-card{padding:30px;margin-bottom:25px;transition:.3s}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 25px 45px #a855f722}
+.project-card h3{color:#6d28d9;font-size:1.2rem;margin-bottom:12px}
+.project-card p{color:#5b5266;line-height:1.8;font-size:1rem;margin-bottom:20px}
+
+.single-cert-box{padding:10px;background:#fff;border:2px solid #f3e8ff;border-radius:23px;box-shadow:0 8px 20px #a855f714;transition:.3s}
+.single-cert-box:hover{transform:scale(1.01);border-color:#c084fc}
+.single-cert-img{width:100%;max-height:450px;object-fit:contain;border-radius:16px;display:block}
+
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:25px;padding:14px 32px;color:#fff;text-decoration:none;font-weight:500;background:linear-gradient(135deg,#c084fc,#a855f7);border:3px solid #fff;border-radius:50px;box-shadow:0 10px 20px #a855f740,0 0 0 4px #e9d5ff80;transition:.3s}
+.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 15px 25px #a855f755}
+.btn:hover .arrow{transform:translateX(-5px)}
+.arrow{font-size:18px;transition:.3s}
+
+@media(max-width:600px){
+.header{padding:28px 18px;border-radius:30px}
+.header h1{font-size:1.5rem}
+.header p{font-size:.9rem}
+.project-card{padding:20px;border-radius:27px}
+.project-card p{font-size:.9rem}
 }
-
-body{
-    background: linear-gradient(135deg, #fbf7ff 0%, #f3e8ff 50%, #e9d5ff 100%);
-    min-height:100vh;
-    padding:40px 20px;
-    overflow-x:hidden;
-    position: relative;
-}
-
-/* ตกแต่งพื้นหลังเรืองแสงละมุน */
-body::before{
-    content:"";
-    position:fixed;
-    width:350px;
-    height:350px;
-    background:#e9d5ff;
-    border-radius:50%;
-    filter:blur(120px);
-    opacity:0.4;
-    top:5%;
-    left:5%;
-    z-index: 0;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    width:400px;
-    height:400px;
-    background:#c084fc;
-    border-radius:50%;
-    filter:blur(140px);
-    opacity:0.2;
-    bottom:0;
-    right:5%;
-    z-index: 0;
-}
-
-/* อิโมจิลอย */
-
-.floating{
-    position:fixed;
-    font-size:2rem;
-    opacity:0.55;
-    filter: drop-shadow(0 4px 6px rgba(192, 132, 252, 0.15));
-    animation:float 15s linear infinite;
-    z-index: 1;
-    pointer-events: none;
-}
-
-@keyframes float{
-    from{
-        transform:translateY(110vh) rotate(0deg) scale(0.9);
-    }
-
-    to{
-        transform:translateY(-120vh) rotate(360deg) scale(1.1);
-    }
-}
-
-.f1{left:5%;animation-delay:0s;}
-.f2{left:20%;animation-delay:3s;}
-.f3{left:40%;animation-delay:6s;}
-.f4{left:60%;animation-delay:9s;}
-.f5{left:80%;animation-delay:12s;}
-
-
-/* CONTAINER */
-
-.container{
-    max-width:900px;
-    margin:auto;
-    position:relative;
-    z-index:10;
-}
-
-
-/* HEADER */
-
-.header{
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    border-radius: 35px;
-    padding: 35px 30px;
-    margin-bottom: 30px;
-    box-shadow: 
-        0 20px 40px rgba(168, 85, 247, 0.08),
-        0 2px 10px rgba(255, 255, 255, 0.8) inset;
-    text-align:center;
-}
-
-.header-text h1{
-    color: #8b5cf6;
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.15));
-}
-
-.header-text p{
-    color:#7c3aed;
-    margin-top: 10px;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-
-/* CARD */
-
-.project-card{
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    border-radius: 35px;
-    padding: 35px;
-    margin-bottom: 30px;
-    box-shadow: 
-        0 20px 40px rgba(168, 85, 247, 0.08),
-        0 2px 10px rgba(255, 255, 255, 0.8) inset;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 25px 45px rgba(168, 85, 247, 0.12),
-        0 2px 10px rgba(255, 255, 255, 0.9) inset;
-}
-
-.project-card h3{
-    color:#6d28d9;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
-.project-card p{
-    color:#5b5266;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-size: 1rem;
-}
-
-/* =================================
-   ส่วนจัดวางรูปภาพเกียรติบัตร
-   ================================= */
-
-.single-cert-box{
-    width:100%;
-    background:#ffffff;
-    border: 2px solid #f3e8ff;
-    border-radius: 24px;
-    padding: 12px;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.05);
-    overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.single-cert-box:hover {
-    transform: scale(1.01);
-    border-color: #c084fc;
-}
-
-.single-cert-img{
-    width:100%;
-    height:auto;
-    max-height:450px;
-    object-fit:contain;
-    border-radius: 16px;
-    display:block;
-}
-
-
-/* =================================
-   ปุ่ม Back to Contents
-   ================================= */
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    margin-top:25px;
-    padding:14px 32px;
-    color:white;
-    text-decoration:none;
-    font-size: 1rem;
-    font-weight: 500;
-    background:linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-    border: 3px solid #ffffff;
-    border-radius:50px;
-    box-shadow: 
-        0 10px 20px rgba(168, 85, 247, 0.25),
-        0 0 0 4px rgba(233, 213, 255, 0.5);
-    transition:all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-
-/* ลูกศร */
-
-.btn .arrow{
-    font-size: 18px;
-    transition:transform .3s ease;
-}
-
-
-/* ตอนเอาเมาส์ชี้ */
-
-.btn:hover{
-    transform:translateY(-4px) scale(1.03);
-    background:linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
-    box-shadow: 
-        0 14px 25px rgba(168, 85, 247, 0.35),
-        0 0 0 6px rgba(233, 213, 255, 0.7);
-}
-
-
-/* ลูกศรขยับ */
-
-.btn:hover .arrow{
-    transform:translateX(-5px);
-}
-
-
-/* ตอนกด */
-
-.btn:active{
-    transform:translateY(0) scale(0.97);
-}
-
 </style>
 </head>
 
 <body>
-
-<!-- อิโมจิลอย -->
 
 <div class="floating f1">🐰</div>
 <div class="floating f2">💜</div>
@@ -261,92 +51,35 @@ body::after{
 <div class="floating f4">🌷</div>
 <div class="floating f5">🪻</div>
 
-
 <div class="container">
 
-
-    <!-- HEADER -->
-
-    <div class="header">
-
-        <div class="header-text">
-
-            <h1>🐰 Ethics & Leadership Certificates 🐰</h1>
-
-            <p>
-                เกียรติบัตรด้านคุณธรรม จริยธรรม ผู้นำเยาวชน และจิตสาธารณะ 💜
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- ใบที่ 1: ค่ายพัฒนาคุณธรรม -->
-
-    <div class="project-card">
-
-        <h3>🌟 ค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน</h3>
-
-        <p>
-            เข้าร่วมกิจกรรมค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน ประจำปีการศึกษา 2568 จัดโดยโรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" เพื่อปลูกฝังคุณธรรม จริยธรรม การมีวินัยในตนเอง และจิตสาธารณะในการอยู่ร่วมกันในสังคม
-        </p>
-
-        <div class="single-cert-box">
-            <img src="IMG_0640.jpeg" alt="เกียรติบัตรค่ายพัฒนาคุณธรรม จริยธรรม" class="single-cert-img">
-        </div>
-
-    </div>
-
-
-    <!-- ใบที่ 2: STRONG CAMP -->
-
-    <div class="project-card">
-
-        <h3>🛡️ โครงการ STRONG CAMP เยาวชนไทยต้านโกง จังหวัดชลบุรี</h3>
-
-        <p>
-            ผ่านการอบรมโครงการ STRONG CAMP เยาวชนไทยต้านโกง (STRONG CAMP - Young Coaches) ระดับอำเภอ สนับสนุนโดยกองทุน ป.ป.ช. เพื่อพัฒนาทักษะแกนนำเยาวชนในการส่งเสริมความซื่อสัตย์สุจริตและการมีจิตพอเพียง
-        </p>
-
-        <div class="single-cert-box">
-            <img src="IMG_0641.jpeg" alt="เกียรติบัตร STRONG CAMP เยาวชนไทยต้านโกง" class="single-cert-img">
-        </div>
-
-    </div>
-
-
-    <!-- ใบที่ 3: แกนนํา อย.น้อย -->
-
-    <div class="project-card">
-
-        <h3>💊 โครงการอบรม "แกนนำ อย.น้อย"</h3>
-
-        <p>
-            เข้าร่วมการอบรมโครงการแกนนำ อย.น้อย ประจำปีการศึกษา 2568 ณ โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" เพื่อทำหน้าที่เผยแพร่ความรู้ด้านการบริโภคผลิตภัณฑ์สุขภาพอย่างปลอดภัยให้แก่เพื่อนนักเรียนและชุมชน
-        </p>
-
-        <div class="single-cert-box">
-            <img src="IMG_0644.jpeg" alt="เกียรติบัตรแกนนำ อย.น้อย" class="single-cert-img">
-        </div>
-
-
-        <!-- ปุ่มย้อนกลับ -->
-
-        <div style="text-align: center;">
-            <a href="portfolio.html" class="btn">
-
-                <span class="arrow">←</span>
-
-                <span>Back to Contents</span>
-
-            </a>
-        </div>
-
-    </div>
-
-
+<div class="header">
+<h1>🐰 Ethics & Leadership Certificates 🐰</h1>
+<p>เกียรติบัตรด้านคุณธรรม จริยธรรม ผู้นำเยาวชน และจิตสาธารณะ 💜</p>
 </div>
 
+<div class="project-card">
+<h3>🌟 ค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน</h3>
+<p>เข้าร่วมกิจกรรมค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน ประจำปีการศึกษา 2568 จัดโดยโรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" เพื่อปลูกฝังคุณธรรม จริยธรรม การมีวินัยในตนเอง และจิตสาธารณะในการอยู่ร่วมกันในสังคม</p>
+<div class="single-cert-box"><img src="IMG_0640.jpeg" alt="เกียรติบัตรค่ายพัฒนาคุณธรรม จริยธรรม" class="single-cert-img"></div>
+</div>
+
+<div class="project-card">
+<h3>🛡️ โครงการ STRONG CAMP เยาวชนไทยต้านโกง จังหวัดชลบุรี</h3>
+<p>ผ่านการอบรมโครงการ STRONG CAMP เยาวชนไทยต้านโกง (STRONG CAMP - Young Coaches) ระดับอำเภอ สนับสนุนโดยกองทุน ป.ป.ช. เพื่อพัฒนาทักษะแกนนำเยาวชนในการส่งเสริมความซื่อสัตย์สุจริตและการมีจิตพอเพียง</p>
+<div class="single-cert-box"><img src="IMG_0641.jpeg" alt="เกียรติบัตร STRONG CAMP เยาวชนไทยต้านโกง" class="single-cert-img"></div>
+</div>
+
+<div class="project-card">
+<h3>💊 โครงการอบรม "แกนนำ อย.น้อย"</h3>
+<p>เข้าร่วมการอบรมโครงการแกนนำ อย.น้อย ประจำปีการศึกษา 2568 ณ โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" เพื่อทำหน้าที่เผยแพร่ความรู้ด้านการบริโภคผลิตภัณฑ์สุขภาพอย่างปลอดภัยให้แก่เพื่อนนักเรียนและชุมชน</p>
+<div class="single-cert-box"><img src="IMG_0644.jpeg" alt="เกียรติบัตรแกนนำ อย.น้อย" class="single-cert-img"></div>
+
+<div style="text-align:center">
+<a href="portfolio.html" class="btn"><span class="arrow">←</span><span>Back to Contents</span></a>
+</div>
+</div>
+
+</div>
 </body>
 </html>
