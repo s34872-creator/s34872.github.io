@@ -4,224 +4,268 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Activities & Experiences</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', 'Kanit', sans-serif;
 }
 
-body{
-    min-height:100vh;
-    background:linear-gradient(135deg, #f5e9ff, #e9d5ff, #d8b4fe);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
-    overflow-x:hidden;
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fbf7ff 0%, #f3e8ff 50%, #e9d5ff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    overflow-x: hidden;
 }
 
 /* =================================
    ส่วนของอิโมจิลอย (Floating Animation)
    ================================= */
-.floating{
-    position:fixed;
-    font-size:2rem;
-    opacity:.7;
-    animation:float 15s linear infinite;
-    z-index: 1; /* ให้อยู่หลังกล่องเนื้อหา */
+.floating {
+    position: fixed;
+    font-size: 2rem;
+    opacity: 0.55;
+    filter: drop-shadow(0 4px 6px rgba(192, 132, 252, 0.15));
+    animation: float 15s linear infinite;
+    z-index: 1;
     pointer-events: none;
 }
 
-@keyframes float{
-    from{
-        transform:translateY(110vh);
+@keyframes float {
+    from {
+        transform: translateY(110vh) rotate(0deg) scale(0.9);
     }
-    to{
-        transform:translateY(-120vh);
+    to {
+        transform: translateY(-120vh) rotate(360deg) scale(1.1);
     }
 }
 
-.f1{left:5%;animation-delay:0s;}
-.f2{left:20%;animation-delay:3s;}
-.f3{left:40%;animation-delay:6s;}
-.f4{left:60%;animation-delay:9s;}
-.f5{left:80%;animation-delay:12s;}
+.f1 { left: 5%; animation-delay: 0s; }
+.f2 { left: 20%; animation-delay: 3s; }
+.f3 { left: 40%; animation-delay: 6s; }
+.f4 { left: 60%; animation-delay: 9s; }
+.f5 { left: 80%; animation-delay: 12s; }
 
-/* ตกแต่งพื้นหลัง */
-body::before{
-    content:"";
-    position:fixed;
-    width:250px;
-    height:250px;
-    background:#c084fc;
-    border-radius:50%;
-    filter:blur(100px);
-    opacity:.25;
-    top:5%;
-    left:5%;
+/* ตกแต่งพื้นหลังเรืองแสงละมุน */
+body::before {
+    content: "";
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: #e9d5ff;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    top: 5%;
+    left: 5%;
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    width:300px;
-    height:300px;
-    background:#a855f7;
-    border-radius:50%;
-    filter:blur(120px);
-    opacity:.2;
-    bottom:0;
-    right:5%;
+body::after {
+    content: "";
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    background: #c084fc;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.25;
+    bottom: 0;
+    right: 5%;
 }
 
 /* คอนเทนเนอร์หลัก */
-.container{
-    width:100%;
-    max-width:800px;
-    position:relative;
-    z-index:2;
+.container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
 }
 
-/* กล่องหลัก */
-.activity-card{
-    position:relative;
-    width:100%;
-    background:rgba(255, 255, 255, .9);
-    backdrop-filter:blur(10px);
-    border-radius:35px;
-    padding:35px;
-    text-align:center;
-    box-shadow: 0 15px 40px rgba(126,34,206,.15), 0 0 30px rgba(192,132,252,.15);
+/* กล่องหลัก Glassmorphism */
+.activity-card {
+    position: relative;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    border-radius: 40px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 
+        0 20px 40px rgba(168, 85, 247, 0.08),
+        0 2px 10px rgba(255, 255, 255, 0.8) inset;
 }
 
 /* หัวข้อ */
-h1{
-    color:#7e22ce;
-    font-size:32px;
-    margin-bottom:8px;
+h1 {
+    color: #8b5cf6;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.15));
 }
 
-.subtitle{
-    color:#777;
-    margin-bottom:25px;
+.subtitle {
+    color: #a855f7;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
 
 /* รายการกิจกรรม */
-.activity-list{
-    display:flex;
-    flex-direction:column;
-    gap:25px;
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.activity-item{
-    text-align:left;
-    background:#faf5ff;
-    border:2px solid #ead5ff;
-    border-radius:25px;
-    padding:25px;
-    box-shadow:0 5px 15px rgba(126,34,206,.05);
+.activity-item {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #f3e8ff;
+    border-radius: 28px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.activity-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:12px;
-    flex-wrap:wrap;
-    gap:10px;
+.activity-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(168, 85, 247, 0.08);
+    background: rgba(255, 255, 255, 0.85);
 }
 
-.activity-title{
-    color:#7e22ce;
-    font-size:20px;
-    font-weight:bold;
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.activity-date{
-    background:#e9d5ff;
-    color:#7e22ce;
-    font-size:13px;
-    font-weight:bold;
-    padding:4px 14px;
-    border-radius:15px;
+.activity-title {
+    color: #6d28d9;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
-.activity-desc{
-    color:#555;
-    font-size:15px;
-    line-height:1.7;
-    margin-bottom:18px;
+.activity-date {
+    background: #f3e8ff;
+    color: #7c3aed;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-radius: 20px;
+    border: 1px solid #e9d5ff;
+}
+
+.activity-desc {
+    color: #5b5266;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.activity-desc strong {
+    color: #7c3aed;
+    font-weight: 500;
 }
 
 /* กริดใส่รูปภาพเกียรติบัตรคู่ */
-.activity-gallery{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
+.activity-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-.cert-box{
-    background:#fff;
-    border:2px solid #e9d5ff;
-    border-radius:16px;
-    padding:8px;
-    box-shadow:0 4px 10px rgba(126,34,206,.05);
+.cert-box {
+    background: #ffffff;
+    border: 2px solid #f3e8ff;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.activity-img{
-    width:100%;
-    height:auto;
-    max-height:220px;
-    object-fit:contain;
-    border-radius:10px;
-    display:block;
+.cert-box:hover {
+    transform: scale(1.02);
+    border-color: #c084fc;
 }
 
-/* ปุ่มย้อนกลับ */
-.back-button{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    margin-top:30px;
-    padding:14px 30px;
-    color:white;
-    text-decoration:none;
-    font-size:16px;
-    font-weight:bold;
-    background:linear-gradient(135deg, #c084fc, #a855f7, #7e22ce);
-    border:2px solid rgba(255,255,255,.7);
-    border-radius:50px;
-    box-shadow: 0 8px 20px rgba(126,34,206,.3), 0 0 15px rgba(168,85,247,.3);
-    transition:all .3s ease;
+.activity-img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 14px;
+    display: block;
 }
 
-.back-button .arrow{
-    font-size:25px;
-    transition:transform .3s ease;
+/* ปุ่มย้อนกลับแบบละมุนนุ่มนวล */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 14px 32px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+    border: 3px solid #ffffff;
+    border-radius: 50px;
+    box-shadow: 
+        0 10px 20px rgba(168, 85, 247, 0.25),
+        0 0 0 4px rgba(233, 213, 255, 0.5);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.back-button:hover{
-    transform:translateY(-5px) scale(1.05);
-    background:linear-gradient(135deg, #d8b4fe, #c084fc, #9333ea);
-    box-shadow: 0 12px 30px rgba(126,34,206,.4), 0 0 30px rgba(168,85,247,.6);
+.back-button .arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
 }
 
-.back-button:hover .arrow{
-    transform:translateX(-7px);
+.back-button:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
+    box-shadow: 
+        0 14px 25px rgba(168, 85, 247, 0.35),
+        0 0 0 6px rgba(233, 213, 255, 0.7);
 }
 
-.back-button:active{
-    transform:scale(.95);
+.back-button:hover .arrow {
+    transform: translateX(-5px);
+}
+
+.back-button:active {
+    transform: translateY(0) scale(0.97);
 }
 
 /* รองรับมือถือ */
 @media (max-width: 600px) {
+    .activity-card {
+        padding: 30px 18px;
+        border-radius: 30px;
+    }
     .activity-gallery {
         grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 1.6rem;
     }
 }
 </style>
