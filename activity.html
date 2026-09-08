@@ -2,349 +2,212 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Activities | Kantida Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* ===== พื้นฐาน ===== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  font-family: 'Fredoka', 'Kanit', sans-serif;
+*{box-sizing:border-box;margin:0;font-family:'Fredoka','Kanit',sans-serif}
+
+body{
+ padding:35px 18px;
+ background:linear-gradient(135deg,#9379C2,#B19CD8,#CCB7E5,#D9C4EC,#E6D1F2);
+ color:#65447f;
 }
 
-body {
-  min-height: 100vh;
-  padding: 35px 18px;
-  background: linear-gradient(135deg, #9379C2, #B19CD8, #CCB7E5, #D9C4EC, #E6D1F2);
-  color: #65447f;
-  overflow-x: hidden;
+.bunny{position:fixed;font-size:50px;animation:float 4s infinite}
+.b1{top:5%;left:4%}.b2{right:4%;bottom:6%}
+
+@keyframes float{50%{transform:translateY(-12px) rotate(5deg)}}
+
+.container{
+ max-width:1050px;
+ margin:auto;
+ padding:35px;
+ background:#ffffff90;
+ border:2px solid white;
+ border-radius:35px;
+ backdrop-filter:blur(18px);
+ box-shadow:0 20px 60px #5b397744;
 }
 
-/* ===== แสงพื้นหลัง ===== */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  filter: blur(90px);
-  background: #ffffff88;
-  z-index: -1;
+.title{text-align:center;margin-bottom:30px}
+.title h1{font-size:40px;color:#65447f}
+.title span{color:#9379C2}
+.title p{margin-top:6px;color:#765A96}
+
+.activity{
+ padding:25px;
+ margin-bottom:25px;
+ background:#ffffffa0;
+ border:2px solid white;
+ border-radius:28px;
+ box-shadow:0 12px 35px #76549e25;
 }
 
-body::before {
-  top: -120px;
-  left: -100px;
+.badge{
+ display:inline-block;
+ padding:7px 16px;
+ margin-bottom:18px;
+ color:white;
+ border-radius:25px;
+ background:linear-gradient(135deg,#9379C2,#B19CD8,#CCB7E5);
 }
 
-body::after {
-  right: -100px;
-  bottom: -130px;
+.photos{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:18px;
+ margin-bottom:22px;
 }
 
-/* ===== กระต่าย ===== */
-.bunny {
-  position: fixed;
-  font-size: 58px;
-  animation: float 4s ease-in-out infinite;
-  z-index: 1;
+.photo{
+ padding:9px;
+ background:white;
+ border-radius:20px;
+ box-shadow:0 10px 25px #5b397744;
+ transition:.3s;
 }
 
-.b1 {
-  top: 5%;
-  left: 5%;
+.photo:hover{transform:translateY(-6px) scale(1.02)}
+
+.photo img{
+ width:100%;
+ height:280px;
+ object-fit:cover;
+ border-radius:14px;
+ display:block;
 }
 
-.b2 {
-  right: 5%;
-  bottom: 7%;
-  animation-delay: 1s;
+.info h2{font-size:27px;margin-bottom:10px}
+.info p{color:#765A96;line-height:1.8}
+
+.learn{
+ margin-top:16px;
+ padding:15px 18px;
+ background:#E6D1F288;
+ border:1px solid white;
+ border-radius:18px;
 }
 
-@keyframes float {
-  50% {
-    transform: translateY(-13px) rotate(5deg);
-  }
+.learn h3{font-size:17px;margin-bottom:5px}
+.learn p{font-size:14px}
+
+.date{
+ display:inline-block;
+ margin-top:15px;
+ padding:8px 15px;
+ background:white;
+ border-radius:15px;
 }
 
-/* ===== กล่องหลัก ===== */
-.container {
-  width: min(1100px, 100%);
-  margin: auto;
-  padding: 38px;
-  background: #ffffff82;
-  border: 2px solid white;
-  border-radius: 40px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 25px 70px #5b397744;
+.footer{
+ margin-top:25px;
+ text-align:center;
+ color:#765A96;
+ font-size:13px;
+ letter-spacing:1px;
 }
 
-/* ===== หัวข้อ ===== */
-.title {
-  text-align: center;
-  margin-bottom: 38px;
-}
-
-.title h1 {
-  font-size: 42px;
-  color: #65447f;
-  text-shadow: 0 5px 15px #76549e44;
-}
-
-.title h1 span {
-  color: #9379C2;
-}
-
-.title p {
-  margin-top: 8px;
-  color: #765A96;
-  font-size: 16px;
-}
-
-/* ===== กิจกรรม ===== */
-.activity {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 35px;
-  align-items: center;
-  padding: 25px;
-  margin-bottom: 30px;
-  background: #ffffff8c;
-  border: 2px solid white;
-  border-radius: 32px;
-  box-shadow: 0 15px 40px #76549e25;
-}
-
-/* ===== รูปภาพ ===== */
-.photos {
-  position: relative;
-  height: 390px;
-}
-
-.photo {
-  position: absolute;
-  width: 65%;
-  padding: 9px;
-  background: white;
-  border-radius: 22px;
-  box-shadow: 0 15px 35px #5b397744;
-  transition: .4s;
-}
-
-.photo img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 15px;
-  display: block;
-}
-
-.photo:first-child {
-  top: 10px;
-  left: 0;
-  transform: rotate(-5deg);
-}
-
-.photo:last-child {
-  right: 0;
-  bottom: 5px;
-  transform: rotate(5deg);
-}
-
-.photo:hover {
-  z-index: 5;
-  transform: rotate(0) scale(1.05);
-}
-
-/* ===== ข้อมูล ===== */
-.info {
-  padding: 10px 15px;
-}
-
-.badge {
-  display: inline-block;
-  padding: 8px 18px;
-  margin-bottom: 17px;
-  border-radius: 30px;
-  color: white;
-  background: linear-gradient(135deg, #9379C2, #B19CD8, #CCB7E5);
-  border: 2px solid white;
-  box-shadow: 0 8px 20px #76549e33;
-}
-
-.info h2 {
-  margin-bottom: 13px;
-  font-size: 28px;
-  color: #65447f;
-}
-
-.info h2::after {
-  content: " ♡";
-  color: #9379C2;
-}
-
-.info p {
-  color: #765A96;
-  line-height: 1.9;
-  font-size: 15px;
-}
-
-.date {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 10px 17px;
-  border-radius: 18px;
-  background: #E6D1F288;
-  border: 1px solid white;
-  color: #65447f;
-}
-
-/* ===== ตกแต่ง ===== */
-.decor {
-  margin: 8px 0 28px;
-  text-align: center;
-  color: #9379C2;
-  font-size: 22px;
-  letter-spacing: 8px;
-}
-
-/* ===== Footer ===== */
-.footer {
-  margin-top: 25px;
-  text-align: center;
-  color: #765A96;
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-
-/* ===== มือถือ ===== */
-@media (max-width: 750px) {
-  .container {
-    padding: 28px 16px;
-  }
-
-  .title h1 {
-    font-size: 34px;
-  }
-
-  .activity {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .photos {
-    height: 350px;
-  }
-
-  .info {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .photos {
-    height: 300px;
-  }
-
-  .photo {
-    width: 68%;
-  }
-
-  .photo img {
-    height: 230px;
-  }
-
-  .info h2 {
-    font-size: 24px;
-  }
+@media(max-width:700px){
+ .container{padding:22px 15px}
+ .title h1{font-size:32px}
+ .photos{grid-template-columns:1fr}
+ .photo img{height:250px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- กระต่าย -->
 <div class="bunny b1">🐰</div>
 <div class="bunny b2">🐇</div>
 
 <div class="container">
 
-  <!-- หัวข้อ -->
-  <div class="title">
-    <h1>✦ <span>Activities</span> 🐰 ✦</h1>
-    <p>กิจกรรม • ประสบการณ์ • ความภาคภูมิใจ</p>
+<div class="title">
+ <h1>✦ <span>Activities</span> 🐰 ✦</h1>
+ <p>กิจกรรม • ประสบการณ์ • สิ่งที่ได้รับ</p>
+</div>
+
+
+<!-- Activity 01 -->
+<div class="activity">
+
+ <div class="badge">♡ Activity 01</div>
+
+ <div class="photos">
+  <div class="photo">
+   <img src="IMG_0695(5).jpeg">
+  </div>
+  <div class="photo">
+   <img src="IMG_0713(2).jpeg">
+  </div>
+ </div>
+
+ <div class="info">
+  <h2>ศึกษาดูงานคลินิกทันตกรรม ♡</h2>
+  <p>
+   เข้าร่วมกิจกรรมแนะแนวทางการศึกษา
+   เพื่อเรียนรู้การทำงานและบรรยากาศ
+   ในสายอาชีพด้านทันตกรรม
+  </p>
+
+  <div class="learn">
+   <h3>✦ สิ่งที่ได้รับ</h3>
+   <p>
+    ได้เรียนรู้การทำงานของทันตแพทย์
+    การดูแลผู้ป่วย และความสำคัญของ
+    ความละเอียดรอบคอบในการทำงาน
+   </p>
   </div>
 
-  <!-- กิจกรรมที่ 1 -->
-  <div class="activity">
+  <div class="date">✦ 27 มีนาคม 2569</div>
+ </div>
 
-    <div class="photos">
-      <div class="photo">
-        <img src="IMG_0695(5).jpeg" alt="กิจกรรมคลินิกทันตกรรม">
-      </div>
+</div>
 
-      <div class="photo">
-        <img src="IMG_0713(2).jpeg" alt="กิจกรรมการฝึกปฏิบัติงาน">
-      </div>
-    </div>
 
-    <div class="info">
-      <div class="badge">♡ Activity 01</div>
+<!-- Activity 02 -->
+<div class="activity">
 
-      <h2>ศึกษาดูงานคลินิกทันตกรรม</h2>
+ <div class="badge">♡ Activity 02</div>
 
-      <p>
-        เข้าร่วมกิจกรรมแนะแนวทางการศึกษาเพื่อเสริมสร้าง
-        ประสบการณ์และเป็นแนวทางในการประกอบอาชีพ
-        ด้านทันตกรรม พร้อมเรียนรู้บรรยากาศและการทำงาน
-        ของบุคลากรทางการแพทย์
-      </p>
+ <div class="photos">
+  <div class="photo">
+   <img src="IMG_0713(2).jpeg">
+  </div>
+  <div class="photo">
+   <img src="IMG_0639(2).jpeg">
+  </div>
+ </div>
 
-      <div class="date">✦ 27 มีนาคม 2569</div>
-    </div>
+ <div class="info">
+  <h2>ฝึกปฏิบัติงานโรงพยาบาล ♡</h2>
+  <p>
+   เข้าร่วมการฝึกปฏิบัติงาน ณ โรงพยาบาลบ้านบึง
+   เพื่อเรียนรู้การทำงานในสถานพยาบาลจริง
+  </p>
 
+  <div class="learn">
+   <h3>✦ สิ่งที่ได้รับ</h3>
+   <p>
+    ได้พัฒนาทักษะการสื่อสาร ความรับผิดชอบ
+    การทำงานร่วมกับผู้อื่น และได้เรียนรู้
+    การดูแลผู้ป่วยอย่างเป็นระบบ
+   </p>
   </div>
 
-  <div class="decor">♡ ✦ ♡ ✦ ♡</div>
+  <div class="date">✦ 1 , 5 - 8 พฤษภาคม 2569</div>
+ </div>
 
-  <!-- กิจกรรมที่ 2 -->
-  <div class="activity">
+</div>
 
-    <div class="photos">
-      <div class="photo">
-        <img src="IMG_0713(2).jpeg" alt="การฝึกปฏิบัติงาน">
-      </div>
 
-      <div class="photo">
-        <img src="IMG_0639(2).jpeg" alt="โรงพยาบาลบ้านบึง">
-      </div>
-    </div>
-
-    <div class="info">
-      <div class="badge">♡ Activity 02</div>
-
-      <h2>ฝึกปฏิบัติงานโรงพยาบาล</h2>
-
-      <p>
-        ได้ผ่านการฝึกปฏิบัติงานที่กลุ่มงานการพยาบาล
-        โรงพยาบาลบ้านบึง เพื่อเรียนรู้การทำงานจริง
-        พัฒนาทักษะด้านการสื่อสาร ความรับผิดชอบ
-        และการทำงานร่วมกับบุคลากรในสถานพยาบาล
-      </p>
-
-      <div class="date">✦ 15 พฤษภาคม 2569</div>
-    </div>
-
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    ✦ Make by <b>Kantida Khaow</b> ♡
-  </div>
+<div class="footer">
+ ✦ Make by <b>Kantida Khaow</b> ♡
+</div>
 
 </div>
 
