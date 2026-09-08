@@ -2,237 +2,117 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Contents - Warunee Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kantida Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Fredoka', 'Kanit', sans-serif;
+*{box-sizing:border-box;margin:0;font-family:'Fredoka','Kanit',sans-serif}
+
+body{
+ min-height:100vh;display:grid;place-items:center;padding:25px;
+ background:linear-gradient(135deg,#9379C2,#B19CD8,#CCB7E5,#D9C4EC,#E6D1F2);
+ overflow:hidden;
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #fbf7ff 0%, #f3e8ff 50%, #e9d5ff 100%);
-    overflow-x: hidden;
-    position: relative;
-    padding: 20px;
+body:before,body:after{
+ content:"";position:fixed;border-radius:50%;filter:blur(90px);
+ background:#fff8;width:300px;height:300px
+}
+body:before{top:-120px;left:-80px}
+body:after{bottom:-130px;right:-80px}
+
+.bunny{
+ position:fixed;font-size:55px;animation:float 4s ease-in-out infinite
+}
+.b1{top:8%;left:6%}.b2{right:6%;bottom:8%;animation-delay:1s}
+
+@keyframes float{50%{transform:translateY(-12px) rotate(5deg)}}
+
+.card{
+ width:min(100%,850px);padding:42px;
+ text-align:center;background:#ffffff80;
+ border:2px solid white;border-radius:38px;
+ backdrop-filter:blur(20px);
+ box-shadow:0 25px 60px #5b397733;
+ position:relative;z-index:2
 }
 
-/* ตกแต่งพื้นหลังเรืองแสงละมุน */
-body::before {
-    content: "";
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    background: #e9d5ff;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.5;
-    top: 5%;
-    left: 5%;
-    z-index: 0;
+h1{
+ color:#65447f;font-size:32px;margin-bottom:28px;
+ text-shadow:0 4px 12px #5b397733
+}
+h1 span{color:#9379C2}
+
+.menu{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:14px
 }
 
-body::after {
-    content: "";
-    position: fixed;
-    width: 350px;
-    height: 350px;
-    background: #c084fc;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.25;
-    bottom: 0;
-    right: 5%;
-    z-index: 0;
+.menu a,.back{
+ padding:15px 10px;border-radius:22px;
+ text-decoration:none;color:white;font-weight:500;
+ background:linear-gradient(135deg,#9379C2,#B19CD8,#CCB7E5);
+ border:2px solid white;
+ box-shadow:0 8px 20px #76549e33;
+ transition:.3s
 }
 
-/* อิโมจิลอย */
-.floating {
-    position: absolute;
-    font-size: 2rem;
-    opacity: 0.55;
-    filter: drop-shadow(0 4px 6px rgba(192, 132, 252, 0.15));
-    animation: float 18s linear infinite;
-    pointer-events: none;
+.menu a:hover,.back:hover{
+ transform:translateY(-4px) scale(1.03);
+ box-shadow:0 12px 25px #76549e55
 }
 
-@keyframes float {
-    from { transform: translateY(110vh) rotate(0deg) scale(0.9); }
-    to { transform: translateY(-110vh) rotate(360deg) scale(1.1); }
+.contact{
+ margin-top:18px;padding:15px;border-radius:22px;
+ background:#fff9;color:#76549e;
+ border:1px solid white
 }
 
-.f1 { left: 5%; animation-delay: 0s; }
-.f2 { left: 15%; animation-delay: 2s; }
-.f3 { left: 25%; animation-delay: 4s; }
-.f4 { left: 35%; animation-delay: 6s; }
-.f5 { left: 45%; animation-delay: 8s; }
-.f6 { left: 55%; animation-delay: 10s; }
-.f7 { left: 65%; animation-delay: 12s; }
-.f8 { left: 75%; animation-delay: 14s; }
-.f9 { left: 85%; animation-delay: 16s; }
-
-/* การ์ด Glassmorphism ละมุน */
-.card {
-    width: 90%;
-    max-width: 750px;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    border-radius: 40px;
-    padding: 45px 35px;
-    text-align: center;
-    box-shadow: 
-        0 20px 40px rgba(168, 85, 247, 0.08),
-        0 2px 10px rgba(255, 255, 255, 0.8) inset;
-    z-index: 10;
-    position: relative;
+.back{
+ display:inline-block;margin-top:22px;padding:13px 28px
 }
 
-h1 {
-    color: #8b5cf6;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.15));
+.footer{
+ margin-top:20px;color:#765A96;font-size:13px;letter-spacing:1px
 }
 
-/* ปุ่มเมนู */
-.menu {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-.menu a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.05rem;
-    font-weight: 500;
-    padding: 18px 20px;
-    border-radius: 28px;
-    background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-    border: 2px solid #ffffff;
-    box-shadow: 
-        0 10px 20px rgba(168, 85, 247, 0.18),
-        0 0 0 3px rgba(233, 213, 255, 0.4);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    text-align: center;
-}
-
-.menu a:hover {
-    transform: translateY(-5px) scale(1.02);
-    background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
-    box-shadow: 
-        0 14px 28px rgba(168, 85, 247, 0.28),
-        0 0 0 5px rgba(233, 213, 255, 0.6);
-}
-
-.menu a:active {
-    transform: translateY(0) scale(0.98);
-}
-
-/* ปุ่มย้อนกลับ */
-.back {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 32px;
-    padding: 14px 32px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-    border: 3px solid #ffffff;
-    border-radius: 50px;
-    box-shadow: 
-        0 10px 20px rgba(168, 85, 247, 0.25),
-        0 0 0 4px rgba(233, 213, 255, 0.5);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.back:hover {
-    transform: translateY(-4px) scale(1.03);
-    background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
-    box-shadow: 
-        0 14px 25px rgba(168, 85, 247, 0.35),
-        0 0 0 6px rgba(233, 213, 255, 0.7);
-}
-
-.back .arrow {
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.back:hover .arrow {
-    transform: translateX(-5px);
-}
-
-.back:active {
-    transform: translateY(0) scale(0.97);
-}
-
-/* รองรับมือถือ */
-@media (max-width: 600px) {
-    .card {
-        padding: 35px 20px;
-        border-radius: 30px;
-    }
-    .menu {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-    h1 {
-        font-size: 1.6rem;
-    }
+@media(max-width:650px){
+ .card{padding:30px 20px}
+ .menu{grid-template-columns:repeat(2,1fr)}
+ h1{font-size:27px}
 }
 </style>
-
 </head>
+
 <body>
 
-<div class="floating f1">🐰</div>
-<div class="floating f2">💜</div>
-<div class="floating f3">⭐</div>
-<div class="floating f4">☁️</div>
-<div class="floating f5">🌷</div>
-<div class="floating f6">🪻</div>
-<div class="floating f7">💖</div>
-<div class="floating f8">⭐</div>
-<div class="floating f9">🐰</div>
+<div class="bunny b1">🐰</div>
+<div class="bunny b2">🐇</div>
 
 <div class="card">
 
-<h1>🐰 Portfolio contents 🐰</h1>
+<h1>✦ <span>Portfolio</span> Contents 🐰</h1>
 
 <div class="menu">
-    <a href="sop.html">SOP</a>
-    <a href="profile.html">Profile</a>
-    <a href="education.html">Education</a>
-    <a href="portfolio2.html">Portfolio</a>
-    <a href="activity.html">Activity</a>
-    <a href="certificate.html">Certificates</a>
-    <a href="university.html" style="grid-column: span 2;">University</a>
+ <a href="sop.html">📖 Introduction</a>
+ <a href="profile.html">👤 Profile</a>
+ <a href="education.html">🎓 Education</a>
+ <a href="portfolio2.html">💼 Portfolio</a>
+ <a href="sport.html">🏃 Sports</a>
+ <a href="activity.html">🌷 Activities</a>
+ <a href="certificate.html">📜 Certificates</a>
+ <a href="university.html">🏫 University</a>
+ <a href="contact.html">📞 Contact</a>
 </div>
 
-<a href="index.html" class="back">
-    <span class="arrow">←</span>
-    <span>Back to Home</span>
-</a>
+<div class="contact">
+✦ ช่องทางติดต่อ ✦<br>
+Instagram • Facebook • Email
+</div>
+
+<a href="index.html" class="back">♡ ← Back to Home</a>
+
+<div class="footer">✦ Make by <b>Kantida Khaow</b> ♡</div>
 
 </div>
 
