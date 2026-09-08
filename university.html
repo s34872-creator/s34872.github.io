@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Target Faculty & University</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Fredoka','Kanit',sans-serif}
+body{min-height:100vh;padding:30px 15px;display:flex;justify-content:center;align-items:center;overflow-x:hidden;background:radial-gradient(circle at 10% 10%,#e9d5ff99,transparent 25%),radial-gradient(circle at 90% 90%,#c084fc55,transparent 30%),linear-gradient(135deg,#fffaff,#f3e8ff,#e9d5ff)}
+.floating{position:fixed;font-size:1.8rem;opacity:.5;z-index:1;pointer-events:none;animation:float 15s linear infinite;filter:drop-shadow(0 4px 6px #c084fc33)}
+.f1{left:5%}.f2{left:20%;animation-delay:3s}.f3{left:40%;animation-delay:6s}.f4{left:60%;animation-delay:9s}.f5{left:80%;animation-delay:12s}
+@keyframes float{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-120vh) rotate(360deg)}}
+
+.container{width:100%;max-width:800px;position:relative;z-index:2}
+.activity-card{padding:42px 30px;text-align:center;border:2px solid #fff;border-radius:40px;background:#ffffffb8;backdrop-filter:blur(20px);box-shadow:0 25px 60px #8b5cf61c,inset 0 1px 0 #fff}
+h1{color:#7c3aed;font-size:2rem;margin-bottom:6px;text-shadow:0 3px 8px #8b5cf622}
+.subtitle{color:#a855f7;font-weight:500;margin-bottom:30px}
+.subtitle:after{content:"  ✦  ♡  ✦";display:block;color:#c084fc;font-size:.8rem;margin-top:6px}
+
+.activity-list{display:flex;flex-direction:column;gap:25px}
+.activity-item{padding:25px;text-align:left;border:2px solid #f3e8ff;border-radius:28px;background:#ffffffa8;box-shadow:0 10px 25px #a855f714;transition:.3s}
+.activity-item:hover{transform:translateY(-5px);box-shadow:0 15px 30px #a855f722;border-color:#d8b4fe}
+.activity-header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.activity-title{color:#6d28d9;font-size:1.15rem;font-weight:600;line-height:1.4}
+.activity-date{padding:5px 15px;border-radius:20px;border:1px solid #e9d5ff;background:#f3e8ff;color:#7c3aed;font-size:.85rem;font-weight:600;white-space:nowrap}
+.activity-desc{color:#5b5266;font-size:.98rem;line-height:1.8;margin-bottom:20px}
+.activity-desc strong{color:#7c3aed}
+
+.activity-gallery{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.cert-box{padding:8px;background:#fff;border:2px solid #f3e8ff;border-radius:20px;box-shadow:0 5px 15px #a855f714;transition:.3s}
+.cert-box:hover{transform:scale(1.02);border-color:#c084fc}
+.activity-img{width:100%;max-height:220px;object-fit:cover;border-radius:14px;display:block}
+
+.back-button{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:14px 32px;color:#fff;text-decoration:none;font-weight:500;background:linear-gradient(135deg,#c084fc,#a855f7);border:3px solid #fff;border-radius:50px;box-shadow:0 10px 20px #a855f740,0 0 0 4px #e9d5ff80;transition:.3s}
+.back-button:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 15px 25px #a855f755}
+.arrow{font-size:18px;transition:.3s}.back-button:hover .arrow{transform:translateX(-5px)}
+
+@media(max-width:600px){
+.activity-card{padding:30px 18px;border-radius:30px}
+.activity-gallery{grid-template-columns:1fr}
+h1{font-size:1.6rem}
+.activity-item{padding:20px}
+.activity-desc{font-size:.9rem}
+}
+</style>
+</head>
+
+<body>
+<div class="floating f1">🐰</div>
+<div class="floating f2">💜</div>
+<div class="floating f3">⭐</div>
+<div class="floating f4">🌷</div>
+<div class="floating f5">🪻</div>
+
+<div class="container">
+<div class="activity-card">
+
+<h1>✨ Target Faculty & University 🌟</h1>
+<p class="subtitle">💜 คณะและมหาวิทยาลัยในฝัน 💜</p>
+
+<div class="activity-list">
+
+<!-- ข้อมูลคณะและเป้าหมาย -->
+<div class="activity-item">
+<div class="activity-header">
+<div class="activity-title">🩺 คณะสัตวแพทยศาสตร์ สาขาสัตว์เลี้ยงพิเศษ (Exotic Pets)</div>
+<div class="activity-date">มหาวิทยาลัยมหิดล</div>
+</div>
+<p class="activity-desc">
+<strong>แรงบันดาลใจ:</strong> หนูมีความสนใจและหลงใหลในความพิเศษของสัตว์เลี้ยงพิเศษ (Exotic Pets) ที่มีโครงสร้างร่างกายและพฤติกรรมซับซ้อนเฉพาะตัว ซึ่งปัจจุบันยังขาดแคลนสัตวแพทย์ผู้เชี่ยวชาญเฉพาะทางอยู่มาก จึงมีความมุ่งมั่นที่อยากจะเป็นคนดูแลรักษาและเป็นที่พึ่งให้กับชีวิตเล็ก ๆ เหล่านี้<br><br>
+<strong>ทำไมต้องมหิดล:</strong> ประทับใจในบรรยากาศการเรียนที่ร่มรื่น เต็มไปด้วยพื้นที่สีเขียว และสิ่งแวดล้อมที่เอื้อต่อการพัฒนาตัวเองของมหาวิทยาลัยมหิดล (วิทยาเขตศาลายา) อีกทั้งยังมั่นใจในศักยภาพของหลักสูตรและความพร้อมของโรงพยาบาลสัตว์ประศุอาทรที่มีคลินิก Exotic Pet รองรับเคสจริง ทำให้เชื่อมั่นว่าที่นี่จะหล่อหลอมให้เติบโตไปเป็นสัตวแพทย์ที่มีความรู้ ทักษะ และพร้อมยกระดับมาตรฐานการดูแลสัตว์เลี้ยงพิเศษในประเทศไทยได้อย่างแท้จริงค่ะ
+</p>
+<div class="activity-gallery">
+<div class="cert-box"><img src="Mahidol_University_Emblem.png" alt="มหาวิทยาลัยมหิดล" class="activity-img"></div>
+<div class="cert-box"><img src="Exotic_Pet.png" alt="สัตวแพทย์สัตว์เลี้ยงพิเศษ" class="activity-img"></div>
+</div>
+</div>
+
+</div>
+
+<a href="portfolio.html" class="back-button">
+<span class="arrow">←</span>
+<span>Back to Content</span>
+</a>
+
+</div>
+</div>
+</body>
+</html>
