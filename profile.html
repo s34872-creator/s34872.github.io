@@ -3,374 +3,329 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kantida | Personal Profile</title>
 
-<title>Personal Profile</title>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/*RESET*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Fredoka', 'Kanit', sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Fredoka','Kanit',sans-serif}
 
 body{
-    min-height: 100vh;
-    background: linear-gradient(135deg, #fbf7ff 0%, #f3e8ff 50%, #e9d5ff 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 15px;
-    overflow-x: hidden;
-    position: relative;
+    min-height:100vh;padding:35px 15px;display:grid;place-items:center;
+    background:linear-gradient(135deg,#8f76bd,#b49bd5,#d7c5e9,#f5effb);
+    overflow-x:hidden;position:relative;color:#5b5067
 }
 
-/* =================================
-   ส่วนของอิโมจิลอย (Floating Animation)
-   ================================= */
-.floating{
-    position: fixed;
-    font-size: 2rem;
-    opacity: 0.55;
-    filter: drop-shadow(0 4px 6px rgba(192, 132, 252, 0.15));
-    animation: float 15s linear infinite;
-    z-index: 1; /* ให้อยู่หลังกล่องเนื้อหา */
-    pointer-events: none;
+body:before,body:after{
+    content:"";position:fixed;border-radius:50%;filter:blur(90px);z-index:0
 }
+body:before{width:350px;height:350px;background:#fff;top:-120px;left:-100px}
+body:after{width:400px;height:400px;background:#b58cda;bottom:-160px;right:-100px}
+
+.floating{
+    position:fixed;z-index:1;font-size:28px;opacity:.65;
+    animation:float 4s ease-in-out infinite
+}
+.f1{top:8%;left:7%;font-size:55px}
+.f2{top:18%;right:10%}
+.f3{bottom:12%;left:8%;animation-delay:1s}
+.f4{bottom:18%;right:8%;font-size:45px;animation-delay:2s}
 
 @keyframes float{
-    from{
-        transform: translateY(110vh) rotate(0deg) scale(0.9);
-    }
-    to{
-        transform: translateY(-120vh) rotate(360deg) scale(1.1);
-    }
+    50%{transform:translateY(-13px) rotate(5deg)}
 }
 
-.f1{left:5%;animation-delay:0s;}
-.f2{left:20%;animation-delay:3s;}
-.f3{left:40%;animation-delay:6s;}
-.f4{left:60%;animation-delay:9s;}
-.f5{left:80%;animation-delay:12s;}
-
-/* ตกแต่งพื้นหลังเรืองแสงละมุน */
-body::before{
-    content:"";
-    position:fixed;
-    width:300px;
-    height:300px;
-    background:#e9d5ff;
-    border-radius:50%;
-    filter:blur(100px);
-    opacity:0.5;
-    top:5%;
-    left:5%;
-    z-index: 0;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    width:350px;
-    height:350px;
-    background:#c084fc;
-    border-radius:50%;
-    filter:blur(120px);
-    opacity:0.25;
-    bottom:0;
-    right:5%;
-    z-index: 0;
-}
-
-/* คอนเทนเนอร์หลัก */
 .container{
-    width:100%;
-    max-width:750px;
-    position:relative;
-    z-index:2;
+    width:min(100%,1000px);position:relative;z-index:2
 }
 
-/* กล่องหลัก Glassmorphism */
-.profile-card{
-    position:relative;
-    width:100%;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    border-radius: 40px;
-    padding: 45px 35px;
-    text-align: center;
-    box-shadow: 
-        0 20px 40px rgba(168, 85, 247, 0.08),
-        0 2px 10px rgba(255, 255, 255, 0.8) inset;
+.card{
+    background:#ffffff70;border:2px solid #fff;border-radius:40px;
+    padding:35px;backdrop-filter:blur(25px);
+    box-shadow:0 25px 70px #53336b33
 }
 
-/* รูปโปรไฟล์ */
-.profile-pic{
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    object-fit:cover;
-    border: 6px solid #ffffff;
-    box-shadow: 
-        0 10px 25px rgba(168, 85, 247, 0.2),
-        0 0 0 5px rgba(233, 213, 255, 0.5);
-    margin-bottom: 15px;
-    display: inline-block;
-    filter: drop-shadow(0 8px 15px rgba(192, 132, 252, 0.25));
-    animation: bounce 3s ease-in-out infinite;
-    transition:.3s;
+/* ===== TOP ===== */
+
+.top{
+    display:grid;grid-template-columns:38% 62%;
+    gap:30px;align-items:center
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+.photo-box{
+    width:290px;height:290px;margin:auto;display:grid;place-items:center;
+    position:relative;border-radius:50%;
+    background:linear-gradient(135deg,#9075bd,#c9b2df,#fff);
+    box-shadow:0 20px 45px #62427b33
 }
 
-.profile-pic:hover{
-    transform: scale(1.06) rotate(2deg);
-    box-shadow: 
-        0 15px 30px rgba(168, 85, 247, 0.3),
-        0 0 0 7px rgba(233, 213, 255, 0.7);
+.photo-box:after{
+    content:"";position:absolute;inset:-10px;
+    border:2px dashed #fff;border-radius:50%;
+    animation:spin 15s linear infinite
 }
 
-/* หัวข้อ */
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.photo{
+    width:225px;height:225px;object-fit:cover;border-radius:50%;
+    border:7px solid #fff;position:relative;z-index:2;
+    box-shadow:0 10px 30px #57366b44;transition:.3s
+}
+
+.photo:hover{transform:scale(1.05)}
+
+.bunny{
+    position:absolute;right:-5px;bottom:5px;font-size:58px;z-index:3;
+    animation:float 3s ease-in-out infinite
+}
+
+.tag{
+    display:inline-block;padding:8px 17px;border-radius:30px;
+    background:#fff9;color:#76549e;font-size:14px
+}
+
 h1{
-    color: #8b5cf6;
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-    filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.15));
+    margin-top:18px;color:#65447f;font-size:42px;line-height:1.2;
+    text-shadow:0 4px 12px #60407a33
 }
 
-.subtitle{
-    color: #a855f7;
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 25px;
+.eng{
+    color:#9478ae;font-size:17px;margin-top:3px
 }
 
-/* กล่องข้อมูล */
+.intro{
+    margin-top:20px;line-height:1.8;font-family:'Kanit',sans-serif;
+    font-size:16px
+}
+
+.name{
+    color:#76549e;font-weight:600
+}
+
+/* ===== INFO ===== */
+
 .info{
-    text-align: left;
-    background: rgba(255, 255, 255, 0.6);
-    border: 2px solid #f3e8ff;
-    border-radius: 28px;
-    padding: 25px;
-    margin-top: 15px;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.04);
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:12px;margin-top:30px
 }
 
-.info p{
-    color: #5b5266;
-    font-size: 1.05rem;
-    line-height: 2.1;
-    font-weight: 400;
-    border-bottom: 1px dashed rgba(233, 213, 255, 0.8);
-    padding: 8px 0;
+.item{
+    padding:15px 17px;border-radius:20px;
+    background:#fff9;border:1px solid #fff;
+    box-shadow:0 8px 20px #69498512;transition:.3s
 }
 
-.info p:last-child{
-    border-bottom: none;
+.item:hover{transform:translateY(-4px);background:#ffff}
+
+.item b{
+    display:block;color:#76549e;margin-bottom:5px
 }
 
-.info span{
-    color: #7c3aed;
-    font-weight: 500;
-    margin-right: 5px;
+/* ===== ABOUT ===== */
+
+.bottom{
+    display:grid;grid-template-columns:1.5fr 1fr;
+    gap:15px;margin-top:18px
 }
 
-/* เกี่ยวกับฉัน */
-.about{
-    margin-top: 25px;
-    text-align: left;
-    background: rgba(255, 255, 255, 0.85);
-    border: 2px solid #f3e8ff;
-    border-radius: 28px;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.05);
+.box{
+    padding:22px;border-radius:25px;background:#ffffffc9;
+    border:2px solid #f1e6fa
 }
 
-.about h2{
-    color: #6d28d9;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 12px;
+.box h2{
+    color:#684783;font-size:21px;margin-bottom:10px
 }
 
-.about p{
-    color: #5b5266;
-    font-size: 1.05rem;
-    line-height: 1.9;
-    font-weight: 400;
+.box p{
+    font-family:'Kanit',sans-serif;line-height:1.8;font-size:15px
 }
 
-/* ปุ่มย้อนกลับแบบละมุนนุ่มนวล */
-.back-button{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    margin-top:30px;
-    padding:14px 32px;
-    color: #ffffff;
-    text-decoration:none;
-    font-size: 1rem;
-    font-weight: 500;
-    background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-    border: 3px solid #ffffff;
+/* ===== QUOTE ===== */
+
+.quote{
+    display:flex;flex-direction:column;justify-content:center;
+    text-align:center;background:linear-gradient(135deg,#a88bc9,#d0b9e4);
+    color:#fff;box-shadow:0 12px 25px #65447f22
+}
+
+.quote h2{color:#fff}
+
+.quote strong{
+    font-size:20px;line-height:1.6
+}
+
+.quote small{
+    margin-top:10px;opacity:.9
+}
+
+/* ===== BUTTON ===== */
+
+.back{
+    display:flex;width:max-content;margin:25px auto 0;
+    align-items:center;gap:10px;padding:13px 27px;
+    color:#fff;text-decoration:none;border:3px solid #fff;
     border-radius:50px;
-    box-shadow: 
-        0 10px 20px rgba(168, 85, 247, 0.25),
-        0 0 0 4px rgba(233, 213, 255, 0.5);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background:linear-gradient(135deg,#9275bc,#b49ad4,#cbb4e1);
+    box-shadow:0 10px 25px #60407a44;transition:.3s
 }
 
-/* ลูกศร */
-.back-button .arrow{
-    font-size: 18px;
-    transition: transform 0.3s ease;
+.back:hover{transform:translateY(-5px) scale(1.03)}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:750px){
+    .top,.bottom{grid-template-columns:1fr}
+    .right{text-align:center}
+    .intro{max-width:600px;margin:20px auto}
 }
 
-/* ตอนเอาเมาส์ไปชี้ */
-.back-button:hover{
-    transform: translateY(-4px) scale(1.03);
-    background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
-    box-shadow: 
-        0 14px 25px rgba(168, 85, 247, 0.35),
-        0 0 0 6px rgba(233, 213, 255, 0.7);
+@media(max-width:500px){
+    .card{padding:22px;border-radius:30px}
+    .photo-box{width:230px;height:230px}
+    .photo{width:180px;height:180px}
+    h1{font-size:32px}
+    .info{grid-template-columns:1fr}
+    .f1,.f4{font-size:40px}
 }
-
-.back-button:hover .arrow{
-    transform: translateX(-5px);
-}
-
-/* เอฟเฟกต์ตอนกด */
-.back-button:active{
-    transform: translateY(0) scale(0.97);
-}
-
-/* รองรับมือถือ */
-@media (max-width: 600px) {
-    .profile-card {
-        padding: 35px 20px;
-        border-radius: 30px;
-    }
-    h1 {
-        font-size: 1.8rem;
-    }
-    .profile-pic {
-        width: 110px;
-        height: 110px;
-    }
-}
-
 </style>
-
 </head>
 
 <body>
 
-    <!-- อิโมจิลอย -->
-    <div class="floating f1">🐰</div>
-    <div class="floating f2">💜</div>
-    <div class="floating f3">⭐</div>
-    <div class="floating f4">🌷</div>
-    <div class="floating f5">🪻</div>
+<!-- ตกแต่ง -->
+<div class="floating f1">🐰</div>
+<div class="floating f2">✦</div>
+<div class="floating f3">💜</div>
+<div class="floating f4">🐇</div>
 
-    <div class="container">
 
-        <div class="profile-card">
+<div class="container">
+<div class="card">
 
-            <!-- รูปตัวเอง -->
-            <img 
-                src="IMG_0591.jpeg"
-                alt="รูปโปรไฟล์"
-                class="profile-pic"
-            >
+    <!-- TOP -->
+    <div class="top">
 
-            <h1>💜 Personal Profile 💜</h1>
+        <div class="photo-box">
+            <img src="IMG_0591.jpeg" class="photo" alt="Kantida">
+            <div class="bunny">🐰</div>
+        </div>
 
-            <p class="subtitle">
-                ✨ ยินดีต้อนรับเข้าสู่ประวัติส่วนตัวของฉัน ✨
+        <div class="right">
+
+            <div class="tag">🐰 ✦ PERSONAL PROFILE</div>
+
+            <h1>กานต์ธิดา ทีปกากร</h1>
+
+            <div class="eng">
+                Kantida Teepakakorn
+            </div>
+
+            <p class="intro">
+                สวัสดีค่ะ ฉันชื่อ <span class="name">กานต์ธิดา</span>
+                หรือชื่อเล่นว่า <span class="name">ข้าว</span> 💜
+                เป็นคนที่ชื่นชอบวิชาชีววิทยา การร้องเพลง การถ่ายรูป
+                และสนใจสัตว์เลี้ยง Exotic โดยเฉพาะกระต่าย
+                มีความฝันที่จะศึกษาต่อด้าน
+                <b>Exotic Pet Veterinarian</b>
             </p>
 
-            <!-- ข้อมูลส่วนตัว -->
-            <div class="info">
+        </div>
 
-                <p>
-                    <span>👤 ชื่อ - นามสกุล :</span>
-                    นางสาวกานต์ธิดา ทีปกากร
-                </p>
+    </div>
 
-                <p>
-                    <span>💜 ชื่อเล่น :</span>
-                    ข้าว
-                </p>
 
-                <p>
-                    <span>🎂 วันเกิด :</span>
-                    17 ธันวาคม 2008
-                </p>
+    <!-- INFO -->
+    <div class="info">
 
-                <p>
-                    <span>🎓 อายุ :</span>
-                    17 ปี
-                </p>
+        <div class="item">
+            <b>👤 ชื่อ - นามสกุล</b>
+            นางสาวกานต์ธิดา ทีปกากร
+        </div>
 
-                <p>
-                    <span>🏫 โรงเรียน :</span>
-                    บ้านบึง"อุตสาหกรรมนุเคราะห์"
-                </p>
+        <div class="item">
+            <b>💜 ชื่อเล่น</b>
+            ข้าว
+        </div>
 
-                <p>
-                    <span>📚 ระดับชั้น :</span>
-                    มัธยมศึกษาปีที่ 6
-                </p>
+        <div class="item">
+            <b>🎂 วันเกิด</b>
+            17 ธันวาคม 2008
+        </div>
 
-                <p>
-                    <span>🎨 งานอดิเรก :</span>
-                    อ่านหนังสือ ฟังเพลง ถ่ายรูป
-                </p>
+        <div class="item">
+            <b>🎓 อายุ</b>
+            17 ปี
+        </div>
 
-                <p>
-                    <span>⭐ ความสามารถพิเศษ :</span>
-                    ร้องเพลง มีความอดทนและใจเย็นเมื่อต้องดูแลสัตว์ และ มีความรู้พื้นฐานเกี่ยวกับการดูแลสัตว์หลากหลายชนิด
-                </p>
+        <div class="item">
+            <b>🏫 โรงเรียน</b>
+            บ้านบึง"อุตสาหกรรมนุเคราะห์"
+        </div>
 
-            </div>
+        <div class="item">
+            <b>📚 ระดับชั้น</b>
+            มัธยมศึกษาปีที่ 6
+        </div>
 
-            <!-- เกี่ยวกับฉัน -->
-            <div class="about">
+        <div class="item">
+            <b>🎨 งานอดิเรก</b>
+            อ่านหนังสือ • ฟังเพลง • ถ่ายรูป
+        </div>
 
-                <h2>💜 เกี่ยวกับฉัน</h2>
+        <div class="item">
+            <b>⭐ ความสามารถ</b>
+            ร้องเพลง • ดูแลสัตว์ • ใจเย็นและอดทน
+        </div>
 
-                <p>
-                    สวัสดีค่ะ ฉันชื่อนางสาวกานต์ธิดา ทีปกากร
-                    เป็นคนที่ชื่นชอบวิชาชีววิทยา การร้องเพลง การถ่ายรูป สนใจสัตว์เลี้ยง exotic และชอบกระต่ายมากมากค่ะ
-                    ในเวลาว่างฉันมักจะฟังเพลง / อ่านหนังสือ / เล่นกับสัตว์เลี้ยง
-                    และมีความสนใจในด้านการเรียนสัตวแพทย์เฉพาะทางสัตว์เลี้ยงชนิดพิเศษ ( Exotic Pet Veterinarian )
-                </p>
+    </div>
 
-            </div>
 
-            <!-- ปุ่มย้อนกลับ -->
-            <a href="portfolio.html" class="back-button">
+    <!-- ABOUT + QUOTE -->
+    <div class="bottom">
 
-                <span class="arrow">←</span>
+        <div class="box">
 
-                <span>Back to Content</span>
+            <h2>💜 About Me</h2>
 
-            </a>
+            <p>
+                ฉันเป็นคนที่ชื่นชอบวิชาชีววิทยาและมีความสนใจเกี่ยวกับสัตว์
+                โดยเฉพาะสัตว์เลี้ยงชนิดพิเศษ (Exotic Pets)
+                ในเวลาว่างฉันชอบฟังเพลง อ่านหนังสือ ถ่ายรูป
+                และใช้เวลาเล่นกับสัตว์เลี้ยง
+                ฉันตั้งใจพัฒนาตัวเองและเรียนรู้สิ่งใหม่ ๆ
+                เพื่อก้าวไปสู่เป้าหมายในอนาคต
+            </p>
 
-        </div> <!-- ปิด profile-card -->
+        </div>
 
-    </div> <!-- ปิด container -->
+
+        <div class="box quote">
+
+            <h2>✨ คติประจำใจ</h2>
+
+            <strong>
+                “พยายามให้เต็มที่<br>
+                แล้วไม่ต้องเสียดายทีหลัง”
+            </strong>
+
+            <small>
+                — My little motivation 💜
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- BUTTON -->
+    <a href="portfolio.html" class="back">
+        ← Back to Content 🐰
+    </a>
+
+</div>
+</div>
 
 </body>
 </html>
