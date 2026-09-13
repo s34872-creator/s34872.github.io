@@ -8,67 +8,190 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Fredoka','Kanit',sans-serif}
-body{min-height:100vh;padding:35px 18px;background:linear-gradient(135deg,#9379C2,#B19CD8,#CCB7E5,#E6D1F2);overflow-x:hidden}
-body:before,body:after{content:"";position:fixed;border-radius:50%;filter:blur(100px);z-index:-1}
-body:before{width:350px;height:350px;background:#fff8;top:5%;left:3%}
-body:after{width:400px;height:400px;background:#c084fc66;bottom:0;right:3%}
 
-.float{position:fixed;font-size:28px;opacity:.55;animation:float 10s linear infinite;z-index:0}
-.f1{left:6%}.f2{left:85%;animation-delay:3s}.f3{left:45%;animation-delay:6s}
-@keyframes float{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-120vh) rotate(360deg)}}
+body{
+    min-height:100vh;padding:35px 18px;overflow-x:hidden;
+    background:linear-gradient(135deg,#8f78bb,#b49ed5,#d2bee6,#eee2f5);
+}
 
-.container{max-width:700px;margin:auto;position:relative;z-index:2}
-.header,.contact-box{background:#ffffffb8;backdrop-filter:blur(20px);border:2px solid #fff;border-radius:35px;box-shadow:0 15px 35px #7045a822}
-.header{text-align:center;padding:30px 20px;margin-bottom:25px}
-.header h1{color:#7045A8;font-size:2rem}.header p{color:#725B85;margin-top:7px}
+body:before,body:after{
+    content:"";position:fixed;border-radius:50%;filter:blur(100px);z-index:-1
+}
+body:before{width:360px;height:360px;background:#fff9;top:0;left:0}
+body:after{width:420px;height:420px;background:#b58ddd66;right:0;bottom:0}
 
-.contact-box{padding:25px}
-.contact{display:flex;align-items:center;gap:16px;text-decoration:none;background:#ffffffc9;border:2px solid #eadcff;border-radius:22px;padding:15px 18px;margin-bottom:15px;color:#5d5365;transition:.3s}
-.contact:hover{transform:translateY(-4px);border-color:#c084fc;box-shadow:0 10px 20px #8b5cf622}
-.icon{width:52px;height:52px;display:grid;place-items:center;border-radius:17px;background:linear-gradient(135deg,#d8b4fe,#b98be8);font-size:25px}
-.info strong{display:block;color:#7045A8;font-size:1.05rem}.info span{font-size:.9rem;color:#786b82}.arrow{margin-left:auto;color:#9b72c7;font-size:25px}
-.btn{display:block;width:max-content;margin:28px auto 0;padding:12px 28px;color:white;text-decoration:none;background:linear-gradient(135deg,#b98be8,#8b5fc4);border:2px solid white;border-radius:50px;box-shadow:0 8px 20px #7045a833;transition:.3s}
-.btn:hover{transform:translateY(-3px)}
+.container{max-width:720px;margin:auto;position:relative;z-index:2}
 
-.footer{margin-top:25px;text-align:center;color:#765A96;font-size:13px;letter-spacing:1px}
+.header,.contact-box{
+    background:#ffffffaa;
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+    border:1.5px solid #fff;
+    border-radius:34px;
+    box-shadow:0 18px 45px #65458c22;
+}
 
-@media(max-width:600px){.contact-box{padding:20px 15px}.header h1{font-size:1.7rem}}
+.header{text-align:center;padding:35px 20px;margin-bottom:24px}
+
+.header h1{
+    color:#68458f;
+    font-size:2rem;
+    letter-spacing:1px;
+}
+
+.header h1:after{
+    content:"  ✦";
+    color:#b28bd5;
+    font-size:18px;
+}
+
+.header p{color:#776285;margin-top:8px;font-size:.95rem}
+
+.contact-box{padding:26px}
+
+.contact{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:17px;
+    text-decoration:none;
+    background:linear-gradient(135deg,#fffdfdca,#f8f0ffb8);
+    border:1px solid #fff;
+    border-radius:24px;
+    padding:16px 19px;
+    margin-bottom:14px;
+    color:#5d5365;
+    box-shadow:0 7px 20px #7045a818;
+    transition:.35s ease;
+}
+
+.contact:before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:18%;
+    width:3px;
+    height:64%;
+    border-radius:10px;
+    background:linear-gradient(#c9a5e8,#9670be);
+}
+
+.contact:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 28px #7045a830;
+    border-color:#d5b9ec;
+}
+
+.icon{
+    width:54px;height:54px;
+    display:grid;
+    place-items:center;
+    border-radius:18px;
+    color:#76519b;
+    background:linear-gradient(145deg,#fff,#e9d7f7);
+    border:1px solid #fff;
+    box-shadow:inset 0 1px 5px #fff,0 5px 12px #7045a818;
+    font-family:Georgia,serif;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.facebook:after{content:"f"}
+.instagram:after{content:"◎"}
+.line:after{content:"L"}
+
+.info strong{
+    display:block;
+    color:#68458f;
+    font-size:1.05rem;
+    letter-spacing:.3px;
+}
+
+.info span{font-size:.88rem;color:#806e8c;margin-top:2px;display:block}
+
+.arrow{
+    margin-left:auto;
+    color:#9b72c7;
+    font-family:Georgia,serif;
+    font-size:27px;
+    transition:.3s;
+}
+
+.contact:hover .arrow{transform:translateX(4px);color:#7045a8}
+
+.btn{
+    display:block;
+    width:max-content;
+    margin:28px auto 3px;
+    padding:12px 29px;
+    color:white;
+    text-decoration:none;
+    background:linear-gradient(135deg,#b99ada,#8963b2);
+    border:2px solid #fff;
+    border-radius:50px;
+    box-shadow:0 9px 22px #7045a840;
+    transition:.3s;
+}
+
+.btn:hover{transform:translateY(-4px);box-shadow:0 13px 25px #7045a855}
+
+.footer{
+    margin-top:25px;
+    text-align:center;
+    color:#765A96;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+@media(max-width:600px){
+    body{padding:25px 14px}
+    .header h1{font-size:1.7rem}
+    .contact-box{padding:20px 14px}
+}
 </style>
 </head>
 
 <body>
-<div class="float f1">🐰</div><div class="float f2">💜</div><div class="float f3">✨</div>
 
 <div class="container">
+
     <div class="header">
-        <h1>💌 Contact Me</h1>
+        <h1>Contact Me</h1>
         <p>ช่องทางการติดต่อของฉัน ♡</p>
     </div>
 
     <div class="contact-box">
 
         <a class="contact" href="https://www.facebook.com/kantida.teepakakorn?" target="_blank">
-            <div class="icon">💙</div>
+            <div class="icon facebook"></div>
             <div class="info"><strong>Facebook</strong><span> Facebook</span></div>
             <div class="arrow">›</div>
         </a>
 
         <a class="contact" href="https://www.instagram.com/k1ryqq?stkn=N2xzZ2Q2OHpnbzdj" target="_blank">
-            <div class="icon">📷</div>
+            <div class="icon instagram"></div>
             <div class="info"><strong>Instagram</strong><span>@k1ryqq</span></div>
             <div class="arrow">›</div>
         </a>
 
         <a class="contact" href="https://line.me/ti/p/gvdxy7qRx_" target="_blank">
-            <div class="icon">💚</div>
+            <div class="icon line"></div>
             <div class="info"><strong>LINE</strong><span>ID: khxqz_</span></div>
+            <div class="arrow">›</div>
+        </a>
+        <a class="contact" target="_blank">
+            <div class="icon email"></div>
+            <div class="info"><strong>Email</strong><span> kantida171251@gmail.com</span></div>
             <div class="arrow">›</div>
         </a>
 
         <a href="portfolio.html" class="btn">← Back to Contents</a>
+
     </div>
 
     <div class="footer">✦ Make by <b>Kantida Khaow</b> ♡</div>
+
 </div>
+
 </body>
 </html>
