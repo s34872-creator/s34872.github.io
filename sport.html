@@ -1,1 +1,394 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sports | Kantida Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;font-family:'Fredoka','Kanit',sans-serif}
+
+body{
+ min-height:100vh;
+ padding:35px 15px;
+ background:linear-gradient(135deg,#fdf8ff,#eadcff,#cdb5e9,#f8efff);
+ color:#65447f;
+ position:relative;
+ overflow-x:hidden;
+}
+
+body:before,body:after{
+ content:"";
+ position:fixed;
+ border-radius:50%;
+ filter:blur(100px);
+ pointer-events:none;
+ z-index:0;
+}
+
+body:before{
+ width:320px;height:320px;
+ background:#fff8;
+ top:-100px;left:-80px;
+}
+
+body:after{
+ width:380px;height:380px;
+ background:#b98de955;
+ bottom:-130px;right:-100px;
+}
+
+/* ===== FLOATING ===== */
+
+.floating{
+ position:fixed;
+ z-index:1;
+ font-size:28px;
+ opacity:.55;
+ pointer-events:none;
+ animation:float 15s linear infinite;
+}
+
+.f1{left:5%}
+.f2{left:25%;animation-delay:3s}
+.f3{left:50%;animation-delay:6s}
+.f4{left:75%;animation-delay:9s}
+.f5{left:90%;animation-delay:12s}
+
+@keyframes float{
+ from{transform:translateY(110vh) rotate(0)}
+ to{transform:translateY(-120vh) rotate(360deg)}
+}
+
+/* ===== CONTAINER ===== */
+
+.container{
+ width:min(100%,1000px);
+ margin:auto;
+ position:relative;
+ z-index:2;
+}
+
+.card{
+ padding:35px;
+ background:#ffffffb8;
+ border:2px solid white;
+ border-radius:40px;
+ backdrop-filter:blur(22px);
+ box-shadow:0 25px 60px #7650a525;
+}
+
+/* ===== HEADER ===== */
+
+.header{
+ text-align:center;
+ padding-bottom:25px;
+ border-bottom:2px dashed #d9c4ec;
+}
+
+.header h1{
+ font-size:40px;
+ color:#7040a8;
+ text-shadow:0 4px 10px #8b5cf633;
+}
+
+.header h1 span{color:#a56dcc}
+
+.header p{
+ margin-top:7px;
+ color:#8c68ad;
+}
+
+/* ===== SPORT ===== */
+
+.sport{
+ margin-top:25px;
+ padding:28px;
+ background:#ffffffc7;
+ border:2px solid white;
+ border-radius:30px;
+ box-shadow:0 12px 30px #7650a518;
+}
+
+.badge{
+ display:inline-block;
+ padding:8px 17px;
+ color:white;
+ border-radius:25px;
+ background:linear-gradient(135deg,#9379c2,#a978d0,#cbb4e1);
+}
+
+.sport h2{
+ margin:18px 0 8px;
+ font-size:29px;
+ color:#7040a8;
+}
+
+.date{
+ display:inline-block;
+ padding:7px 14px;
+ margin-bottom:20px;
+ background:#f3e8ff;
+ border-radius:15px;
+ color:#76549e;
+}
+
+/* ===== PHOTOS ===== */
+
+.photos{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:15px;
+}
+
+.photo{
+ padding:8px;
+ background:white;
+ border-radius:20px;
+ box-shadow:0 10px 25px #7650a525;
+ transition:.3s;
+}
+
+.photo:hover{
+ transform:translateY(-6px) scale(1.02);
+}
+
+.photo img{
+ width:100%;
+ height:270px;
+ object-fit:cover;
+ border-radius:14px;
+ display:block;
+}
+
+/* ===== TEXT ===== */
+
+.description{
+ margin-top:22px;
+ color:#5f536b;
+ font-family:'Kanit',sans-serif;
+ line-height:1.9;
+ font-size:16px;
+}
+
+.details{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:15px;
+ margin-top:20px;
+}
+
+.detail{
+ padding:18px;
+ background:#f8f0ffcc;
+ border:1px solid white;
+ border-radius:20px;
+}
+
+.detail b{
+ display:block;
+ margin-bottom:5px;
+ color:#7040a8;
+}
+
+/* ===== AWARD ===== */
+
+.award{
+ margin-top:20px;
+ padding:22px;
+ text-align:center;
+ border-radius:25px;
+ background:linear-gradient(135deg,#e9d5ff,#d8c0ed,#f7efff);
+ border:2px solid white;
+ box-shadow:0 10px 25px #7650a520;
+}
+
+.award .medal{
+ font-size:45px;
+}
+
+.award h3{
+ margin-top:5px;
+ color:#7040a8;
+ font-size:24px;
+}
+
+.award p{
+ margin-top:5px;
+ color:#765A96;
+ font-family:'Kanit',sans-serif;
+}
+
+/* ===== BACK ===== */
+
+.back{
+ display:flex;
+ width:max-content;
+ margin:30px auto 0;
+ padding:13px 28px;
+ align-items:center;
+ gap:10px;
+ color:white;
+ text-decoration:none;
+ border:3px solid white;
+ border-radius:50px;
+ background:linear-gradient(135deg,#cba7e8,#aa79d1,#8551b5);
+ box-shadow:0 10px 25px #8551b544;
+ transition:.3s;
+}
+
+.back:hover{
+ transform:translateY(-5px) scale(1.04);
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+ margin-top:25px;
+ text-align:center;
+ color:#765A96;
+ font-size:13px;
+ letter-spacing:1px;
+}
+
+.footer b{color:#65447f}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:700px){
+
+ .card{
+  padding:23px 16px;
+  border-radius:30px;
+ }
+
+ .header h1{font-size:32px}
+
+ .sport{
+  padding:20px 15px;
+  border-radius:25px;
+ }
+
+ .sport h2{font-size:24px}
+
+ .photos{
+  grid-template-columns:1fr;
+ }
+
+ .photo img{height:300px}
+
+ .details{
+  grid-template-columns:1fr;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating f1">🐰</div>
+<div class="floating f2">💜</div>
+<div class="floating f3">🏆</div>
+<div class="floating f4">⭐</div>
+<div class="floating f5">🐇</div>
+
+<div class="container">
+
+<div class="card">
+
+<div class="header">
+ <h1>🏆 <span>My Sport</span> 🐰</h1>
+ <p>กีฬา • E-Sport • ความพยายาม • ความสำเร็จ</p>
+</div>
+
+<div class="sport">
+
+ <div class="badge">🎮 E-SPORT</div>
+
+ <h2>การแข่งขันเกม ROV กีฬาสี ♡</h2>
+
+ <div class="date">
+  ✦ กีฬาสี ปีการศึกษา 2568
+ </div>
+
+ <div class="photos">
+
+  <div class="photo">
+   <img src="FullSizeRender.jpeg" alt="การแข่งขัน ROV">
+  </div>
+
+  <div class="photo">
+   <img src="65DD289C-B22B-4E58-9CCC-9D3477DDBB55.jpeg" alt="การแข่งขัน E-Sport ROV">
+  </div>
+
+  <div class="photo">
+   <img src="IMG_0697.jpeg" alt="การแข่งขัน ROV">
+  </div>
+
+ </div>
+
+ <p class="description">
+  เข้าร่วมการแข่งขัน E-Sport เกม ROV
+  ในกิจกรรมกีฬาสีของโรงเรียน
+  โดยได้ร่วมทำงานกับสมาชิกในทีมเพื่อวางแผนการแข่งขัน
+  ฝึกการสื่อสาร การตัดสินใจ และการแก้ไขสถานการณ์เฉพาะหน้า
+  ซึ่งเป็นประสบการณ์ที่ช่วยให้ได้เรียนรู้การทำงานร่วมกับผู้อื่น
+  และการรับผิดชอบต่อหน้าที่ของตนเอง
+ </p>
+
+ <div class="details">
+
+  <div class="detail">
+   <b>🎮 ประเภทกีฬา</b>
+   E-Sport : ROV
+  </div>
+
+  <div class="detail">
+   <b>🏫 รายการ</b>
+   การแข่งขันกีฬาสี
+  </div>
+
+  <div class="detail">
+   <b>🤝 ทักษะที่ได้ฝึก</b>
+   การสื่อสาร • การวางแผน • การทำงานเป็นทีม
+  </div>
+
+  <div class="detail">
+   <b>🧠 สิ่งที่เรียนรู้</b>
+   การแก้ปัญหาเฉพาะหน้าและการมีน้ำใจนักกีฬา
+  </div>
+
+ </div>
+
+ <div class="award">
+
+  <div class="medal">🥉</div>
+
+  <h3>รองชนะเลิศอันดับ 2</h3>
+
+  <p>
+   ได้รับรางวัล <b>อันดับที่ 3</b>
+   จากการแข่งขัน E-Sport เกม ROV
+   ในการแข่งขันกีฬาสี
+  </p>
+
+ </div>
+
+</div>
+
+<a href="portfolio.html" class="back">
+ ← Back to Content 🐰
+</a>
+
+</div>
+
+<div class="footer">
+ ✦ Make by <b>Kantida Khaow</b> ♡
+</div>
+
+</div>
+
+</body>
+</html>
