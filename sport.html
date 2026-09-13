@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Activities | Kantida Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;font-family:'Fredoka','Kanit',sans-serif}
+
+body{
+ padding:35px 18px;
+ background:linear-gradient(135deg,#9379C2,#B19CD8,#CCB7E5,#D9C4EC,#E6D1F2);
+ color:#65447f;
+}
+
+.bunny{
+ position:fixed;font-size:50px;
+ animation:float 4s infinite;
+ z-index:1
+}
+.b1{top:5%;left:4%}
+.b2{right:4%;bottom:6%}
+
+@keyframes float{
+ 50%{transform:translateY(-12px) rotate(5deg)}
+}
+
+.container{
+ max-width:1050px;
+ margin:auto;
+ padding:35px;
+ background:#ffffff90;
+ border:2px solid white;
+ border-radius:35px;
+ backdrop-filter:blur(18px);
+ box-shadow:0 20px 60px #5b397744;
+ position:relative;
+ z-index:2;
+}
+
+.title{
+ text-align:center;
+ margin-bottom:30px
+}
+
+.title h1{
+ font-size:40px;
+ color:#65447f
+}
+
+.title span{color:#9379C2}
+
+.title p{
+ margin-top:6px;
+ color:#765A96
+}
+
+.activity{
+ padding:25px;
+ margin-bottom:25px;
+ background:#ffffffa0;
+ border:2px solid white;
+ border-radius:28px;
+ box-shadow:0 12px 35px #76549e25;
+}
+
+.badge{
+ display:inline-block;
+ padding:7px 16px;
+ margin-bottom:18px;
+ color:white;
+ border-radius:25px;
+ background:linear-gradient(135deg,#9379C2,#B19CD8,#CCB7E5);
+}
+
+.date{
+ display:inline-block;
+ margin-bottom:20px;
+ padding:8px 15px;
+ background:white;
+ border-radius:15px;
+ color:#765A96;
+}
+
+/* ===== 3 PHOTOS ===== */
+
+.photos{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
+ margin-bottom:22px;
+}
+
+.photo{
+ padding:9px;
+ background:white;
+ border-radius:20px;
+ box-shadow:0 10px 25px #5b397744;
+ transition:.3s;
+}
+
+.photo:hover{
+ transform:translateY(-6px) scale(1.02)
+}
+
+.photo img{
+ width:100%;
+ height:300px;
+ object-fit:cover;
+ border-radius:14px;
+ display:block;
+}
+
+.info h2{
+ font-size:27px;
+ margin-bottom:10px
+}
+
+.info p{
+ color:#765A96;
+ line-height:1.8
+}
+
+.learn{
+ margin-top:16px;
+ padding:17px 18px;
+ background:#E6D1F288;
+ border:1px solid white;
+ border-radius:18px;
+}
+
+.learn h3{
+ font-size:18px;
+ margin-bottom:6px
+}
+
+.learn p{font-size:14px}
+
+/* ===== AWARD ===== */
+
+.award{
+ margin-top:18px;
+ padding:20px;
+ text-align:center;
+ border-radius:22px;
+ background:linear-gradient(135deg,#f8efff,#e6d1f2);
+ border:2px solid white;
+ box-shadow:0 10px 25px #76549e20;
+}
+
+.award h3{
+ font-size:22px;
+ color:#7040a8;
+ margin-bottom:6px;
+}
+
+.award p{
+ color:#765A96;
+ line-height:1.7;
+}
+
+/* ===== BACK BUTTON ===== */
+
+.back{
+ display:flex;
+ width:max-content;
+ margin:30px auto 0;
+ align-items:center;
+ gap:10px;
+ padding:13px 27px;
+ color:white;
+ text-decoration:none;
+ border:3px solid white;
+ border-radius:50px;
+ background:linear-gradient(135deg,#9275BC,#B49AD4,#CBB4E1);
+ box-shadow:0 10px 25px #60407a44;
+ transition:.3s;
+}
+
+.back:hover{
+ transform:translateY(-5px) scale(1.03);
+ box-shadow:0 15px 30px #60407a55;
+}
+
+.footer{
+ margin-top:25px;
+ text-align:center;
+ color:#765A96;
+ font-size:13px;
+ letter-spacing:1px;
+}
+
+.footer b{color:#65447f}
+
+@media(max-width:750px){
+ .container{padding:22px 15px}
+ .title h1{font-size:32px}
+ .photos{grid-template-columns:1fr}
+ .photo img{height:280px}
+}
+
+@media(max-width:500px){
+ .activity{padding:18px}
+ .photo img{height:250px}
+ .info h2{font-size:23px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bunny b1">🐰</div>
+<div class="bunny b2">🐇</div>
+
+<div class="container">
+
+<div class="title">
+ <h1>✦ <span>Sports</span> 🏆 ✦</h1>
+ <p>กีฬา • E-Sport • ประสบการณ์ • ความสำเร็จ</p>
+</div>
+
+<!-- SPORT ACTIVITY -->
+
+<div class="activity">
+
+ <div class="badge">♡ Sports Activity</div>
+
+ <div class="date">
+  ✦ กีฬาสี ปีการศึกษา 2568
+ </div>
+
+ <div class="photos">
+
+  <div class="photo">
+   <img src="FullSizeRender.jpeg" alt="การแข่งขัน ROV กีฬาสี">
+  </div>
+
+  <div class="photo">
+   <img src="65DD289C-B22B-4E58-9CCC-9D3477DDBB55.jpeg" alt="การแข่งขัน E-Sport ROV">
+  </div>
+
+  <div class="photo">
+   <img src="IMG_0697.jpeg" alt="การแข่งขัน ROV">
+  </div>
+
+ </div>
+
+ <div class="info">
+
+  <h2>🏆 การแข่งขัน E-Sport เกม ROV กีฬาสี ♡</h2>
+
+  <p>
+   เข้าร่วมการแข่งขันกีฬา E-Sport เกม ROV
+   ในการแข่งขันกีฬาสีของโรงเรียน
+   ได้ฝึกฝนการทำงานเป็นทีม การวางแผน
+   การสื่อสาร และการตัดสินใจร่วมกับสมาชิกในทีม
+   เพื่อมุ่งสู่เป้าหมายเดียวกัน
+  </p>
+
+  <div class="learn">
+
+   <h3>✦ สิ่งที่ได้รับ</h3>
+
+   <p>
+    ได้พัฒนาทักษะการทำงานเป็นทีม
+    การสื่อสาร การวางแผนและการแก้ไขปัญหาเฉพาะหน้า
+    รวมถึงได้เรียนรู้การควบคุมอารมณ์
+    และการมีน้ำใจนักกีฬา
+   </p>
+
+  </div>
+
+  <div class="award">
+
+   <h3>🥉 รองชนะเลิศอันดับ 2</h3>
+
+   <p>
+    ได้รับรางวัล <b>รองชนะเลิศอันดับ 2</b>
+    หรือ <b>อันดับที่ 3</b>
+    จากการแข่งขัน E-Sport เกม ROV
+    ในกีฬาสี
+   </p>
+
+  </div>
+
+ </div>
+
+</div>
+
+<!-- BACK -->
+
+<a href="portfolio.html" class="back">
+ ← Back to Content 🐰
+</a>
+
+<div class="footer">
+ ✦ Make by <b>Kantida Khaow</b> ♡
+</div>
+
+</div>
+
+</body>
+</html>
