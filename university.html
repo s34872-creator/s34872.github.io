@@ -12,18 +12,16 @@
 
 body{
  min-height:100vh;padding:30px 15px;
- display:flex;justify-content:center;align-items:center;
- overflow-x:hidden;
+ display:flex;justify-content:center;
  background:
- radial-gradient(circle at 10% 15%,#fff8 0 8%,transparent 25%),
- radial-gradient(circle at 90% 85%,#c084fc55,transparent 30%),
- linear-gradient(135deg,#fffaff,#f1e4ff,#d9c4ec,#f9efff)
+ radial-gradient(circle at 10% 10%,#fff8,transparent 25%),
+ radial-gradient(circle at 90% 90%,#c084fc55,transparent 30%),
+ linear-gradient(135deg,#fffaff,#f1e4ff,#d9c4ec,#f9efff);
 }
 
 .floating{
- position:fixed;font-size:1.8rem;opacity:.5;z-index:1;
- pointer-events:none;filter:drop-shadow(0 5px 8px #8b5cf633);
- animation:float 15s linear infinite
+ position:fixed;font-size:1.8rem;opacity:.5;
+ pointer-events:none;animation:float 15s linear infinite
 }
 .f1{left:5%}.f2{left:20%;animation-delay:3s}
 .f3{left:40%;animation-delay:6s}.f4{left:60%;animation-delay:9s}
@@ -34,23 +32,21 @@ body{
  to{transform:translateY(-120vh) rotate(360deg)}
 }
 
-.container{width:100%;max-width:900px;position:relative;z-index:2}
+.container{width:100%;max-width:900px;z-index:2}
 
 .activity-card{
  padding:45px 32px 25px;text-align:center;
  border:2px solid #fff;border-radius:42px;
- background:#ffffffa8;backdrop-filter:blur(25px);
- box-shadow:0 25px 70px #8b5cf625,inset 0 1px 0 #fff
+ background:#ffffffaa;backdrop-filter:blur(25px);
+ box-shadow:0 25px 70px #8b5cf625
 }
 
 h1{
- color:#7040a8;font-size:2rem;margin-bottom:7px;
- text-shadow:0 4px 10px #8b5cf622
+ color:#7040a8;font-size:2rem;
+ margin-bottom:7px;text-shadow:0 4px 10px #8b5cf622
 }
 
-.subtitle{
- color:#a05bd1;font-weight:500;margin-bottom:32px
-}
+.subtitle{color:#a05bd1;font-weight:500;margin-bottom:30px}
 .subtitle:after{
  content:"✦  ♡  ✦";display:block;
  color:#c084fc;font-size:.8rem;margin-top:7px
@@ -60,19 +56,13 @@ h1{
  padding:30px;text-align:left;
  border:2px solid #fff;border-radius:30px;
  background:#ffffff99;
- box-shadow:0 12px 30px #8b5cf618;
- transition:.3s
-}
-
-.activity-item:hover{
- transform:translateY(-5px);
- box-shadow:0 18px 35px #8b5cf630;
- border-color:#d8b4fe
+ box-shadow:0 12px 30px #8b5cf618
 }
 
 .activity-header{
- display:flex;justify-content:space-between;align-items:center;
- gap:12px;flex-wrap:wrap;margin-bottom:18px
+ display:flex;justify-content:space-between;
+ align-items:center;gap:12px;flex-wrap:wrap;
+ margin-bottom:18px
 }
 
 .activity-title{
@@ -82,43 +72,71 @@ h1{
 
 .activity-date{
  padding:7px 16px;border-radius:20px;
- border:1px solid #e9d5ff;
  background:#f8efff;color:#7c3aed;
- font-size:.85rem;font-weight:600;white-space:nowrap;
- box-shadow:0 4px 10px #a855f714
+ border:1px solid #e9d5ff;
+ font-size:.85rem;font-weight:600
 }
 
 .activity-desc{
  color:#5c5367;font-size:1rem;
- line-height:1.9;margin-bottom:27px
+ line-height:1.9;margin-bottom:28px
 }
 
 .activity-desc strong{color:#7c3aed}
 
-.activity-gallery{
- display:grid;grid-template-columns:1fr 1fr;gap:20px
+/* โลโก้มหาวิทยาลัย */
+.logo-section{
+ text-align:center;
+ padding:25px 20px;
+ margin-bottom:22px;
+ border-radius:28px;
+ background:linear-gradient(135deg,#fff,#faf3ff);
+ border:2px solid #ead8ff;
+ box-shadow:0 10px 25px #8b5cf620
 }
 
-.cert-box{
- padding:12px;background:#fff;
- border:2px solid #f0e3ff;border-radius:24px;
- box-shadow:0 8px 20px #a855f718;
- transition:.3s
-}
-
-.cert-box:hover{
- transform:translateY(-4px) scale(1.01);
- border-color:#c084fc;
- box-shadow:0 12px 25px #a855f730
-}
-
-.activity-img{
- width:100%;height:240px;
- object-fit:cover;border-radius:16px;display:block
+.logo-title{
+ color:#8b5ac2;
+ font-size:.9rem;
+ margin-bottom:12px
 }
 
 .logo-img{
- object-fit:contain;background:#fcf8ff
+ width:230px;
+ height:230px;
+ object-fit:contain;
+ display:block;
+ margin:auto;
+ filter:drop-shadow(0 12px 15px #8b5cf633);
+ transition:.3s
+}
+
+.logo-img:hover{
+ transform:scale(1.05)
+}
+
+/* รูปบรรยากาศ */
+.photo-section{
+ padding:12px;
+ background:#fff;
+ border:2px solid #ead8ff;
+ border-radius:28px;
+ box-shadow:0 10px 25px #8b5cf620
+}
+
+.photo-label{
+ text-align:center;
+ color:#7c3aed;
+ font-weight:600;
+ padding:12px 0 15px
+}
+
+.campus-img{
+ width:100%;
+ height:330px;
+ object-fit:cover;
+ border-radius:20px;
+ display:block
 }
 
 .back-button{
@@ -132,12 +150,10 @@ h1{
 }
 
 .back-button:hover{
- transform:translateY(-4px) scale(1.03);
- box-shadow:0 16px 30px #a855f755
+ transform:translateY(-4px) scale(1.03)
 }
 
-.arrow{font-size:18px;transition:.3s}
-.back-button:hover .arrow{transform:translateX(-5px)}
+.arrow{font-size:18px}
 
 .footer{
  margin-top:25px;text-align:center;
@@ -150,11 +166,9 @@ h1{
  .activity-card{padding:30px 18px 22px;border-radius:32px}
  h1{font-size:1.6rem}
  .activity-item{padding:20px}
- .activity-title{font-size:1.05rem}
  .activity-desc{font-size:.9rem;line-height:1.8}
- .activity-gallery{grid-template-columns:1fr}
- .activity-img{height:210px}
- .back-button{padding:13px 27px}
+ .logo-img{width:200px;height:200px}
+ .campus-img{height:230px}
 }
 </style>
 </head>
@@ -168,7 +182,6 @@ h1{
 <div class="floating f5">🪻</div>
 
 <div class="container">
-
 <div class="activity-card">
 
 <h1>✨ Target Faculty & University 🌟</h1>
@@ -189,20 +202,20 @@ h1{
 <strong>ทำไมต้องมหิดล:</strong> ประทับใจในบรรยากาศการเรียนที่ร่มรื่น เต็มไปด้วยพื้นที่สีเขียว และสิ่งแวดล้อมที่เอื้อต่อการพัฒนาตัวเองของมหาวิทยาลัยมหิดล (วิทยาเขตศาลายา) อีกทั้งยังมั่นใจในศักยภาพของหลักสูตรและความพร้อมของโรงพยาบาลสัตว์ประศุอาทรที่มีคลินิก Exotic Pet รองรับเคสจริง ทำให้เชื่อมั่นว่าที่นี่จะหล่อหลอมให้เติบโตไปเป็นสัตวแพทย์ที่มีความรู้ ทักษะ และพร้อมยกระดับมาตรฐานการดูแลสัตว์เลี้ยงพิเศษในประเทศไทยได้อย่างแท้จริงค่ะ
 </p>
 
-<div class="activity-gallery">
-
-<div class="cert-box">
-<img src="IMG_0693.png"
-alt="ตรามหาวิทยาลัยมหิดล"
-class="activity-img logo-img">
+<!-- โลโก้มหาวิทยาลัย -->
+<div class="logo-section">
+<div class="logo-title">✦ MY DREAM UNIVERSITY ✦</div>
+<img src="โลโก้มหิดล.jpeg"
+     alt="ตรามหาวิทยาลัยมหิดล"
+     class="logo-img">
 </div>
 
-<div class="cert-box">
-<img src="IMG_0694.jpeg"
-alt="บรรยากาศมหาวิทยาลัยมหิดล ศาลายา"
-class="activity-img">
-</div>
-
+<!-- รูปบรรยากาศ -->
+<div class="photo-section">
+<div class="photo-label">🌷 บรรยากาศมหาวิทยาลัยมหิดล ศาลายา 🌷</div>
+<img src="มหิดล.jpeg"
+     alt="บรรยากาศมหาวิทยาลัยมหิดล ศาลายา"
+     class="campus-img">
 </div>
 
 </div>
