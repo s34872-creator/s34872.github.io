@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | Kantida Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Fredoka','Kanit',sans-serif}
+body{min-height:100vh;padding:35px 18px;background:linear-gradient(135deg,#9379C2,#B19CD8,#CCB7E5,#E6D1F2);overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;border-radius:50%;filter:blur(100px);z-index:-1}
+body:before{width:350px;height:350px;background:#fff8;top:5%;left:3%}
+body:after{width:400px;height:400px;background:#c084fc66;bottom:0;right:3%}
+
+.float{position:fixed;font-size:28px;opacity:.55;animation:float 10s linear infinite;z-index:0}
+.f1{left:6%}.f2{left:85%;animation-delay:3s}.f3{left:45%;animation-delay:6s}
+@keyframes float{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-120vh) rotate(360deg)}}
+
+.container{max-width:700px;margin:auto;position:relative;z-index:2}
+.header,.contact-box{background:#ffffffb8;backdrop-filter:blur(20px);border:2px solid #fff;border-radius:35px;box-shadow:0 15px 35px #7045a822}
+.header{text-align:center;padding:30px 20px;margin-bottom:25px}
+.header h1{color:#7045A8;font-size:2rem}.header p{color:#725B85;margin-top:7px}
+
+.contact-box{padding:25px}
+.contact{display:flex;align-items:center;gap:16px;text-decoration:none;background:#ffffffc9;border:2px solid #eadcff;border-radius:22px;padding:15px 18px;margin-bottom:15px;color:#5d5365;transition:.3s}
+.contact:hover{transform:translateY(-4px);border-color:#c084fc;box-shadow:0 10px 20px #8b5cf622}
+.icon{width:52px;height:52px;display:grid;place-items:center;border-radius:17px;background:linear-gradient(135deg,#d8b4fe,#b98be8);font-size:25px}
+.info strong{display:block;color:#7045A8;font-size:1.05rem}.info span{font-size:.9rem;color:#786b82}.arrow{margin-left:auto;color:#9b72c7;font-size:25px}
+.btn{display:block;width:max-content;margin:28px auto 0;padding:12px 28px;color:white;text-decoration:none;background:linear-gradient(135deg,#b98be8,#8b5fc4);border:2px solid white;border-radius:50px;box-shadow:0 8px 20px #7045a833;transition:.3s}
+.btn:hover{transform:translateY(-3px)}
+
+.footer{margin-top:25px;text-align:center;color:#765A96;font-size:13px;letter-spacing:1px}
+
+@media(max-width:600px){.contact-box{padding:20px 15px}.header h1{font-size:1.7rem}}
+</style>
+</head>
+
+<body>
+<div class="float f1">🐰</div><div class="float f2">💜</div><div class="float f3">✨</div>
+
+<div class="container">
+    <div class="header">
+        <h1>💌 Contact Me</h1>
+        <p>ช่องทางการติดต่อของฉัน ♡</p>
+    </div>
+
+    <div class="contact-box">
+
+        <a class="contact" href="https://www.facebook.com/kantida.teepakakorn?" target="_blank">
+            <div class="icon">💙</div>
+            <div class="info"><strong>Facebook</strong><span> Facebook</span></div>
+            <div class="arrow">›</div>
+        </a>
+
+        <a class="contact" href="https://www.instagram.com/k1ryqq?stkn=N2xzZ2Q2OHpnbzdj" target="_blank">
+            <div class="icon">📷</div>
+            <div class="info"><strong>Instagram</strong><span>@k1ryqq</span></div>
+            <div class="arrow">›</div>
+        </a>
+
+        <a class="contact" href="https://line.me/ti/p/gvdxy7qRx_" target="_blank">
+            <div class="icon">💚</div>
+            <div class="info"><strong>LINE</strong><span>ID: khxqz_</span></div>
+            <div class="arrow">›</div>
+        </a>
+
+        <a href="portfolio.html" class="btn">← Back to Contents</a>
+    </div>
+
+    <div class="footer">✦ Make by <b>Kantida Khaow</b> ♡</div>
+</div>
+</body>
+</html>
