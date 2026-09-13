@@ -8,185 +8,188 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Fredoka','Kanit',sans-serif}
-body{
-    min-height:100vh;padding:35px 15px;overflow-x:hidden;
-    background:
-    radial-gradient(circle at 8% 15%,#e9d5ff 0,transparent 24%),
-    radial-gradient(circle at 92% 85%,#d8b4fe99 0,transparent 28%),
-    linear-gradient(135deg,#fffaff,#f7efff 50%,#eadcff);
-    position:relative;
-}
-body:before,body:after{
-    content:"";position:fixed;border-radius:50%;filter:blur(90px);
-    pointer-events:none;z-index:0;
-}
-body:before{width:280px;height:280px;background:#d8b4fe66;top:-80px;left:-80px}
-body:after{width:330px;height:330px;background:#c084fc44;bottom:-100px;right:-80px}
 
-.floating{
-    position:fixed;font-size:1.8rem;opacity:.5;z-index:1;
-    pointer-events:none;animation:float 15s linear infinite;
-    filter:drop-shadow(0 5px 8px #a855f733)
+body{
+ min-height:100vh;padding:35px 15px;overflow-x:hidden;position:relative;
+ background:linear-gradient(135deg,#fdf8ff,#eadcff,#cdb5e9,#f8efff);
 }
-.f1{left:5%}.f2{left:20%;animation-delay:3s}.f3{left:40%;animation-delay:6s}
-.f4{left:60%;animation-delay:9s}.f5{left:80%;animation-delay:12s}
-@keyframes float{
-    from{transform:translateY(110vh) rotate(0) scale(.9)}
-    to{transform:translateY(-120vh) rotate(360deg) scale(1.1)}
+
+body:before,body:after{
+ content:"";position:fixed;border-radius:50%;filter:blur(80px);
+ pointer-events:none;z-index:0;
 }
+body:before{width:300px;height:300px;background:#fff8;top:-100px;left:-80px}
+body:after{width:350px;height:350px;background:#b98de955;bottom:-120px;right:-100px}
 
 .container{max-width:900px;margin:auto;position:relative;z-index:2}
 
 .header,.project-card{
-    background:#ffffffb8;backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
-    border:2px solid #fff;border-radius:35px;
-    box-shadow:0 20px 45px #8b5cf61c,inset 0 1px 0 #fff;
+ background:#ffffffaa;backdrop-filter:blur(22px);
+ border:2px solid #fff;border-radius:35px;
+ box-shadow:0 20px 50px #7650a525,inset 0 1px #fff;
 }
 
 .header{
-    padding:35px 25px;margin-bottom:25px;text-align:center;
-    position:relative;overflow:hidden;
+ padding:38px 25px;margin-bottom:25px;text-align:center;
+ position:relative;overflow:hidden;
 }
+
 .header:before{
-    content:"✦  ♡  ✦";position:absolute;top:10px;right:20px;
-    color:#d8b4fe;font-size:15px;letter-spacing:5px;
+ content:"✦ ♡ ✦ ♡ ✦";position:absolute;top:13px;right:22px;
+ color:#b48add;font-size:14px;letter-spacing:4px;
 }
+
+.header:after{
+ content:"🐰";position:absolute;left:20px;bottom:10px;
+ font-size:42px;transform:rotate(-8deg);
+ filter:drop-shadow(0 5px 8px #8d62b633);
+}
+
 .header h1{
-    color:#7c3aed;font-size:1.9rem;font-weight:600;
-    text-shadow:0 3px 8px #8b5cf633;
+ color:#7040a8;font-size:1.9rem;font-weight:600;
+ text-shadow:0 4px 10px #8b5cf633;
 }
+
 .header p{
-    color:#a855f7;margin-top:10px;font-size:1rem;font-weight:500;
+ color:#9863c5;margin-top:10px;font-size:1rem;font-weight:500;
 }
+
 .header p:after{
-    content:"  🪻  ✦  🐰  ✦  🪻";
-    display:block;margin-top:8px;font-size:.75rem;opacity:.8;
+ content:"✦  🪻  ♡  🌷  ♡  🪻  ✦";
+ display:block;margin-top:10px;font-size:.8rem;opacity:.85;
 }
 
 .project-card{
-    padding:30px;margin-bottom:25px;position:relative;
-    overflow:hidden;transition:.35s ease;
+ padding:30px;margin-bottom:25px;position:relative;
+ overflow:hidden;transition:.35s ease;
 }
+
 .project-card:before{
-    content:"";position:absolute;width:100px;height:100px;
-    background:#e9d5ff66;border-radius:50%;filter:blur(30px);
-    right:-35px;top:-35px;
+ content:"";position:absolute;width:130px;height:130px;
+ background:#d9bdf866;border-radius:50%;filter:blur(35px);
+ right:-45px;top:-45px;
 }
+
+.project-card:after{
+ content:"♡";position:absolute;right:22px;bottom:18px;
+ color:#c5a1df55;font-size:55px;
+}
+
 .project-card:hover{
-    transform:translateY(-5px);
-    border-color:#d8b4fe;
-    box-shadow:0 25px 50px #8b5cf626,0 0 0 5px #e9d5ff55;
+ transform:translateY(-6px);
+ box-shadow:0 25px 55px #7650a533,0 0 0 5px #eadcff88;
 }
+
 .project-card h3{
-    color:#6d28d9;font-size:1.2rem;font-weight:600;
-    margin-bottom:12px;position:relative;
+ color:#7040a8;font-size:1.2rem;font-weight:600;
+ margin-bottom:12px;position:relative;
 }
+
 .project-card p{
-    color:#5b5266;line-height:1.8;font-size:1rem;
-    margin-bottom:20px;position:relative;
+ color:#5f536b;line-height:1.8;font-size:1rem;
+ margin-bottom:20px;position:relative;
 }
 
 .single-cert-box{
-    padding:10px;background:#fff;
-    border:2px solid #f0e4ff;border-radius:24px;
-    box-shadow:0 8px 20px #a855f714;
-    transition:.35s ease;position:relative;
+ padding:10px;background:#fff;border:2px solid #eee2fa;
+ border-radius:24px;box-shadow:0 10px 25px #7650a514;
+ transition:.35s;position:relative;
 }
+
 .single-cert-box:before{
-    content:"♡";position:absolute;top:12px;right:12px;
-    width:27px;height:27px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    background:#ffffffdd;color:#c084fc;z-index:2;
-    box-shadow:0 3px 10px #8b5cf622;
+ content:"♡";position:absolute;top:12px;right:12px;
+ width:28px;height:28px;border-radius:50%;
+ display:grid;place-items:center;background:#ffffffdd;
+ color:#a86ed0;z-index:2;
+ box-shadow:0 4px 12px #7650a522;
 }
+
 .single-cert-box:hover{
-    transform:scale(1.012);border-color:#c084fc;
-    box-shadow:0 12px 25px #a855f722;
+ transform:scale(1.012);border-color:#c39add;
+ box-shadow:0 15px 30px #7650a522;
 }
+
 .single-cert-img{
-    width:100%;max-height:450px;object-fit:contain;
-    border-radius:16px;display:block;
+ width:100%;max-height:450px;object-fit:contain;
+ border-radius:16px;display:block;
 }
 
 .btn{
-    display:inline-flex;align-items:center;justify-content:center;
-    gap:10px;margin-top:25px;padding:14px 32px;color:#fff;
-    text-decoration:none;font-size:1rem;font-weight:500;
-    background:linear-gradient(135deg,#d8b4fe,#c084fc,#a855f7);
-    border:3px solid #fff;border-radius:50px;
-    box-shadow:0 10px 22px #a855f744,0 0 0 4px #e9d5ff88;
-    transition:.35s cubic-bezier(.34,1.56,.64,1);
+ display:inline-flex;align-items:center;justify-content:center;
+ gap:10px;margin-top:25px;padding:14px 32px;color:#fff;
+ text-decoration:none;font-size:1rem;font-weight:500;
+ background:linear-gradient(135deg,#cba7e8,#aa79d1,#8551b5);
+ border:3px solid #fff;border-radius:50px;
+ box-shadow:0 10px 25px #8551b544,0 0 0 4px #eadcff99;
+ transition:.35s;
 }
+
 .btn:hover{
-    transform:translateY(-5px) scale(1.04);
-    box-shadow:0 17px 30px #a855f755,0 0 0 7px #e9d5ff99;
+ transform:translateY(-5px) scale(1.04);
+ box-shadow:0 18px 35px #8551b555,0 0 0 7px #eadcffaa;
 }
-.arrow{font-size:18px;transition:.3s}
+
+.arrow{font-size:19px;transition:.3s}
 .btn:hover .arrow{transform:translateX(-6px)}
 
 @media(max-width:600px){
-    .header{padding:28px 18px;border-radius:30px}
-    .header h1{font-size:1.5rem}
-    .header p{font-size:.9rem}
-    .project-card{padding:21px;border-radius:27px}
-    .project-card h3{font-size:1.05rem}
-    .project-card p{font-size:.9rem}
-    .btn{width:100%;max-width:260px}
+ .header{padding:30px 18px;border-radius:30px}
+ .header h1{font-size:1.5rem}
+ .header p{font-size:.9rem}
+ .header:after{font-size:32px}
+ .project-card{padding:21px;border-radius:27px}
+ .project-card h3{font-size:1.05rem}
+ .project-card p{font-size:.9rem}
+ .btn{width:100%;max-width:260px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="floating f1">🐰</div>
-<div class="floating f2">💜</div>
-<div class="floating f3">⭐</div>
-<div class="floating f4">🌷</div>
-<div class="floating f5">🪻</div>
-
 <div class="container">
 
 <div class="header">
-    <h1>🐰 Ethics & Leadership Certificates 🐰</h1>
-    <p>เกียรติบัตรด้านคุณธรรม จริยธรรม ผู้นำเยาวชน และจิตสาธารณะ 💜</p>
+ <h1>🐰 Ethics & Leadership Certificates 🐰</h1>
+ <p>เกียรติบัตรด้านคุณธรรม จริยธรรม ผู้นำเยาวชน และจิตสาธารณะ 💜</p>
 </div>
 
 <div class="project-card">
-    <h3>🌟 ค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน</h3>
-    <p>
-        เข้าร่วมกิจกรรมค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน ประจำปีการศึกษา 2568 จัดโดยโรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" เพื่อปลูกฝังคุณธรรม จริยธรรม การมีวินัยในตนเอง และจิตสาธารณะในการอยู่ร่วมกันในสังคม
-    </p>
-    <div class="single-cert-box">
-        <img src="IMG_0640.jpeg" alt="เกียรติบัตรค่ายพัฒนาคุณธรรม จริยธรรม" class="single-cert-img">
-    </div>
+ <h3>🌟 ค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน</h3>
+ <p>
+ เข้าร่วมกิจกรรมค่ายพัฒนาคุณธรรม จริยธรรมนักเรียน ประจำปีการศึกษา 2568 จัดโดยโรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" เพื่อปลูกฝังคุณธรรม จริยธรรม การมีวินัยในตนเอง และจิตสาธารณะในการอยู่ร่วมกันในสังคม
+ </p>
+ <div class="single-cert-box">
+  <img src="IMG_0640.jpeg" alt="เกียรติบัตรค่ายพัฒนาคุณธรรม จริยธรรม" class="single-cert-img">
+ </div>
 </div>
 
 <div class="project-card">
-    <h3>🛡️ โครงการ STRONG CAMP เยาวชนไทยต้านโกง จังหวัดชลบุรี</h3>
-    <p>
-        ผ่านการอบรมโครงการ STRONG CAMP เยาวชนไทยต้านโกง (STRONG CAMP - Young Coaches) ระดับอำเภอ สนับสนุนโดยกองทุน ป.ป.ช. เพื่อพัฒนาทักษะแกนนำเยาวชนในการส่งเสริมความซื่อสัตย์สุจริตและการมีจิตพอเพียง
-    </p>
-    <div class="single-cert-box">
-        <img src="IMG_0641.jpeg" alt="เกียรติบัตร STRONG CAMP เยาวชนไทยต้านโกง" class="single-cert-img">
-    </div>
+ <h3>🛡️ โครงการ STRONG CAMP เยาวชนไทยต้านโกง จังหวัดชลบุรี</h3>
+ <p>
+ ผ่านการอบรมโครงการ STRONG CAMP เยาวชนไทยต้านโกง (STRONG CAMP - Young Coaches) ระดับอำเภอ สนับสนุนโดยกองทุน ป.ป.ช. เพื่อพัฒนาทักษะแกนนำเยาวชนในการส่งเสริมความซื่อสัตย์สุจริตและการมีจิตพอเพียง
+ </p>
+ <div class="single-cert-box">
+  <img src="IMG_0641.jpeg" alt="เกียรติบัตร STRONG CAMP เยาวชนไทยต้านโกง" class="single-cert-img">
+ </div>
 </div>
 
 <div class="project-card">
-    <h3>💊 โครงการอบรม "แกนนำ อย.น้อย"</h3>
-    <p>
-        เข้าร่วมการอบรมโครงการแกนนำ อย.น้อย ประจำปีการศึกษา 2568 ณ โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" เพื่อทำหน้าที่เผยแพร่ความรู้ด้านการบริโภคผลิตภัณฑ์สุขภาพอย่างปลอดภัยให้แก่เพื่อนนักเรียนและชุมชน
-    </p>
-    <div class="single-cert-box">
-        <img src="IMG_0644.jpeg" alt="เกียรติบัตรแกนนำ อย.น้อย" class="single-cert-img">
-    </div>
+ <h3>💊 โครงการอบรม "แกนนำ อย.น้อย"</h3>
+ <p>
+ เข้าร่วมการอบรมโครงการแกนนำ อย.น้อย ประจำปีการศึกษา 2568 ณ โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์" เพื่อทำหน้าที่เผยแพร่ความรู้ด้านการบริโภคผลิตภัณฑ์สุขภาพอย่างปลอดภัยให้แก่เพื่อนนักเรียนและชุมชน
+ </p>
 
-    <div style="text-align:center">
-        <a href="portfolio.html" class="btn">
-            <span class="arrow">←</span>
-            <span>Back to Contents</span>
-        </a>
-    </div>
+ <div class="single-cert-box">
+  <img src="IMG_0644.jpeg" alt="เกียรติบัตรแกนนำ อย.น้อย" class="single-cert-img">
+ </div>
+
+ <div style="text-align:center">
+  <a href="portfolio.html" class="btn">
+   <span class="arrow">←</span>
+   <span>Back to Contents</span>
+  </a>
+ </div>
 </div>
 
 </div>
