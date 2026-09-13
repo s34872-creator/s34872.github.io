@@ -31,9 +31,7 @@ body:after{width:400px;height:400px;background:#b58cda;bottom:-160px;right:-100p
 .f3{bottom:12%;left:8%;animation-delay:1s}
 .f4{bottom:18%;right:8%;font-size:45px;animation-delay:2s}
 
-@keyframes float{
-    50%{transform:translateY(-13px) rotate(5deg)}
-}
+@keyframes float{50%{transform:translateY(-13px) rotate(5deg)}}
 
 .container{
     width:min(100%,1000px);position:relative;z-index:2
@@ -44,8 +42,6 @@ body:after{width:400px;height:400px;background:#b58cda;bottom:-160px;right:-100p
     padding:35px;backdrop-filter:blur(25px);
     box-shadow:0 25px 70px #53336b33
 }
-
-/* ===== TOP ===== */
 
 .top{
     display:grid;grid-template-columns:38% 62%;
@@ -90,20 +86,14 @@ h1{
     text-shadow:0 4px 12px #60407a33
 }
 
-.eng{
-    color:#9478ae;font-size:17px;margin-top:3px
-}
+.eng{color:#9478ae;font-size:17px;margin-top:3px}
 
 .intro{
     margin-top:20px;line-height:1.8;font-family:'Kanit',sans-serif;
     font-size:16px
 }
 
-.name{
-    color:#76549e;font-weight:600
-}
-
-/* ===== INFO ===== */
+.name{color:#76549e;font-weight:600}
 
 .info{
     display:grid;grid-template-columns:1fr 1fr;
@@ -122,8 +112,6 @@ h1{
     display:block;color:#76549e;margin-bottom:5px
 }
 
-/* ===== ABOUT ===== */
-
 .bottom{
     display:grid;grid-template-columns:1.5fr 1fr;
     gap:15px;margin-top:18px
@@ -134,15 +122,11 @@ h1{
     border:2px solid #f1e6fa
 }
 
-.box h2{
-    color:#684783;font-size:21px;margin-bottom:10px
-}
+.box h2{color:#684783;font-size:21px;margin-bottom:10px}
 
 .box p{
     font-family:'Kanit',sans-serif;line-height:1.8;font-size:15px
 }
-
-/* ===== QUOTE ===== */
 
 .quote{
     display:flex;flex-direction:column;justify-content:center;
@@ -152,28 +136,33 @@ h1{
 
 .quote h2{color:#fff}
 
-.quote strong{
-    font-size:20px;line-height:1.6
-}
+.quote strong{font-size:20px;line-height:1.6}
 
-.quote small{
-    margin-top:10px;opacity:.9
-}
+.quote small{margin-top:10px;opacity:.9}
 
-/* ===== BUTTON ===== */
+/* ===== BACK BUTTON ===== */
 
 .back{
-    display:flex;width:max-content;margin:25px auto 0;
+    display:flex;width:max-content;margin:28px auto 0;
     align-items:center;gap:10px;padding:13px 27px;
     color:#fff;text-decoration:none;border:3px solid #fff;
     border-radius:50px;
     background:linear-gradient(135deg,#9275bc,#b49ad4,#cbb4e1);
-    box-shadow:0 10px 25px #60407a44;transition:.3s
+    box-shadow:0 10px 25px #60407a44;
+    transition:.3s
 }
 
-.back:hover{transform:translateY(-5px) scale(1.03)}
+.back:hover{
+    transform:translateY(-5px) scale(1.03);
+    box-shadow:0 15px 30px #60407a55
+}
 
-/* ===== MOBILE ===== */
+.footer{
+    margin-top:25px;text-align:center;
+    color:#765A96;font-size:13px;letter-spacing:1px
+}
+
+.footer b{color:#65447f}
 
 @media(max-width:750px){
     .top,.bottom{grid-template-columns:1fr}
@@ -189,29 +178,19 @@ h1{
     .info{grid-template-columns:1fr}
     .f1,.f4{font-size:40px}
 }
-    .footer{
- margin-top:25px;
- text-align:center;
- color:#765A96;
- font-size:13px;
- letter-spacing:1px;
-}
 </style>
 </head>
 
 <body>
 
-<!-- ตกแต่ง -->
 <div class="floating f1">🐰</div>
 <div class="floating f2">✦</div>
 <div class="floating f3">💜</div>
 <div class="floating f4">🐇</div>
 
-
 <div class="container">
 <div class="card">
 
-    <!-- TOP -->
     <div class="top">
 
         <div class="photo-box">
@@ -220,27 +199,21 @@ h1{
         </div>
 
         <div class="right">
-
             <div class="tag">🐰 ✦ PERSONAL PROFILE</div>
 
             <h1>กานต์ธิดา ทีปกากร</h1>
 
-            <div class="eng">
-                Kantida Teepakakorn
-            </div>
+            <div class="eng">Kantida Teepakakorn</div>
 
             <p class="intro">
-               สนใจสัตว์เลี้ยง Exotic โดยเฉพาะกระต่าย
+                สนใจสัตว์เลี้ยง Exotic โดยเฉพาะกระต่าย
                 มีความฝันที่จะศึกษาต่อด้าน
                 <b>Exotic Pet Veterinarian</b>
             </p>
-
         </div>
 
     </div>
 
-
-    <!-- INFO -->
     <div class="info">
 
         <div class="item">
@@ -285,14 +258,10 @@ h1{
 
     </div>
 
-
-    <!-- ABOUT + QUOTE -->
     <div class="bottom">
 
         <div class="box">
-
             <h2>💜 About Me</h2>
-
             <p>
                 ฉันเป็นคนที่ชื่นชอบวิชาชีววิทยาและมีความสนใจเกี่ยวกับสัตว์
                 โดยเฉพาะสัตว์เลี้ยงชนิดพิเศษ (Exotic Pets)
@@ -301,12 +270,9 @@ h1{
                 ฉันตั้งใจพัฒนาตัวเองและเรียนรู้สิ่งใหม่ ๆ
                 เพื่อก้าวไปสู่เป้าหมายในอนาคต
             </p>
-
         </div>
 
-
         <div class="box quote">
-
             <h2>✨ คติประจำใจ</h2>
 
             <strong>
@@ -314,20 +280,19 @@ h1{
                 แล้วไม่ต้องเสียดายทีหลัง”
             </strong>
 
-            <small>
-                — My little motivation 💜
-            </small>
-
+            <small>— My little motivation 💜</small>
         </div>
 
     </div>
 
-
-    <!-- BUTTON -->
+    <!-- ปุ่มย้อนกลับ -->
     <a href="portfolio.html" class="back">
         ← Back to Content 🐰
     </a>
-    <div class="footer">✦ Make by <b>Kantida Khaow</b> ♡</div>
+
+    <div class="footer">
+        ✦ Make by <b>Kantida Khaow</b> ♡
+    </div>
 
 </div>
 </div>
