@@ -2,383 +2,232 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Works | Kantida Portfolio</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Fredoka', 'Kanit', sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Fredoka','Kanit',sans-serif}
 
 body{
-    background: linear-gradient(135deg, #fbf7ff 0%, #f3e8ff 50%, #e9d5ff 100%);
     min-height:100vh;
-    padding:40px 20px;
+    padding:30px 18px;
+    background:linear-gradient(135deg,#9379C2,#B19CD8,#CCB7E5,#E6D1F2);
     overflow-x:hidden;
-    position: relative;
 }
 
-/* ตกแต่งพื้นหลังเรืองแสงละมุน */
-body::before{
-    content:"";
-    position:fixed;
-    width:350px;
-    height:350px;
-    background:#e9d5ff;
-    border-radius:50%;
-    filter:blur(120px);
-    opacity:0.4;
-    top:5%;
-    left:5%;
-    z-index: 0;
+body:before,body:after{
+    content:"";position:fixed;border-radius:50%;filter:blur(100px);
+    z-index:-1
 }
-
-body::after{
-    content:"";
-    position:fixed;
-    width:400px;
-    height:400px;
-    background:#c084fc;
-    border-radius:50%;
-    filter:blur(140px);
-    opacity:0.2;
-    bottom:0;
-    right:5%;
-    z-index: 0;
-}
-
-/* อิโมจิลอย */
+body:before{width:330px;height:330px;background:#fff8;top:5%;left:3%}
+body:after{width:380px;height:380px;background:#c084fc88;bottom:0;right:3%}
 
 .floating{
-    position:fixed;
-    font-size:2rem;
-    opacity:0.55;
-    filter: drop-shadow(0 4px 6px rgba(192, 132, 252, 0.15));
-    animation:float 15s linear infinite;
-    z-index: 1;
-    pointer-events: none;
+    position:fixed;font-size:28px;opacity:.55;
+    animation:float 12s linear infinite;z-index:0
 }
+.f1{left:5%}.f2{left:25%;animation-delay:2s}
+.f3{left:50%;animation-delay:5s}.f4{left:75%;animation-delay:8s}
 
 @keyframes float{
-    from{
-        transform:translateY(110vh) rotate(0deg) scale(0.9);
-    }
-
-    to{
-        transform:translateY(-120vh) rotate(360deg) scale(1.1);
-    }
+    from{transform:translateY(110vh) rotate(0)}
+    to{transform:translateY(-120vh) rotate(360deg)}
 }
 
-.f1{left:5%;animation-delay:0s;}
-.f2{left:20%;animation-delay:3s;}
-.f3{left:40%;animation-delay:6s;}
-.f4{left:60%;animation-delay:9s;}
-.f5{left:80%;animation-delay:12s;}
+.container{max-width:900px;margin:auto;position:relative;z-index:2}
 
-
-/* CONTAINER */
-
-.container{
-    max-width:900px;
-    margin:auto;
-    position:relative;
-    z-index:10;
+.header,.work{
+    background:#ffffffb8;
+    backdrop-filter:blur(20px);
+    border:2px solid #fff;
+    border-radius:32px;
+    box-shadow:0 15px 35px #7c3aed18;
 }
-
-
-/* HEADER */
 
 .header{
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    border-radius: 35px;
-    padding: 35px 30px;
-    margin-bottom: 30px;
-    box-shadow: 
-        0 20px 40px rgba(168, 85, 247, 0.08),
-        0 2px 10px rgba(255, 255, 255, 0.8) inset;
     text-align:center;
+    padding:30px 20px;
+    margin-bottom:25px;
 }
 
-.header-text h1{
-    color: #8b5cf6;
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.15));
+.header h1{
+    color:#7045a8;
+    font-size:2rem;
 }
 
-.header-text p{
-    color:#7c3aed;
-    margin-top: 8px;
-    font-size: 1rem;
-    font-weight: 500;
+.header p{
+    color:#725b85;
+    margin-top:7px;
 }
 
-
-/* CARD */
-
-.project-card{
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    border-radius: 35px;
-    padding: 35px;
-    margin-bottom: 30px;
-    box-shadow: 
-        0 20px 40px rgba(168, 85, 247, 0.08),
-        0 2px 10px rgba(255, 255, 255, 0.8) inset;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.work{
+    padding:25px;
+    margin-bottom:25px;
 }
 
-.project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 25px 45px rgba(168, 85, 247, 0.12),
-        0 2px 10px rgba(255, 255, 255, 0.9) inset;
+.work h2{
+    color:#7045a8;
+    font-size:1.25rem;
+    margin-bottom:8px;
 }
 
-.project-card h3{
-    color:#6d28d9;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    line-height: 1.4;
+.work p{
+    color:#5d5365;
+    line-height:1.7;
+    margin-bottom:18px;
 }
 
-.project-card p{
-    color:#5b5266;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-size: 0.98rem;
-}
-
-/* =================================
-   ส่วนจัดวางรูปภาพ (Gallery & Single)
-   ================================= */
-
-/* กริดสำหรับ 2 รูป (มหิดล) */
-.activity-gallery-2{
+.gallery{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
 }
 
-.img-box{
-    background:#ffffff;
-    border: 2px solid #f3e8ff;
-    border-radius: 20px;
-    padding: 8px;
-    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.05);
-    overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+.photo{
+    background:#fff;
+    padding:8px;
+    border-radius:20px;
+    border:2px solid #eadcff;
+    box-shadow:0 6px 15px #8b5cf615;
 }
 
-.img-box:hover {
-    transform: scale(1.02);
-    border-color: #c084fc;
-}
-
-.activity-img{
+.photo img{
     width:100%;
-    height:250px;
+    height:260px;
     object-fit:cover;
     border-radius:14px;
     display:block;
 }
 
-/* สำหรับรูปเดียว (เกียรติบัตรตอบปัญหา) */
-.single-cert-box{
-    width:100%;
-    background:#ffffff;
-    border: 2px solid #f3e8ff;
-    border-radius: 24px;
-    padding: 12px;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.05);
-    overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+.cert{
+    background:#fff;
+    padding:10px;
+    border-radius:20px;
+    border:2px solid #eadcff;
 }
 
-.single-cert-box:hover {
-    transform: scale(1.01);
-    border-color: #c084fc;
-}
-
-.single-cert-img{
+.cert img{
     width:100%;
     height:auto;
-    max-height:450px;
+    max-height:500px;
     object-fit:contain;
-    border-radius: 16px;
+    border-radius:14px;
     display:block;
 }
 
-
-/* =================================
-   ปุ่ม Back to Contents
-   ================================= */
-
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    margin-top:25px;
-    padding:14px 32px;
+    display:block;
+    width:max-content;
+    margin:30px auto 5px;
+    padding:12px 28px;
     color:white;
     text-decoration:none;
-    font-size: 1rem;
-    font-weight: 500;
-    background:linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-    border: 3px solid #ffffff;
+    background:linear-gradient(135deg,#b98be8,#8b5fc4);
+    border:2px solid white;
     border-radius:50px;
-    box-shadow: 
-        0 10px 20px rgba(168, 85, 247, 0.25),
-        0 0 0 4px rgba(233, 213, 255, 0.5);
-    transition:all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow:0 8px 20px #7045a833;
+    transition:.3s;
 }
 
+.btn:hover{transform:translateY(-3px)}
 
-/* ลูกศร */
-
-.btn .arrow{
-    font-size: 18px;
-    transition:transform .3s ease;
+@media(max-width:600px){
+    .gallery{grid-template-columns:1fr}
+    .photo img{height:220px}
+    .work{padding:20px}
 }
-
-
-/* ตอนเอาเมาส์ชี้ */
-
-.btn:hover{
-    transform:translateY(-4px) scale(1.03);
-    background:linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
-    box-shadow: 
-        0 14px 25px rgba(168, 85, 247, 0.35),
-        0 0 0 6px rgba(233, 213, 255, 0.7);
+    .footer{
+ margin-top:25px;
+ text-align:center;
+ color:#765A96;
+ font-size:13px;
+ letter-spacing:1px;
 }
-
-
-/* ลูกศรขยับ */
-
-.btn:hover .arrow{
-    transform:translateX(-5px);
-}
-
-
-/* ตอนกด */
-
-.btn:active{
-    transform:translateY(0) scale(0.97);
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-    .project-card {
-        padding: 25px 18px;
-        border-radius: 30px;
-    }
-    .activity-gallery-2 {
-        grid-template-columns: 1fr;
-    }
-    .activity-img {
-        height: 200px;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- อิโมจิลอย -->
-
 <div class="floating f1">🐰</div>
 <div class="floating f2">💜</div>
-<div class="floating f3">⭐</div>
+<div class="floating f3">✨</div>
 <div class="floating f4">🌷</div>
-<div class="floating f5">🪻</div>
-
 
 <div class="container">
 
-
-    <!-- HEADER -->
-
     <div class="header">
-
-        <div class="header-text">
-
-            <h1>🐰 Portfolio 🐰</h1>
-
-            <p>
-                พื้นที่รวบรวมผลงานและกิจกรรมที่ภาคภูมิใจ 💜
-            </p>
-
-        </div>
-
+        <h1>🐰 My Works 🐰</h1>
+        <p>ผลงานและประสบการณ์ที่ภาคภูมิใจ 💜</p>
     </div>
 
-
-    <!-- ผลงาน 1: กิจกรรมมหิดล (2 รูป) -->
-
-    <div class="project-card">
-
-        <h3>🐰 ผลงานชิ้นที่ 1 : กิจกรรมเปิดบ้านและเยี่ยมชม คณะสัตวแพทยศาสตร์ มหาวิทยาลัยมหิดล</h3>
-
+    <!-- ผลงาน 1 -->
+    <div class="work">
+        <h2>✦ การแข่งขันคิดเลขเร็ว</h2>
         <p>
-            เข้าร่วมกิจกรรมเปิดบ้าน ณ มหิดลสิทธาคาร และเยี่ยมชมคณะสัตวแพทยศาสตร์ มหาวิทยาลัยมหิดล เพื่อเรียนรู้บรรยากาศการเรียนและค้นหาแนวทางการศึกษาต่อในสายสัตวแพทย์
+            เข้าร่วมการแข่งขันคิดเลขเร็ว ระดับมัธยมศึกษาตอนปลาย
+            เนื่องในสัปดาห์คณิตศาสตร์สู่ความเป็นเลิศ
+            ได้ฝึกความรวดเร็วและความแม่นยำในการคิดคำนวณ
         </p>
 
-        <div class="activity-gallery-2">
-            <div class="img-box">
-                <img src="DSCF0779.jpeg" alt="มหิดลสิทธาคาร" class="activity-img">
-            </div>
-            <div class="img-box">
-                <img src="DSCF0757.jpeg" alt="คณะสัตวแพทยศาสตร์ มหิดล" class="activity-img">
-            </div>
+        <div class="cert">
+            <img src="IMG_0179.jpeg" alt="เกียรติบัตรการแข่งขันคิดเลขเร็ว">
         </div>
-
     </div>
 
-
-    <!-- ผลงาน 2: แข่งตอบปัญหา AMSCI (1 รูป) -->
-
-    <div class="project-card">
-
-        <h3>🐰 ผลงานชิ้นที่ 2 : การแข่งขันตอบปัญหาวิชาการชีววิทยาและวิทยาศาสตร์การแพทย์ (AMSCI 2026)</h3>
-
+    <!-- ผลงาน 2 -->
+    <div class="work">
+        <h2>✦ การแข่งขันอัจฉริยภาพทางคณิตศาสตร์</h2>
         <p>
-            เข้าร่วมการแข่งขันตอบปัญหาวิชาการชีววิทยาและวิทยาศาสตร์การแพทย์ ระดับมัธยมศึกษาตอนปลาย ชิงโล่พระราชทานฯ เนื่องในงานสัปดาห์วันอานันทมหิดล จัดโดยสโมสรนิสิตคณะแพทยศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย
+            เข้าร่วมการแข่งขันอัจฉริยภาพทางคณิตศาสตร์
+            ได้ฝึกการคิดวิเคราะห์และการแก้โจทย์ปัญหาทางคณิตศาสตร์
         </p>
 
-        <div class="single-cert-box">
-            <img src="0B5369EB-A17F-4B41-B0D7-8AB97FC9C305.jpeg" alt="เกียรติบัตรการแข่งขันตอบปัญหา AMSCI 2026" class="single-cert-img">
+        <div class="cert">
+            <img src="IMG_0180.jpeg" alt="เกียรติบัตรคณิตศาสตร์">
         </div>
-
-
-        <!-- ปุ่มย้อนกลับ -->
-
-        <div style="text-align: center;">
-            <a href="portfolio.html" class="btn">
-
-                <span class="arrow">←</span>
-
-                <span>Back to Contents</span>
-
-            </a>
-        </div>
-
     </div>
 
+    <!-- ผลงาน 3 -->
+    <div class="work">
+        <h2>✦ การแข่งขันตอบปัญหาชีววิทยาและวิทยาศาสตร์การแพทย์</h2>
+        <p>
+            เข้าร่วมการแข่งขันตอบปัญหาวิชาการชีววิทยาและวิทยาศาสตร์การแพทย์
+            ระดับมัธยมศึกษาตอนปลาย จัดโดยสโมสรนิสิตคณะแพทยศาสตร์
+            จุฬาลงกรณ์มหาวิทยาลัย
+        </p>
+
+        <div class="gallery">
+            <div class="cert">
+                <img src="IMG_9134.jpeg" alt="เกียรติบัตร AMSCI">
+            </div>
+            <div class="cert">
+                <img src="0B5369EB-A17F-4B41-B0D7-8AB97FC9C305.jpeg" alt="เกียรติบัตร AMSCI">
+            </div>
+        </div>
+    </div>
+
+    <!-- ผลงาน 4 -->
+    <div class="work">
+        <h2>✦ การแข่งขันตอบปัญหาทางวิทยาศาสตร์</h2>
+        <p>
+            ได้รับรางวัลรองชนะเลิศอันดับ 1 จากการแข่งขันตอบปัญหาทางวิทยาศาสตร์
+            ได้ฝึกการคิดวิเคราะห์ การใช้เหตุผล และการทำงานภายใต้เวลาที่กำหนด
+        </p>
+
+        <div class="gallery">
+            <div class="cert">
+                <img src="IMG_0642.jpeg" alt="เกียรติบัตรวิทยาศาสตร์">
+            </div>
+            <div class="cert">
+                <img src="IMG_0643.jpeg" alt="เกียรติบัตรวิทยาศาสตร์">
+            </div>
+        </div>
+    </div>
+
+    <a href="portfolio.html" class="btn">← Back to Contents</a>
+    <div class="footer">✦ Make by <b>Kantida Khaow</b> ♡</div>
 
 </div>
 
