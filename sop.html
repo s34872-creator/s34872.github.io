@@ -2,294 +2,299 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Statement of Purpose - Kantida Teepagorn</title>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Fredoka', 'Kanit', sans-serif;
+*{box-sizing:border-box;margin:0;font-family:'Fredoka','Kanit',sans-serif}
+
+body{
+ min-height:100vh;padding:35px 15px;
+ background:linear-gradient(135deg,#fdf8ff,#eadcff,#cdb5e9,#f8efff);
+ color:#5b5067;position:relative;overflow-x:hidden;
 }
 
-body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #fbf7ff 0%, #f3e8ff 50%, #e9d5ff 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 15px;
-    overflow-x: hidden;
-    position: relative;
+body:before,body:after{
+ content:"";position:fixed;border-radius:50%;
+ filter:blur(100px);pointer-events:none;z-index:0
+}
+body:before{
+ width:320px;height:320px;background:#fff8;
+ top:-100px;left:-80px
+}
+body:after{
+ width:380px;height:380px;background:#b98de955;
+ bottom:-130px;right:-100px
 }
 
-/* =================================
-   ส่วนของอิโมจิลอย (Floating Animation)
-   ================================= */
-.floating {
-    position: fixed;
-    font-size: 2rem;
-    opacity: 0.55;
-    filter: drop-shadow(0 4px 6px rgba(192, 132, 252, 0.15));
-    animation: float 15s linear infinite;
-    z-index: 1;
-    pointer-events: none;
+/* ===== FLOATING ===== */
+
+.floating{
+ position:fixed;z-index:1;font-size:28px;opacity:.55;
+ pointer-events:none;animation:float 15s linear infinite;
 }
 
-@keyframes float {
-    from {
-        transform: translateY(110vh) rotate(0deg) scale(0.9);
-    }
-    to {
-        transform: translateY(-120vh) rotate(360deg) scale(1.1);
-    }
+.f1{left:5%;animation-delay:0s}
+.f2{left:20%;animation-delay:3s}
+.f3{left:40%;animation-delay:6s}
+.f4{left:60%;animation-delay:9s}
+.f5{left:80%;animation-delay:12s}
+
+@keyframes float{
+ from{transform:translateY(110vh) rotate(0) scale(.9)}
+ to{transform:translateY(-120vh) rotate(360deg) scale(1.1)}
 }
 
-.f1 { left: 5%; animation-delay: 0s; }
-.f2 { left: 20%; animation-delay: 3s; }
-.f3 { left: 40%; animation-delay: 6s; }
-.f4 { left: 60%; animation-delay: 9s; }
-.f5 { left: 80%; animation-delay: 12s; }
+/* ===== MAIN ===== */
 
-/* ตกแต่งพื้นหลังเรืองแสงละมุน */
-body::before {
-    content: "";
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    background: #e9d5ff;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.5;
-    top: 5%;
-    left: 5%;
-    z-index: 0;
+.container{
+ width:min(100%,900px);
+ margin:auto;
+ position:relative;
+ z-index:2;
 }
 
-body::after {
-    content: "";
-    position: fixed;
-    width: 350px;
-    height: 350px;
-    background: #c084fc;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.25;
-    bottom: 0;
-    right: 5%;
-    z-index: 0;
+.sop-card{
+ padding:38px;
+ background:#ffffffb8;
+ border:2px solid white;
+ border-radius:40px;
+ backdrop-filter:blur(22px);
+ box-shadow:0 25px 60px #7650a525,inset 0 1px #fff;
 }
 
-/* คอนเทนเนอร์หลัก */
-.container {
-    width: 100%;
-    max-width: 800px;
-    position: relative;
-    z-index: 2;
+/* ===== HEADER ===== */
+
+.sop-header{
+ text-align:center;
+ padding:5px 10px 25px;
+ margin-bottom:22px;
+ border-bottom:2px dashed #d9c4ec;
 }
 
-/* กล่องหลัก Glassmorphism */
-.sop-card {
-    position: relative;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    border-radius: 40px;
-    padding: 45px 35px;
-    box-shadow: 
-        0 20px 40px rgba(168, 85, 247, 0.08),
-        0 2px 10px rgba(255, 255, 255, 0.8) inset;
+.sop-header h1{
+ color:#7040a8;
+ font-size:36px;
+ text-shadow:0 4px 10px #8b5cf633;
 }
 
-/* หัวข้อ */
-.sop-header {
-    text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 2px dashed #e9d5ff;
-    padding-bottom: 22px;
+.sop-header p{
+ margin-top:8px;
+ color:#8c68ad;
+ font-size:15px;
 }
 
-.sop-header h1 {
-    color: #8b5cf6;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    letter-spacing: 0.5px;
-    filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.15));
+.sop-header strong{color:#76549e}
+
+/* ===== CONTENT ===== */
+
+.sop-section{
+ padding:23px;
+ margin-bottom:18px;
+ background:#ffffffc7;
+ border:2px solid #fff;
+ border-radius:25px;
+ box-shadow:0 8px 25px #7650a514;
+ transition:.3s;
 }
 
-.sop-header p {
-    color: #a855f7;
-    font-size: 1.05rem;
-    font-weight: 500;
+.sop-section:hover{
+ transform:translateY(-3px);
+ box-shadow:0 14px 30px #7650a525;
 }
 
-/* เนื้อหา SOP */
-.sop-section {
-    background: rgba(255, 255, 255, 0.85);
-    border: 2px solid #f3e8ff;
-    border-radius: 28px;
-    padding: 25px;
-    margin-bottom: 22px;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.sop-section h2{
+ display:flex;
+ align-items:center;
+ gap:8px;
+ margin-bottom:10px;
+ color:#7040a8;
+ font-size:20px;
 }
 
-.sop-section:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(168, 85, 247, 0.08);
-    background: rgba(255, 255, 255, 0.95);
+.sop-section p{
+ color:#5f536b;
+ font-family:'Kanit',sans-serif;
+ font-size:15px;
+ line-height:1.9;
+ text-align:justify;
 }
 
-.sop-section h2 {
-    color: #6d28d9;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* ===== BACK BUTTON ===== */
+
+.button-box{
+ text-align:center;
+ margin-top:28px;
 }
 
-.sop-section p {
-    color: #5b5266;
-    font-size: 1rem;
-    line-height: 1.9;
-    font-weight: 400;
-    text-align: justify;
+.back-button{
+ display:inline-flex;
+ align-items:center;
+ gap:10px;
+ padding:13px 28px;
+ color:#fff;
+ text-decoration:none;
+ border:3px solid #fff;
+ border-radius:50px;
+ background:linear-gradient(135deg,#cba7e8,#aa79d1,#8551b5);
+ box-shadow:0 10px 25px #8551b544,0 0 0 4px #eadcff99;
+ transition:.3s;
 }
 
-/* ปุ่มย้อนกลับ */
-.button-box {
-    text-align: center;
-    margin-top: 25px;
+.back-button:hover{
+ transform:translateY(-5px) scale(1.04);
+ box-shadow:0 16px 32px #8551b555,0 0 0 7px #eadcffaa;
 }
 
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px 32px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-    border: 3px solid #ffffff;
-    border-radius: 50px;
-    box-shadow: 
-        0 10px 20px rgba(168, 85, 247, 0.25),
-        0 0 0 4px rgba(233, 213, 255, 0.5);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+.arrow{
+ font-size:19px;
+ transition:.3s;
 }
 
-.back-button .arrow {
-    font-size: 18px;
-    transition: transform 0.3s ease;
+.back-button:hover .arrow{
+ transform:translateX(-5px);
 }
 
-.back-button:hover {
-    transform: translateY(-4px) scale(1.03);
-    background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
-    box-shadow: 
-        0 14px 25px rgba(168, 85, 247, 0.35),
-        0 0 0 6px rgba(233, 213, 255, 0.7);
+/* ===== FOOTER ===== */
+
+.footer{
+ margin-top:25px;
+ text-align:center;
+ color:#765A96;
+ font-size:13px;
+ letter-spacing:1px;
 }
 
-.back-button:hover .arrow {
-    transform: translateX(-5px);
-}
+.footer b{color:#65447f}
 
-.back-button:active {
-    transform: translateY(0) scale(0.97);
-}
+/* ===== MOBILE ===== */
 
-/* รองรับมือถือ */
-@media (max-width: 600px) {
-    .sop-card {
-        padding: 35px 20px;
-        border-radius: 30px;
-    }
-    .sop-header h1 {
-        font-size: 1.6rem;
-    }
-    .sop-section {
-        padding: 20px 18px;
-        border-radius: 22px;
-    }
-    .sop-section h2 {
-        font-size: 1.1rem;
-    }
+@media(max-width:600px){
+ .sop-card{
+  padding:25px 17px;
+  border-radius:30px;
+ }
+
+ .sop-header h1{font-size:28px}
+
+ .sop-header p{font-size:13px}
+
+ .sop-section{
+  padding:19px 16px;
+  border-radius:22px;
+ }
+
+ .sop-section h2{font-size:18px}
+
+ .sop-section p{
+  font-size:14px;
+  line-height:1.8;
+ }
 }
 </style>
 </head>
 
 <body>
 
-    <!-- อิโมจิลอย -->
-    <div class="floating f1">🐰</div>
-    <div class="floating f2">💜</div>
-    <div class="floating f3">⭐</div>
-    <div class="floating f4">🌷</div>
-    <div class="floating f5">🪻</div>
+<div class="floating f1">🐰</div>
+<div class="floating f2">💜</div>
+<div class="floating f3">⭐</div>
+<div class="floating f4">🌷</div>
+<div class="floating f5">🪻</div>
 
-    <div class="container">
-        
-        <div class="sop-card">
+<div class="container">
 
-            <div class="sop-header">
-                <h1>📝 Statement of Purpose 🐰</h1>
-                <p><strong>นางสาวกานต์ธิดา ทีปกากร</strong> | คณะสัตวแพทยศาสตร์ (GPAX 3.94)</p>
-            </div>
+<div class="sop-card">
 
-            <!-- ย่อหน้าที่ 1 -->
-            <div class="sop-section">
-                <h2>🐰 แรงบันดาลใจและความหลงใหลในกลไกชีวิต</h2>
-                <p>
-                    จุดเริ่มต้นความหลงใหลในวิชาชีพสัตวแพทย์ของดิฉัน ไม่ได้เกิดเพียงจากความรักในสัตว์เลี้ยงทั่วไป แต่เริ่มจากการสังเกตพฤติกรรมและธรรมชาติอันละเอียดอ่อนของ "กระต่าย" ซึ่งเป็นสัตว์ที่ไม่แสดงอาการเจ็บป่วยออกมาอย่างเปิดเผย ความซับซ้อนนี้กระตุ้นให้ดิฉันต้องการศึกษาลึกถึงกลไกทางชีววิทยา ระบบกายวิภาคศาสตร์ และพฤติกรรมวิทยา เพื่อวิเคราะห์สิ่งที่ซ่อนอยู่ภายใต้ความเงียบขรึมนั้น การได้เข้าใจธรรมชาติของสิ่งมีชีวิตและเป็นผู้ลงมือช่วยเหลือรักษาอย่างแม่นยำ คือเป้าหมายสูงสุดที่ดิฉันตั้งใจมุ่งมั่นเดินหน้าต่อไป
-                </p>
-            </div>
+<div class="sop-header">
+ <h1>📝 Statement of Purpose 🐰</h1>
+ <p>
+  <strong>นางสาวกานต์ธิดา ทีปกากร</strong>
+  | คณะสัตวแพทยศาสตร์ (GPAX 3.94)
+ </p>
+</div>
 
-            <!-- ย่อหน้าที่ 2 -->
-            <div class="sop-section">
-                <h2>🧬 ศักยภาพทางชีววิทยาและการฝึกฝนความคิดเชิงวิเคราะห์</h2>
-                <p>
-                    ตลอดการศึกษาระดับมัธยมศึกษาตอนปลาย แผนการเรียน Gifted Program ดิฉันได้ค้นพบความเชี่ยวชาญและความหลงใหลอย่างแท้จริงในรายวิชาชีววิทยา ซึ่งส่งผลให้ดิฉันสั่งสมเกรดเฉลี่ยสะสม (GPAX) ได้ถึง 3.94 ดิฉันมองว่าชีววิทยาไม่ใช่การท่องจำ แต่คือการร้อยเรียงระบบเหตุและผล ดิฉันชอบการวิเคราะห์กระบวนการทำงานของระบบร่างกาย เซลล์ และกลไกการเกิดโรค การเรียนรู้ผ่านการสังเกต รายละเอียดเล็กๆ และการค้นคว้าอย่างถี่ถ้วน ทำให้ดิฉันพัฒนาทักษะการสืบหาต้นตอของปัญหาอย่างเป็นระบบ ซึ่งเป็นหัวใจสำคัญในการวินิจฉัยโรคทางสัตวแพทย์
-                </p>
-            </div>
+<!-- SECTION 01 -->
+<div class="sop-section">
+ <h2>🐰 แรงบันดาลใจและความหลงใหลในกลไกชีวิต</h2>
 
-            <!-- ย่อหน้าที่ 3 -->
-            <div class="sop-section">
-                <h2>🩺 ความสุขในการทำงานเงียบๆ และความมุ่งมั่นภาคปฏิบัติ</h2>
-                <p>
-                    ดิฉันเป็นคนที่ชอบความสงบ มีสมาธิสูง และถนัดการเรียนรู้ผ่านการเฝ้าสังเกตและลงมือปฏิบัติอย่างตั้งใจ จากประสบการณ์เข้าร่วมกิจกรรมฝึกปฏิบัติงาน ณ กลุ่มงานการพยาบาล โรงพยาบาลบ้านบึง และกิจกรรมเปิดบ้านคณะสัตวแพทยศาสตร์ มหาวิทยาลัยมหิดล ทำให้ดิฉันพบว่าหัวใจของสัตวแพทย์ที่รักษาสัตว์เล็กหรือสัตว์พิเศษ คือ "ความอดทนและความละเอียดอ่อน" สัตว์พูดไม่ได้และมักหวาดกลัว การทำงานที่ต้องใช้ความเงียบ สมาธิที่จดจ่อ และการสังเกตสัญญาณชีพอย่างใจเย็น คือจุดแข็งที่ทำให้ดิฉันสามารถจดจ่อกับการวินิจฉัย การเข้าแล็บ และการรักษาได้อย่างมีประสิทธิภาพ
-                </p>
-            </div>
+ <p>
+  จุดเริ่มต้นความหลงใหลในวิชาชีพสัตวแพทย์ของดิฉัน
+  ไม่ได้เกิดเพียงจากความรักในสัตว์เลี้ยงทั่วไป
+  แต่เริ่มจากการสังเกตพฤติกรรมและธรรมชาติอันละเอียดอ่อนของ
+  "กระต่าย" ซึ่งเป็นสัตว์ที่ไม่แสดงอาการเจ็บป่วยออกมาอย่างเปิดเผย
+  ความซับซ้อนนี้กระตุ้นให้ดิฉันต้องการศึกษาลึกถึงกลไกทางชีววิทยา
+  ระบบกายวิภาคศาสตร์ และพฤติกรรมวิทยา
+  เพื่อวิเคราะห์สิ่งที่ซ่อนอยู่ภายใต้ความเงียบขรึมนั้น
+  การได้เข้าใจธรรมชาติของสิ่งมีชีวิตและเป็นผู้ลงมือช่วยเหลือรักษาอย่างแม่นยำ
+  คือเป้าหมายสูงสุดที่ดิฉันตั้งใจมุ่งมั่นเดินหน้าต่อไป
+ </p>
+</div>
 
-            <!-- ย่อหน้าที่ 4 -->
-            <div class="sop-section">
-                <h2>🌟 เป้าหมายในอนาคต</h2>
-                <p>
-                    เป้าหมายหลักของดิฉันคือ การสำเร็จการศึกษาจากคณะสัตวแพทยศาสตร์ และมุ่งสู่การเป็นสัตวแพทย์เฉพาะทางด้านสัตว์เลี้ยงชนิดพิเศษ (Exotic Pet Veterinarian) ที่มีความเชี่ยวชาญด้านกระต่ายและสัตว์เลี้ยงขนาดเล็ก ดิฉันพร้อมที่จะทุ่มเทเวลาให้กับการศึกษารายวิชาชีววิทยาสัตว์ การทำวิจัยในห้องปฏิบัติการ และการฝึกทักษะหัตถการทางการแพทย์ เพื่อนำความรู้และความตั้งใจจริงมายกระดับมาตรฐานการรักษาพยาบาลสัตว์เลี้ยงพิเศษในประเทศไทยอย่างดีที่สุด
-                </p>
-            </div>
+<!-- SECTION 02 -->
+<div class="sop-section">
+ <h2>🧬 ศักยภาพทางชีววิทยาและการฝึกฝนความคิดเชิงวิเคราะห์</h2>
 
-            <!-- ปุ่มย้อนกลับ -->
-            <div class="button-box">
-                <a href="portfolio.html" class="back-button">
-                    <span class="arrow">←</span>
-                    <span>Back to Content</span>
-                </a>
-            </div>
+ <p>
+  ตลอดการศึกษาระดับมัธยมศึกษาตอนปลาย แผนการเรียน Gifted Program
+  ดิฉันได้ค้นพบความเชี่ยวชาญและความหลงใหลอย่างแท้จริงในรายวิชาชีววิทยา
+  ซึ่งส่งผลให้ดิฉันสั่งสมเกรดเฉลี่ยสะสม (GPAX) ได้ถึง 3.94
+  ดิฉันมองว่าชีววิทยาไม่ใช่การท่องจำ แต่คือการร้อยเรียงระบบเหตุและผล
+  ดิฉันชอบการวิเคราะห์กระบวนการทำงานของระบบร่างกาย เซลล์
+  และกลไกการเกิดโรค การเรียนรู้ผ่านการสังเกต รายละเอียดเล็กๆ
+  และการค้นคว้าอย่างถี่ถ้วน ทำให้ดิฉันพัฒนาทักษะการสืบหาต้นตอของปัญหาอย่างเป็นระบบ
+  ซึ่งเป็นหัวใจสำคัญในการวินิจฉัยโรคทางสัตวแพทย์
+ </p>
+</div>
 
-        </div> <!-- ปิด sop-card -->
+<!-- SECTION 03 -->
+<div class="sop-section">
+ <h2>🩺 ความสุขในการทำงานเงียบๆ และความมุ่งมั่นภาคปฏิบัติ</h2>
 
-    </div> <!-- ปิด container -->
+ <p>
+  ดิฉันเป็นคนที่ชอบความสงบ มีสมาธิสูง และถนัดการเรียนรู้ผ่านการเฝ้าสังเกต
+  และลงมือปฏิบัติอย่างตั้งใจ จากประสบการณ์เข้าร่วมกิจกรรมฝึกปฏิบัติงาน
+  ณ กลุ่มงานการพยาบาล โรงพยาบาลบ้านบึง และกิจกรรมเปิดบ้านคณะสัตวแพทยศาสตร์
+  มหาวิทยาลัยมหิดล ทำให้ดิฉันพบว่าหัวใจของสัตวแพทย์ที่รักษาสัตว์เล็กหรือสัตว์พิเศษ
+  คือ "ความอดทนและความละเอียดอ่อน" สัตว์พูดไม่ได้และมักหวาดกลัว
+  การทำงานที่ต้องใช้ความเงียบ สมาธิที่จดจ่อ และการสังเกตสัญญาณชีพอย่างใจเย็น
+  คือจุดแข็งที่ทำให้ดิฉันสามารถจดจ่อกับการวินิจฉัย การเข้าแล็บ
+  และการรักษาได้อย่างมีประสิทธิภาพ
+ </p>
+</div>
+
+<!-- SECTION 04 -->
+<div class="sop-section">
+ <h2>🌟 เป้าหมายในอนาคต</h2>
+
+ <p>
+  เป้าหมายหลักของดิฉันคือ การสำเร็จการศึกษาจากคณะสัตวแพทยศาสตร์
+  และมุ่งสู่การเป็นสัตวแพทย์เฉพาะทางด้านสัตว์เลี้ยงชนิดพิเศษ
+  (Exotic Pet Veterinarian) ที่มีความเชี่ยวชาญด้านกระต่ายและสัตว์เลี้ยงขนาดเล็ก
+  ดิฉันพร้อมที่จะทุ่มเทเวลาให้กับการศึกษารายวิชาชีววิทยาสัตว์
+  การทำวิจัยในห้องปฏิบัติการ และการฝึกทักษะหัตถการทางการแพทย์
+  เพื่อนำความรู้และความตั้งใจจริงมายกระดับมาตรฐานการรักษาพยาบาลสัตว์เลี้ยงพิเศษ
+  ในประเทศไทยอย่างดีที่สุด
+ </p>
+</div>
+
+<!-- BACK BUTTON -->
+<div class="button-box">
+ <a href="portfolio.html" class="back-button">
+  <span class="arrow">←</span>
+  <span>Back to Content 🐰</span>
+ </a>
+</div>
+
+</div>
+
+<div class="footer">
+ ✦ Make by <b>Kantida Khaow</b> ♡
+</div>
+
+</div>
 
 </body>
 </html>
