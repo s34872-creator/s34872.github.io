@@ -4,284 +4,279 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Academic Background</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Fredoka', 'Kanit', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Fredoka','Kanit',sans-serif;
 }
 
-body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #fbf7ff 0%, #f3e8ff 50%, #e9d5ff 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 15px;
-    overflow-x: hidden;
-    position: relative;
+body{
+    min-height:100vh;
+    padding:35px 15px;
+    overflow-x:hidden;
+    position:relative;
+    background:linear-gradient(135deg,#fdf8ff,#eadcff,#cdb5e9,#f8efff);
 }
 
-/* =================================
-   ส่วนของอิโมจิลอย (Floating Animation)
-   ================================= */
-.floating {
-    position: fixed;
-    font-size: 2rem;
-    opacity: 0.55;
-    filter: drop-shadow(0 4px 6px rgba(192, 132, 252, 0.15));
-    animation: float 15s linear infinite;
-    z-index: 1;
-    pointer-events: none;
+body:before,body:after{
+    content:"";
+    position:fixed;
+    border-radius:50%;
+    filter:blur(90px);
+    pointer-events:none;
+    z-index:0;
 }
 
-@keyframes float {
-    from {
-        transform: translateY(110vh) rotate(0deg) scale(0.9);
+body:before{
+    width:300px;
+    height:300px;
+    background:#fff8;
+    top:-100px;
+    left:-80px;
+}
+
+body:after{
+    width:350px;
+    height:350px;
+    background:#b98de955;
+    bottom:-120px;
+    right:-100px;
+}
+
+.floating{
+    position:fixed;
+    font-size:1.8rem;
+    opacity:.5;
+    z-index:1;
+    pointer-events:none;
+    animation:float 15s linear infinite;
+    filter:drop-shadow(0 5px 8px #8b5cf633);
+}
+
+.f1{left:5%}
+.f2{left:20%;animation-delay:3s}
+.f3{left:40%;animation-delay:6s}
+.f4{left:60%;animation-delay:9s}
+.f5{left:80%;animation-delay:12s}
+
+@keyframes float{
+    from{transform:translateY(110vh) rotate(0) scale(.9)}
+    to{transform:translateY(-120vh) rotate(360deg) scale(1.1)}
+}
+
+.container{
+    width:100%;
+    max-width:750px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.academic-card{
+    background:#ffffffb8;
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+    border:2px solid #fff;
+    border-radius:40px;
+    padding:40px 30px;
+    text-align:center;
+    box-shadow:0 20px 50px #7650a525,inset 0 1px #fff;
+}
+
+h1{
+    color:#7040a8;
+    font-size:2rem;
+    font-weight:600;
+    text-shadow:0 4px 10px #8b5cf633;
+}
+
+.subtitle{
+    color:#9863c5;
+    font-size:1rem;
+    font-weight:500;
+    margin:8px 0 28px;
+}
+
+.subtitle:after{
+    content:"✦ 🪻 ♡ 🐰 ♡ 🌷 ✦";
+    display:block;
+    margin-top:9px;
+    font-size:.8rem;
+}
+
+.highlight-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.highlight-box{
+    background:#ffffffdd;
+    border:2px solid #eee2fa;
+    border-radius:28px;
+    padding:20px;
+    box-shadow:0 8px 20px #7650a514;
+    transition:.3s;
+}
+
+.highlight-box:hover{
+    transform:translateY(-4px);
+    box-shadow:0 13px 25px #7650a522;
+}
+
+.highlight-box h3{
+    color:#9863c5;
+    font-size:.95rem;
+    font-weight:500;
+    margin-bottom:8px;
+}
+
+.gpax-num{
+    color:#7040a8;
+    font-size:2.4rem;
+    font-weight:600;
+}
+
+.program-text{
+    color:#7040a8;
+    font-size:1.25rem;
+    font-weight:600;
+    margin-top:6px;
+}
+
+.timeline{
+    text-align:left;
+    background:#ffffff99;
+    border:2px solid #eee2fa;
+    border-radius:30px;
+    padding:28px 25px;
+    box-shadow:0 8px 20px #7650a514;
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:25px;
+    border-left:3px dashed #c39add;
+}
+
+.timeline-item:last-child{
+    margin-bottom:0;
+    border-left-color:transparent;
+}
+
+.timeline-item:before{
+    content:"🌸";
+    position:absolute;
+    left:-12px;
+    top:-3px;
+    font-size:14px;
+    background:#fff;
+    border-radius:50%;
+    line-height:1;
+    box-shadow:0 3px 8px #7650a522;
+}
+
+.year{
+    display:inline-block;
+    background:#f3e8ff;
+    color:#7040a8;
+    font-size:.85rem;
+    font-weight:600;
+    padding:5px 14px;
+    border-radius:20px;
+    border:1px solid #e9d5ff;
+    margin-bottom:8px;
+}
+
+.timeline-item h2{
+    color:#7040a8;
+    font-size:1.1rem;
+    font-weight:600;
+    margin-bottom:4px;
+}
+
+.timeline-item p{
+    color:#5f536b;
+    font-size:.95rem;
+}
+
+.back-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:30px;
+    padding:14px 32px;
+    color:#fff;
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:500;
+    background:linear-gradient(135deg,#cba7e8,#aa79d1,#8551b5);
+    border:3px solid #fff;
+    border-radius:50px;
+    box-shadow:0 10px 25px #8551b544,0 0 0 4px #eadcff99;
+    transition:.35s;
+}
+
+.back-button:hover{
+    transform:translateY(-5px) scale(1.04);
+    box-shadow:0 18px 35px #8551b555,0 0 0 7px #eadcffaa;
+}
+
+.arrow{
+    font-size:19px;
+    transition:.3s;
+}
+
+.back-button:hover .arrow{
+    transform:translateX(-6px);
+}
+
+.footer{
+    margin-top:25px;
+    padding-bottom:10px;
+    text-align:center;
+    color:#765A96;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+@media(max-width:600px){
+    .academic-card{
+        padding:30px 18px;
+        border-radius:30px;
     }
-    to {
-        transform: translateY(-120vh) rotate(360deg) scale(1.1);
+
+    .highlight-grid{
+        grid-template-columns:1fr;
     }
-}
 
-.f1 { left: 5%; animation-delay: 0s; }
-.f2 { left: 20%; animation-delay: 3s; }
-.f3 { left: 40%; animation-delay: 6s; }
-.f4 { left: 60%; animation-delay: 9s; }
-.f5 { left: 80%; animation-delay: 12s; }
-
-/* ตกแต่งพื้นหลังเรืองแสงละมุน */
-body::before {
-    content: "";
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    background: #e9d5ff;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.5;
-    top: 5%;
-    left: 5%;
-    z-index: 0;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    width: 350px;
-    height: 350px;
-    background: #c084fc;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.25;
-    bottom: 0;
-    right: 5%;
-    z-index: 0;
-}
-
-/* คอนเทนเนอร์หลัก */
-.container {
-    width: 100%;
-    max-width: 750px;
-    position: relative;
-    z-index: 2;
-}
-
-/* กล่องหลัก Glassmorphism */
-.academic-card {
-    position: relative;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 3px solid rgba(255, 255, 255, 0.9);
-    border-radius: 40px;
-    padding: 40px 30px;
-    text-align: center;
-    box-shadow: 
-        0 20px 40px rgba(168, 85, 247, 0.08),
-        0 2px 10px rgba(255, 255, 255, 0.8) inset;
-}
-
-/* หัวข้อ */
-h1 {
-    color: #8b5cf6;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-    filter: drop-shadow(0 2px 4px rgba(139, 92, 246, 0.15));
-}
-
-.subtitle {
-    color: #a855f7;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 30px;
-}
-
-/* กล่องโชว์ GPAX และแผนการเรียนเด่นๆ */
-.highlight-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.highlight-box {
-    background: rgba(255, 255, 255, 0.85);
-    border: 2px solid #f3e8ff;
-    border-radius: 28px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.highlight-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(168, 85, 247, 0.1);
-    background: rgba(255, 255, 255, 0.95);
-}
-
-.highlight-box h3 {
-    color: #a855f7;
-    font-size: 0.95rem;
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
-.highlight-box .gpax-num {
-    color: #6d28d9;
-    font-size: 2.4rem;
-    font-weight: 600;
-    line-height: 1.1;
-    filter: drop-shadow(0 2px 4px rgba(109, 40, 217, 0.15));
-}
-
-.highlight-box .program-text {
-    color: #6d28d9;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-transform: capitalize;
-    margin-top: 6px;
-}
-
-/* ลำดับประวัติการศึกษา (Timeline) */
-.timeline {
-    text-align: left;
-    background: rgba(255, 255, 255, 0.6);
-    border: 2px solid #f3e8ff;
-    border-radius: 28px;
-    padding: 30px 25px 25px 25px;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.04);
-}
-
-.timeline-item {
-    position: relative;
-    padding-left: 28px;
-    margin-bottom: 22px;
-    border-left: 3px dashed #c084fc;
-}
-
-.timeline-item:last-child {
-    margin-bottom: 0;
-    border-left-color: transparent;
-}
-
-.timeline-item::before {
-    content: "🌸";
-    position: absolute;
-    left: -12px;
-    top: -2px;
-    font-size: 14px;
-    background: #ffffff;
-    border-radius: 50%;
-    line-height: 1;
-    box-shadow: 0 2px 5px rgba(168, 85, 247, 0.2);
-}
-
-.timeline-item .year {
-    display: inline-block;
-    background: #f3e8ff;
-    color: #7c3aed;
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 4px 14px;
-    border-radius: 20px;
-    border: 1px solid #e9d5ff;
-    margin-bottom: 8px;
-}
-
-.timeline-item h2 {
-    color: #6d28d9;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.timeline-item p {
-    color: #5b5266;
-    font-size: 0.95rem;
-    font-weight: 400;
-}
-
-/* ปุ่มย้อนกลับแบบละมุนนุ่มนวล */
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-    padding: 14px 32px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
-    border: 3px solid #ffffff;
-    border-radius: 50px;
-    box-shadow: 
-        0 10px 20px rgba(168, 85, 247, 0.25),
-        0 0 0 4px rgba(233, 213, 255, 0.5);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.back-button .arrow {
-    font-size: 18px;
-    transition: transform 0.3s ease;
-}
-
-.back-button:hover {
-    transform: translateY(-4px) scale(1.03);
-    background: linear-gradient(135deg, #d8b4fe 0%, #c084fc 100%);
-    box-shadow: 
-        0 14px 25px rgba(168, 85, 247, 0.35),
-        0 0 0 6px rgba(233, 213, 255, 0.7);
-}
-
-.back-button:hover .arrow {
-    transform: translateX(-5px);
-}
-
-.back-button:active {
-    transform: translateY(0) scale(0.97);
-}
-
-/* รองรับหน้าจอมือถือ */
-@media (max-width: 600px) {
-    .academic-card {
-        padding: 30px 18px;
-        border-radius: 30px;
+    h1{
+        font-size:1.6rem;
     }
-    .highlight-grid {
-        grid-template-columns: 1fr;
+
+    .timeline{
+        padding:25px 18px;
     }
-    h1 {
-        font-size: 1.6rem;
+
+    .timeline-item h2{
+        font-size:1rem;
+    }
+
+    .timeline-item p{
+        font-size:.88rem;
+    }
+
+    .back-button{
+        width:100%;
+        max-width:260px;
     }
 }
 </style>
@@ -289,65 +284,70 @@ h1 {
 
 <body>
 
-    <!-- อิโมจิลอย -->
-    <div class="floating f1">🐰</div>
-    <div class="floating f2">💜</div>
-    <div class="floating f3">⭐</div>
-    <div class="floating f4">🌷</div>
-    <div class="floating f5">🪻</div>
+<div class="floating f1">🐰</div>
+<div class="floating f2">💜</div>
+<div class="floating f3">⭐</div>
+<div class="floating f4">🌷</div>
+<div class="floating f5">🪻</div>
 
-    <div class="container">
-        
-        <div class="academic-card">
+<div class="container">
 
-            <h1>🎓 Academic Background 🎓</h1>
-            <p class="subtitle">✨ ประวัติการศึกษาและผลการเรียน ✨</p>
+    <div class="academic-card">
 
-            <!-- ไฮไลต์ GPAX และแผนการเรียน -->
-            <div class="highlight-grid">
-                <div class="highlight-box">
-                    <h3>📚 แผนการเรียน</h3>
-                    <div class="program-text">gifted program</div>
-                </div>
+        <h1>🎓 Academic Background 🎓</h1>
+        <p class="subtitle">✨ ประวัติการศึกษาและผลการเรียน ✨</p>
 
-                <div class="highlight-box">
-                    <h3>⭐ เกรดเฉลี่ยสะสม (GPAX)</h3>
-                    <div class="gpax-num">3.94</div>
-                </div>
+        <div class="highlight-grid">
+
+            <div class="highlight-box">
+                <h3>📚 แผนการเรียน</h3>
+                <div class="program-text">Gifted Program</div>
             </div>
 
-            <!-- ลำดับประวัติการศึกษา -->
-            <div class="timeline">
-                
-                <div class="timeline-item">
-                    <span class="year">2024 - 2026</span>
-                    <h2>โรงเรียนบ้านบึง"อุตสาหกรรมนุเคราะห์"</h2>
-                    <p>ระดับมัธยมศึกษาตอนปลาย (ม.4 - ม.6)</p>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="year">2021 - 2023</span>
-                    <h2>โรงเรียนบ้านบึง"อุตสาหกรรมนุเคราะห์"</h2>
-                    <p>ระดับมัธยมศึกษาตอนต้น (ม.1 - ม.3)</p>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="year">2012 - 2020</span>
-                    <h2>โรงเรียนวัฒนดรุณวิทย์</h2>
-                    <p>ระดับการศึกษาปฐมวัย - ประถมศึกษา (อ.1 - ป.6)</p>
-                </div>
-
+            <div class="highlight-box">
+                <h3>⭐ เกรดเฉลี่ยสะสม (GPAX)</h3>
+                <div class="gpax-num">3.94</div>
             </div>
 
-            <!-- ปุ่มย้อนกลับ -->
-            <a href="portfolio.html" class="back-button">
-                <span class="arrow">←</span>
-                <span>Back to Content</span>
-            </a>
+        </div>
 
-        </div> <!-- ปิด academic-card -->
+        <div class="timeline">
 
-    </div> <!-- ปิด container -->
+            <!-- อนุบาล - ประถม -->
+            <div class="timeline-item">
+                <span class="year">2012 - 2020</span>
+                <h2>โรงเรียนวัฒนดรุณวิทย์</h2>
+                <p>ระดับการศึกษาปฐมวัย - ประถมศึกษา (อ.1 - ป.6)</p>
+            </div>
+
+            <!-- มัธยมต้น -->
+            <div class="timeline-item">
+                <span class="year">2021 - 2023</span>
+                <h2>โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</h2>
+                <p>ระดับมัธยมศึกษาตอนต้น (ม.1 - ม.3)</p>
+            </div>
+
+            <!-- มัธยมปลาย -->
+            <div class="timeline-item">
+                <span class="year">2024 - 2026</span>
+                <h2>โรงเรียนบ้านบึง "อุตสาหกรรมนุเคราะห์"</h2>
+                <p>ระดับมัธยมศึกษาตอนปลาย (ม.4 - ม.6)</p>
+            </div>
+
+        </div>
+
+        <a href="portfolio.html" class="back-button">
+            <span class="arrow">←</span>
+            <span>Back to Content</span>
+        </a>
+
+    </div>
+
+    <div class="footer">
+        ✦ Make by <b>Kantida Khaow</b> ♡
+    </div>
+
+</div>
 
 </body>
 </html>
